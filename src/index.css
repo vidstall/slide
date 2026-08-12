@@ -470,15 +470,24 @@ body {
   transform: translateX(-50%);
   display: flex;
   gap: 8px;
+  margin-top: 32px;
   z-index: 10;
 }
 
 .dot {
+  box-sizing: content-box;
   width: 8px;
   height: 8px;
-  border-radius: 50%;
+  padding: 8px;
   background: var(--border);
+  background-clip: content-box;
+  border-radius: 50%;
+  cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dot:hover {
+  background: var(--accent);
 }
 
 .dot-active {

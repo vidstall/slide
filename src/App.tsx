@@ -50,6 +50,17 @@ function App() {
     }
   }, [stepIndex, currentSlide.stepsCount, slideIndex, lockAnimation]);
 
+  const goToSlide = useCallback(
+    (index: number) => {
+      if (animatingRef.current || index === slideIndex) return;
+      lockAnimation();
+      setDirection(index > slideIndex ? 1 : -1);
+      setSlideIndex(index);
+      setStepIndex(0);
+    },
+    [slideIndex, lockAnimation]
+  );
+
   const retreat = useCallback(() => {
     if (animatingRef.current) return;
     if (stepIndex > 0) {
@@ -137,7 +148,14 @@ function App() {
 
       <div className="progress-dots">
         {slides.map((s, i) => (
-          <span key={s.id} className={i === slideIndex ? "dot dot-active" : "dot"} />
+          <span
+            key={s.id}
+            className={i === slideIndex ? "dot dot-active" : "dot"}
+            onClick={(e) => {
+              e.stopPropagation();
+              goToSlide(i);
+            }}
+          />
         ))}
       </div>
 
