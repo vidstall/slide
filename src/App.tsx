@@ -2,6 +2,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { slides } from "./presentation/slides";
 import { Landing } from "./presentation/Landing";
+import { useTheme } from "./presentation/theme/useTheme";
+import { ThemeToggle } from "./presentation/theme/ThemeToggle";
 
 const TRANSITION_MS = 450;
 
@@ -12,6 +14,7 @@ const slideVariants: Variants = {
 };
 
 function App() {
+  const { theme, toggleTheme } = useTheme();
   const [started, setStarted] = useState(false);
   const [slideIndex, setSlideIndex] = useState(0);
   const [stepIndex, setStepIndex] = useState(0);
@@ -60,8 +63,12 @@ function App() {
   }, [stepIndex, slideIndex, lockAnimation]);
 
   useEffect(() => {
-    if (!started) return;
     function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "d" || e.key === "D") {
+        toggleTheme();
+        return;
+      }
+      if (!started) return;
       if (["ArrowRight", " ", "Enter", "PageDown"].includes(e.key)) {
         e.preventDefault();
         advance();
@@ -72,7 +79,7 @@ function App() {
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [started, advance, retreat]);
+  }, [started, advance, retreat, toggleTheme]);
 
   const handleStart = useCallback(() => {
     document.documentElement.requestFullscreen?.().catch(() => {
@@ -82,7 +89,12 @@ function App() {
   }, []);
 
   if (!started) {
-    return <Landing onStart={handleStart} />;
+    return (
+      <>
+        <Landing onStart={handleStart} />
+        <ThemeToggle theme={theme} onToggle={toggleTheme} />
+      </>
+    );
   }
 
   return (
@@ -94,6 +106,7 @@ function App() {
         retreat();
       }}
     >
+      <ThemeToggle theme={theme} onToggle={toggleTheme} />
       <AnimatePresence mode="wait" custom={direction} initial={false}>
         <motion.div
           key={currentSlide.id}
