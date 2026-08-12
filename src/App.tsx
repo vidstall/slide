@@ -4,6 +4,8 @@ import { slides } from "./presentation/slides";
 import { Landing } from "./presentation/Landing";
 import { useTheme } from "./presentation/theme/useTheme";
 import { ThemeToggle } from "./presentation/theme/ThemeToggle";
+import { useFullscreen } from "./presentation/theme/useFullscreen";
+import { FullscreenToggle } from "./presentation/theme/FullscreenToggle";
 
 const TRANSITION_MS = 450;
 
@@ -15,6 +17,7 @@ const slideVariants: Variants = {
 
 function App() {
   const { theme, toggleTheme } = useTheme();
+  const { fullscreen, toggleFullscreen } = useFullscreen();
   const [started, setStarted] = useState(false);
   const [slideIndex, setSlideIndex] = useState(0);
   const [stepIndex, setStepIndex] = useState(0);
@@ -68,6 +71,10 @@ function App() {
         toggleTheme();
         return;
       }
+      if (e.key === "f" || e.key === "F") {
+        toggleFullscreen();
+        return;
+      }
       if (!started) return;
       if (["ArrowRight", " ", "Enter", "PageDown"].includes(e.key)) {
         e.preventDefault();
@@ -79,7 +86,7 @@ function App() {
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [started, advance, retreat, toggleTheme]);
+  }, [started, advance, retreat, toggleTheme, toggleFullscreen]);
 
   const handleStart = useCallback(() => {
     document.documentElement.requestFullscreen?.().catch(() => {
@@ -92,7 +99,10 @@ function App() {
     return (
       <>
         <Landing onStart={handleStart} />
-        <ThemeToggle theme={theme} onToggle={toggleTheme} />
+        <div className="toolbar">
+          <ThemeToggle theme={theme} onToggle={toggleTheme} />
+          <FullscreenToggle fullscreen={fullscreen} onToggle={toggleFullscreen} />
+        </div>
       </>
     );
   }
@@ -106,7 +116,10 @@ function App() {
         retreat();
       }}
     >
-      <ThemeToggle theme={theme} onToggle={toggleTheme} />
+      <div className="toolbar">
+        <ThemeToggle theme={theme} onToggle={toggleTheme} />
+        <FullscreenToggle fullscreen={fullscreen} onToggle={toggleFullscreen} />
+      </div>
       <AnimatePresence mode="wait" custom={direction} initial={false}>
         <motion.div
           key={currentSlide.id}

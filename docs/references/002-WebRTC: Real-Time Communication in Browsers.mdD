@@ -1,0 +1,10 @@
+@techreport{w3cwebrtc2025,
+  author      = {Jennings, Cullen and Alvestrand, Harald and Burnett, Dan and Bergkvist, Adam and H{\aa}kansson, Stefan and Aboba, Bernard},
+  title       = {WebRTC: Real-Time Communication in Browsers},
+  institution = {W3C},
+  type        = {W3C Recommendation},
+  month       = mar,
+  year        = {2025},
+  url         = {https://www.w3.org/TR/webrtc/}
+}
+
