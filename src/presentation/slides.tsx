@@ -82,7 +82,7 @@ const gapRows: ComparisonRow[] = [
 
 const archNodes: DiagramNodeData[] = [
   { id: "client", label: "Client", sublabel: "Browser · WebRTC peer", x: 2, y: 50, layer: "client" },
-  { id: "relay", label: "Relay", sublabel: "mediasoup SFU + coturn TURN", x: 32, y: 12, layer: "offchain" },
+  { id: "relay", label: "Relay", sublabel: "mediasoup SFU", x: 32, y: 12, layer: "offchain" },
   { id: "validator", label: "Validator Daemon", sublabel: "Canary probe · STUN/relay-latency probe", x: 32, y: 88, layer: "offchain" },
   { id: "cpdaemon", label: "cp-daemon", sublabel: "Control-plane: pairing quorum, TURN issuance, failover", x: 80, y: 6, layer: "control" },
   { id: "chain", label: "Sui Chain", sublabel: "Registry · RoomAssignment · SessionProof · Settlement (Move)", x: 116, y: 50, layer: "chain" },
@@ -200,12 +200,12 @@ const huddle01TradeoffColumns = ["Dimension", "Traditional Cloud VC", "Huddle01"
 const huddle01TradeoffRows: ComparisonRow[] = [
   {
     criteria: "Reliability / SLA",
-    values: ["99.9%+ SLA-backed uptime, data-center hosted", "Node uptime market-driven — no formal SLA"],
+    values: ["99.9%+ SLA-backed uptime", "Node uptime market-driven — no formal SLA"],
     highlight: 0,
   },
   {
     criteria: "Infrastructure cost",
-    values: ["High fixed cost — dedicated capacity, paid whether idle or not", "Spare-capacity node economics — lower marginal cost"],
+    values: ["High fixed cost — paid even when idle", "Spare-capacity node economics — lower marginal cost"],
     highlight: 1,
   },
   {
@@ -325,10 +325,10 @@ export const slides: SlideDef[] = [
               What is Video Conferencing? <sup className="citation-mark">[001]</sup>
             </h1>
             <ul className="bullet-list">
-              <li>Real-time, two-way transmission of audio and video between people in different locations</li>
-              <li>Two-way is what makes it "conferencing" — the first-ever call in 1927 was one-way, image only</li>
-              <li>A conference of participants, not just a single point-to-point link</li>
-              <li>The technology moved from mechanical, analog origins in the 1920s to IP-based, cloud-delivered services — the definition never changed</li>
+              <li>Real-time, two-way audio and video between distant participants</li>
+              <li>Two-way is what makes it "conferencing" — the 1927 first call was one-way</li>
+              <li>A conference of participants, not a point-to-point link</li>
+              <li>Mechanical origins to cloud services — the definition never changed</li>
             </ul>
           </div>
           <DeviceMesh />
@@ -367,9 +367,7 @@ export const slides: SlideDef[] = [
         wide
       >
         <p className="slide-subtitle">
-          DePIN for RTC: node operators contribute spare bandwidth for $HUDL token rewards, coordinated on a
-          purpose-built Arbitrum Orbit dRTC Chain — running the same mediasoup SFU as this work. Funded and
-          production-stage: $37M node sale, 840M+ minutes served, mainnet and $HUDL TGE live since Q1 2026.
+          DePIN for RTC: spare-bandwidth nodes, token rewards, a purpose-built dRTC chain — and the same mediasoup SFU as this work.
         </p>
         <ComparisonTable columns={huddle01TradeoffColumns} rows={huddle01TradeoffRows} step={step} />
       </SlideLayout>
@@ -457,7 +455,7 @@ export const slides: SlideDef[] = [
         <div className="stat-grid" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
           {[
             { value: "Latency", label: "Wide-area one-way component-sum, n=30 sessions — reduced-fidelity lower bound" },
-            { value: "Cost", label: "Per-function gas + one full K=2, N=4 session — pinned localnet only" },
+            { value: "Fee", label: "Per-function gas + one full K=2, N=4 session — pinned localnet only" },
             { value: "Capacity", label: "Relay CPU/egress through N=15 viewers — N=100 is a projection" },
             { value: "Failover", label: "Warm-pipe mechanism floor, 30 cutovers — not full user-visible recovery" },
           ].map((stat, i) => (
@@ -482,13 +480,12 @@ export const slides: SlideDef[] = [
     id: "eval-latency",
     stepsCount: 0,
     render: () => (
-      <SlideLayout eyebrow="Evaluation" title="Latency: Below the 200ms Ceiling">
+      <SlideLayout eyebrow="Evaluation" title="Latency: Wide-Area One-Way Component-Sum">
         <div style={{ maxWidth: 560 }}>
           <BarChart
             data={[
               { label: "p50", value: 64.8 },
               { label: "p95", value: 70.9 },
-              { label: "p99", value: 72.0 },
             ]}
             unit=" ms"
           />
@@ -501,7 +498,7 @@ export const slides: SlideDef[] = [
     id: "eval-cost",
     stepsCount: 0,
     render: () => (
-      <SlideLayout eyebrow="Evaluation" title="Cost: Fractions of a Cent per Call" wide>
+      <SlideLayout eyebrow="Evaluation" title="On-Chain Fee per Session" wide>
         <div style={{ maxWidth: 720 }}>
           <BarChart
             data={[
@@ -598,26 +595,24 @@ export const slides: SlideDef[] = [
         title="Quality Baseline"
         subtitle="azure-devnet-sample — 25 workers · 5 Azure VMs · 2 bots + 1 real join"
       >
-        <div className="stat-grid" style={{ gridTemplateColumns: "repeat(5, 1fr)" }}>
-          {["eastus", "westus2", "centralus", "westeurope", "eastus2"].map((region) => (
-            <div key={region} className="stat-card">
-              <div className="stat-value">{region}</div>
-              <div className="stat-label">1 relay + 2 cp-daemon + 2 validator-daemon</div>
-            </div>
-          ))}
+        <div className="stat-grid">
+          <div className="stat-card">
+            <div className="stat-value">5 Azure regions</div>
+            <div className="stat-label">eastus · westus2 · centralus · westeurope · eastus2 — each: 1 relay + 2 cp-daemon + 2 validator-daemon</div>
+          </div>
         </div>
         <div className="stat-grid" style={{ marginTop: 12 }}>
           <div className="stat-card">
             <div className="stat-value">25 infra workers</div>
-            <div className="stat-label">5 services × 5 VMs, Standard_D2als_v7 (2 vCPU), under a 3-vCPU/region quota</div>
+            <div className="stat-label">5 services × 5 VMs — infra processes, not users</div>
           </div>
           <div className="stat-card">
             <div className="stat-value">2 scripted bots + 1 real</div>
-            <div className="stat-label">bot1 creates the room, bot2 joins 5s later, both stream media_mode=both</div>
+            <div className="stat-label">bot1 creates the room, bot2 joins 5s later, both streaming</div>
           </div>
           <div className="stat-card">
             <div className="stat-value">10-minute session</div>
-            <div className="stat-label">Author manually joined live from Vietnam mid-call as a 3rd, real participant</div>
+            <div className="stat-label">Author joined live from Vietnam mid-call — a 3rd, real participant</div>
           </div>
         </div>
       </SectionDivider>
@@ -801,10 +796,10 @@ export const slides: SlideDef[] = [
           className="bullet-list"
           step={step}
           items={[
-            "Deployment is healthy overall: 0% packet loss and stable bitrate/frame rate for the whole session",
-            "The one rough patch — the ICE/latency/jitter blip — is attributable to the author's manual Vietnam join, a genuine cross-continental path, not a scripted-bot artifact; it self-resolves within 1–2 minutes",
-            "No evidence of instability, resource exhaustion, or degradation over the 10-minute session — a passing/healthy result suitable to cite in the thesis evaluation",
-            "The topology also handled a real, geographically distant participant gracefully — a useful signal beyond scripted bot-to-bot traffic",
+            "Healthy overall: stable bitrate and frame rate for the whole session",
+            "The one rough patch traces to the live Vietnam join — a genuine cross-continental path — and self-resolves within 1–2 minutes",
+            "No instability, resource exhaustion, or degradation across the 10 minutes",
+            "A real, geographically distant participant handled gracefully — a signal beyond bot-to-bot traffic",
           ]}
         />
         <div className="stat-grid" style={{ marginTop: 12 }}>
@@ -835,18 +830,16 @@ export const slides: SlideDef[] = [
         title="2-Bot Resilience Test"
         subtitle="15 workers · 5 hosts · 2 relay-failover events (5.8–7.0s downtime)"
       >
-        <div className="stat-grid" style={{ gridTemplateColumns: "repeat(5, 1fr)" }}>
-          {["eastus", "westus2", "centralus", "westeurope", "eastus2"].map((region) => (
-            <div key={region} className="stat-card">
-              <div className="stat-value">{region}</div>
-              <div className="stat-label">1 relay + 1 cp-daemon + 1 validator-daemon</div>
-            </div>
-          ))}
+        <div className="stat-grid">
+          <div className="stat-card">
+            <div className="stat-value">5 Azure regions</div>
+            <div className="stat-label">eastus · westus2 · centralus · westeurope · eastus2 — each: 1 relay + 1 cp-daemon + 1 validator-daemon</div>
+          </div>
         </div>
         <div className="stat-grid" style={{ marginTop: 12 }}>
           <div className="stat-card">
             <div className="stat-value">15 infra workers</div>
-            <div className="stat-label">3 services × 5 VMs, Standard_D2als_v7 (2 vCPU), under a 3-vCPU/region quota</div>
+            <div className="stat-label">3 services × 5 VMs — infra processes, not users</div>
           </div>
           <div className="stat-card">
             <div className="stat-value">2 scripted bots</div>
@@ -913,10 +906,10 @@ export const slides: SlideDef[] = [
           className="bullet-list"
           step={step}
           items={[
-            "2 relay-kill events, downtime 5.82s and 6.96s — the room recovered both times with no dropped participants",
-            "Whole-run quality stayed healthy: 50.15ms avg latency, 7.20ms avg jitter, 0.00% avg packet loss",
-            "695.25 kbps avg download bitrate — light load at 2 concurrent viewers",
-            "Smallest of the resilience scenarios — establishes the failover-recovery baseline before scaling to 5 and 10 bots",
+            "Both relay kills recovered — no dropped participants",
+            "Whole-run quality stayed healthy: 7.20ms avg jitter",
+            "695.25 kbps avg download — light load at 2 concurrent viewers",
+            "Smallest resilience scenario — the failover-recovery baseline for the 10-bot run in 3.4",
           ]}
         />
         <div className="stat-grid" style={{ marginTop: 12 }}>
@@ -947,18 +940,16 @@ export const slides: SlideDef[] = [
         title="10-Bot Resilience Test"
         subtitle="15 workers · 5 hosts · 4 relay-failover events (7.6–19.6s downtime)"
       >
-        <div className="stat-grid" style={{ gridTemplateColumns: "repeat(5, 1fr)" }}>
-          {["eastus", "westus2", "centralus", "westeurope", "eastus2"].map((region) => (
-            <div key={region} className="stat-card">
-              <div className="stat-value">{region}</div>
-              <div className="stat-label">1 relay + 1 cp-daemon + 1 validator-daemon</div>
-            </div>
-          ))}
+        <div className="stat-grid">
+          <div className="stat-card">
+            <div className="stat-value">5 Azure regions</div>
+            <div className="stat-label">eastus · westus2 · centralus · westeurope · eastus2 — each: 1 relay + 1 cp-daemon + 1 validator-daemon</div>
+          </div>
         </div>
         <div className="stat-grid" style={{ marginTop: 12 }}>
           <div className="stat-card">
             <div className="stat-value">15 infra workers</div>
-            <div className="stat-label">3 services × 5 VMs, Standard_D2als_v7 (2 vCPU), under a 3-vCPU/region quota</div>
+            <div className="stat-label">3 services × 5 VMs — infra processes, not users</div>
           </div>
           <div className="stat-card">
             <div className="stat-value">10 scripted bots</div>
@@ -1025,10 +1016,10 @@ export const slides: SlideDef[] = [
           className="bullet-list"
           step={step}
           items={[
-            "4 relay-kill events, downtime 7.61s–19.6s — the room recovered every time despite 5x the concurrency of 3.3",
-            "Whole-run avg latency actually drops to 31.68ms — no evidence of degradation as load scales to 10 bots",
-            "Packet loss stays low: 0.03% avg, 0.14% p95; 1880.99 kbps avg download bitrate at 10 concurrent viewers",
-            "Largest scenario measured so far — failover recovery holds without user-visible collapse",
+            "All four relay kills recovered — at 5x the concurrency of 3.3",
+            "No degradation as load scales — whole-run latency lower than the 2-bot run",
+            "1880.99 kbps avg download at 10 concurrent viewers",
+            "Largest scenario measured — failover recovery holds without user-visible collapse",
           ]}
         />
         <div className="stat-grid" style={{ marginTop: 12 }}>
@@ -1059,7 +1050,7 @@ export const slides: SlideDef[] = [
           step={step}
           items={[
             "Proof-to-relay binding: a submitted proof doesn't cryptographically verify the relay was assigned to that room",
-            "Cost figures are localnet-only — no mainnet gas/price cross-check yet",
+            "Fee figures are localnet-only — no mainnet cross-check yet",
             "Latency and failover numbers are reduced-fidelity lower bounds — no real-camera, capture-to-paint measurement",
           ]}
         />
@@ -1068,8 +1059,8 @@ export const slides: SlideDef[] = [
           className="bullet-list"
           step={Math.max(0, step - 3)}
           items={[
-            "The architecture is designed for idle/high-churn nodes, but every experiment ran on reliable, single-workstation or data-center infrastructure",
-            "Validating DVConf under real volunteer/spare-capacity churn — not controlled kill-tests on reliable infra — is the natural next step",
+            "Designed for idle, high-churn nodes — yet every experiment ran on reliable infrastructure",
+            "Next step: validate under real volunteer churn, not controlled kill-tests",
           ]}
         />
       </SlideLayout>
@@ -1158,7 +1149,7 @@ export const slides: SlideDef[] = [
     stepsCount: 0,
     render: () => (
       <SlideLayout eyebrow="Thanks" title="Questions?">
-        <p className="slide-subtitle">Press ← to go back and replay the deck.</p>
+        <p className="slide-subtitle">DVConf — decentralised evidence and settlement over an operator-run media plane</p>
       </SlideLayout>
     ),
   },
