@@ -163,7 +163,6 @@ function App() {
 
       <div className="nav-hint">
         {isFirst && "Click or press → to begin"}
-        {!isFirst && !isLast && "← → or click to navigate"}
         {isLast && "End of deck"}
       </div>
     </div>

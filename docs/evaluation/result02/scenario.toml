@@ -1,32 +1,23 @@
-# Stress test: 10 Azure instances (1 relay + 2 cp-daemon + 2 validator-daemon +
-# 1 bot each = 60 workers total, 50 of them killable -- see KILLABLE_SERVICES in
-# cli/scenario/gen_eval_scenarios.py, which excludes bot/node_exporter).
-# 20 bots (2 concurrent sessions per bot WORKER -- apps/bot supports multiple
-# live sessions per process, see bot_client.list_sessions()'s docstring) all join
-# ONE room, then every 2 minutes exactly one more killable worker is stopped
-# (worker.leave), continuing until 25 of the 50 killable workers (50%) are down.
+# Simple stress test: 15 core workers over 5 Azure instances (1 relay + 1
+# cp-daemon + 1 validator-daemon per host), plus 2 bots joining ONE room.
+# Bots hold the room for 20 minutes (+400s) then leave. No chaos/kill
+# actions.
 #
-# Base topology: scenario/example/azure.toml, extended from 5 hosts/regions to 10.
-# Regions eastus/westus2/centralus/westeurope/eastus2 (hosts 001-005) are confirmed
-# working for this subscription at Standard_D2als_v7 (see azure.toml's own
-# comments). Of the 5 new regions (hosts 006-010): japaneast/southeastasia (008/
-# 009) also work at _v7; uksouth (007) and canadacentral (010) rejected _v7
-# (SkuNotAvailable / InvalidParameter respectively) but succeeded at
-# Standard_D2als_v6 -- confirmed live via `scenario apply`. northeurope (006)
-# rejected BOTH _v7 and _v6 with SkuNotAvailable/"Capacity Restrictions" on two
-# separate live apply attempts -- a genuine region-wide capacity shortage for
-# this VM family, not fixable by swapping SKU generation -- so host 006 was
-# moved to swedencentral (Standard_D2als_v7, unused by any other host) instead.
+# Same topology as scenario/evaluation/simple-15wk-5host-20bot.toml -- only
+# the bot session count/action list differs (2 sessions, one each on hosts
+# 001/002, instead of 20/4-per-host). The full 5-host core-worker topology is
+# still deployed even though only 2 of the 5 bot workers are ever used, so
+# this scenario satisfies the same on-chain role minimums (>=2 relays, >=2
+# validators, >=3 CPs per room -- see services/contract's constants.move) as
+# the larger sibling scenarios and stays directly comparable to them.
 #
-# Kill order/timing: the 25 killed (of 50 killable) workers were chosen via the same
-# method cli/scenario/gen_eval_scenarios.py's _select_kill_targets() uses --
-# random.Random(0).sample(killable_pool, 25) over this file's own [[workers]] in
-# declaration order -- but that generator only supports a single kill wave (one
-# --kill-at timestamp), not this file's repeating "one more every 2 minutes"
-# cadence, so this file is hand-composed rather than machine-generated. Reproduce
-# the same order (seed=0) with the worker list this file declares if regenerating.
+# Regions/size: reuses the 5 confirmed-working Azure regions from
+# scenario/example/azure.toml (eastus/westus2/centralus/westeurope/eastus2),
+# Standard_D2als_v7 -- one host per region keeps each region at 2 vCPU, under
+# this subscription's 3-vCPU-per-region cap (worker count doesn't affect
+# vCPU usage, only VM size/count does -- all workers on a host share one VM).
 
-name = "azure-50wk-10bot-1room"
+name = "simple-15wk-5host-2bot"
 env = "devnet"
 
 [contract]
@@ -34,7 +25,6 @@ gas_budget = ""
 create_registry_if_missing = false
 force = false
 
-# Reuse the DigitalOcean-hosted registry, same as scenario/example/azure.toml.
 [registry]
 provider = "digitalocean"
 tag = ""
@@ -63,26 +53,10 @@ region = "eastus"
 
 [[workers]]
 host = "001"
-service = "cp-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 2
-region = "eastus"
-
-[[workers]]
-host = "001"
 service = "validator-daemon"
 provider = "azure"
 size = "Standard_D2als_v7"
 worker_index = 1
-region = "eastus"
-
-[[workers]]
-host = "001"
-service = "validator-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 2
 region = "eastus"
 
 [[workers]]
@@ -112,26 +86,10 @@ region = "westus2"
 
 [[workers]]
 host = "002"
-service = "cp-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 2
-region = "westus2"
-
-[[workers]]
-host = "002"
 service = "validator-daemon"
 provider = "azure"
 size = "Standard_D2als_v7"
 worker_index = 1
-region = "westus2"
-
-[[workers]]
-host = "002"
-service = "validator-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 2
 region = "westus2"
 
 [[workers]]
@@ -161,26 +119,10 @@ region = "centralus"
 
 [[workers]]
 host = "003"
-service = "cp-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 2
-region = "centralus"
-
-[[workers]]
-host = "003"
 service = "validator-daemon"
 provider = "azure"
 size = "Standard_D2als_v7"
 worker_index = 1
-region = "centralus"
-
-[[workers]]
-host = "003"
-service = "validator-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 2
 region = "centralus"
 
 [[workers]]
@@ -210,26 +152,10 @@ region = "westeurope"
 
 [[workers]]
 host = "004"
-service = "cp-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 2
-region = "westeurope"
-
-[[workers]]
-host = "004"
 service = "validator-daemon"
 provider = "azure"
 size = "Standard_D2als_v7"
 worker_index = 1
-region = "westeurope"
-
-[[workers]]
-host = "004"
-service = "validator-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 2
 region = "westeurope"
 
 [[workers]]
@@ -259,14 +185,6 @@ region = "eastus2"
 
 [[workers]]
 host = "005"
-service = "cp-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 2
-region = "eastus2"
-
-[[workers]]
-host = "005"
 service = "validator-daemon"
 provider = "azure"
 size = "Standard_D2als_v7"
@@ -275,269 +193,14 @@ region = "eastus2"
 
 [[workers]]
 host = "005"
-service = "validator-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 2
-region = "eastus2"
-
-[[workers]]
-host = "005"
 service = "bot"
 provider = "azure"
 size = "Standard_D2als_v7"
 worker_index = 1
 region = "eastus2"
 
-# --- host 006 (swedencentral -- moved from northeurope after repeated
-# SkuNotAvailable/capacity failures, see header comment) ---
-[[workers]]
-host = "006"
-service = "relay"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 1
-region = "swedencentral"
-
-[[workers]]
-host = "006"
-service = "cp-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 1
-region = "swedencentral"
-
-[[workers]]
-host = "006"
-service = "cp-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 2
-region = "swedencentral"
-
-[[workers]]
-host = "006"
-service = "validator-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 1
-region = "swedencentral"
-
-[[workers]]
-host = "006"
-service = "validator-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 2
-region = "swedencentral"
-
-[[workers]]
-host = "006"
-service = "bot"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 1
-region = "swedencentral"
-
-# --- host 007 (uksouth, UNVERIFIED for this subscription -- see header comment) ---
-[[workers]]
-host = "007"
-service = "relay"
-provider = "azure"
-size = "Standard_D2als_v6"
-worker_index = 1
-region = "uksouth"
-
-[[workers]]
-host = "007"
-service = "cp-daemon"
-provider = "azure"
-size = "Standard_D2als_v6"
-worker_index = 1
-region = "uksouth"
-
-[[workers]]
-host = "007"
-service = "cp-daemon"
-provider = "azure"
-size = "Standard_D2als_v6"
-worker_index = 2
-region = "uksouth"
-
-[[workers]]
-host = "007"
-service = "validator-daemon"
-provider = "azure"
-size = "Standard_D2als_v6"
-worker_index = 1
-region = "uksouth"
-
-[[workers]]
-host = "007"
-service = "validator-daemon"
-provider = "azure"
-size = "Standard_D2als_v6"
-worker_index = 2
-region = "uksouth"
-
-[[workers]]
-host = "007"
-service = "bot"
-provider = "azure"
-size = "Standard_D2als_v6"
-worker_index = 1
-region = "uksouth"
-
-# --- host 008 (japaneast, UNVERIFIED for this subscription -- see header comment) ---
-[[workers]]
-host = "008"
-service = "relay"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 1
-region = "japaneast"
-
-[[workers]]
-host = "008"
-service = "cp-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 1
-region = "japaneast"
-
-[[workers]]
-host = "008"
-service = "cp-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 2
-region = "japaneast"
-
-[[workers]]
-host = "008"
-service = "validator-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 1
-region = "japaneast"
-
-[[workers]]
-host = "008"
-service = "validator-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 2
-region = "japaneast"
-
-[[workers]]
-host = "008"
-service = "bot"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 1
-region = "japaneast"
-
-# --- host 009 (southeastasia, UNVERIFIED for this subscription -- see header comment) ---
-[[workers]]
-host = "009"
-service = "relay"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 1
-region = "southeastasia"
-
-[[workers]]
-host = "009"
-service = "cp-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 1
-region = "southeastasia"
-
-[[workers]]
-host = "009"
-service = "cp-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 2
-region = "southeastasia"
-
-[[workers]]
-host = "009"
-service = "validator-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 1
-region = "southeastasia"
-
-[[workers]]
-host = "009"
-service = "validator-daemon"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 2
-region = "southeastasia"
-
-[[workers]]
-host = "009"
-service = "bot"
-provider = "azure"
-size = "Standard_D2als_v7"
-worker_index = 1
-region = "southeastasia"
-
-# --- host 010 (canadacentral, UNVERIFIED for this subscription -- see header comment) ---
-[[workers]]
-host = "010"
-service = "relay"
-provider = "azure"
-size = "Standard_D2als_v6"
-worker_index = 1
-region = "canadacentral"
-
-[[workers]]
-host = "010"
-service = "cp-daemon"
-provider = "azure"
-size = "Standard_D2als_v6"
-worker_index = 1
-region = "canadacentral"
-
-[[workers]]
-host = "010"
-service = "cp-daemon"
-provider = "azure"
-size = "Standard_D2als_v6"
-worker_index = 2
-region = "canadacentral"
-
-[[workers]]
-host = "010"
-service = "validator-daemon"
-provider = "azure"
-size = "Standard_D2als_v6"
-worker_index = 1
-region = "canadacentral"
-
-[[workers]]
-host = "010"
-service = "validator-daemon"
-provider = "azure"
-size = "Standard_D2als_v6"
-worker_index = 2
-region = "canadacentral"
-
-[[workers]]
-host = "010"
-service = "bot"
-provider = "azure"
-size = "Standard_D2als_v6"
-worker_index = 1
-region = "canadacentral"
-
-# room0: host 001's bot creates it; every other session (including host 001's
-# own second session) joins it -- 20 total bot sessions across the 10 bot workers,
-# 2 each, staggered 3s apart so 20 simultaneous joins don't land as one spike.
+# bot1 (host 001) creates the room; the one other bot session (host 002)
+# joins it 3s later.
 [[actions]]
 id = "room0"
 type = "bot.create_room"
@@ -546,475 +209,22 @@ host = "001"
 media_mode = "both"
 
 [[actions]]
-id = "room0_h001_2"
-type = "bot.join_room"
-timestamp = "+3s"
-host = "001"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
 id = "room0_h002_1"
 type = "bot.join_room"
-timestamp = "+6s"
+timestamp = "+3s"
 host = "002"
 room_id = "$room0.roomId"
 media_mode = "both"
 
-[[actions]]
-id = "room0_h002_2"
-type = "bot.join_room"
-timestamp = "+9s"
-host = "002"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
-id = "room0_h003_1"
-type = "bot.join_room"
-timestamp = "+12s"
-host = "003"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
-id = "room0_h003_2"
-type = "bot.join_room"
-timestamp = "+15s"
-host = "003"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
-id = "room0_h004_1"
-type = "bot.join_room"
-timestamp = "+18s"
-host = "004"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
-id = "room0_h004_2"
-type = "bot.join_room"
-timestamp = "+21s"
-host = "004"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
-id = "room0_h005_1"
-type = "bot.join_room"
-timestamp = "+24s"
-host = "005"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
-id = "room0_h005_2"
-type = "bot.join_room"
-timestamp = "+27s"
-host = "005"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
-id = "room0_h006_1"
-type = "bot.join_room"
-timestamp = "+30s"
-host = "006"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
-id = "room0_h006_2"
-type = "bot.join_room"
-timestamp = "+33s"
-host = "006"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
-id = "room0_h007_1"
-type = "bot.join_room"
-timestamp = "+36s"
-host = "007"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
-id = "room0_h007_2"
-type = "bot.join_room"
-timestamp = "+39s"
-host = "007"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
-id = "room0_h008_1"
-type = "bot.join_room"
-timestamp = "+42s"
-host = "008"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
-id = "room0_h008_2"
-type = "bot.join_room"
-timestamp = "+45s"
-host = "008"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
-id = "room0_h009_1"
-type = "bot.join_room"
-timestamp = "+48s"
-host = "009"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
-id = "room0_h009_2"
-type = "bot.join_room"
-timestamp = "+51s"
-host = "009"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
-id = "room0_h010_1"
-type = "bot.join_room"
-timestamp = "+54s"
-host = "010"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-[[actions]]
-id = "room0_h010_2"
-type = "bot.join_room"
-timestamp = "+57s"
-host = "010"
-room_id = "$room0.roomId"
-media_mode = "both"
-
-# Chaos: one additional killable worker stopped every 2 minutes, up to 25/50 (50%).
-[[actions]]
-type = "worker.leave"
-timestamp = "+120s"
-host = "005"
-service = "validator-daemon"
-provider = "azure"
-worker_index = 2
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+240s"
-host = "010"
-service = "validator-daemon"
-provider = "azure"
-worker_index = 1
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+360s"
-host = "006"
-service = "cp-daemon"
-provider = "azure"
-worker_index = 1
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+480s"
-host = "001"
-service = "cp-daemon"
-provider = "azure"
-worker_index = 2
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+600s"
-host = "004"
-service = "cp-daemon"
-provider = "azure"
-worker_index = 1
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+720s"
-host = "007"
-service = "cp-daemon"
-provider = "azure"
-worker_index = 2
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+840s"
-host = "007"
-service = "cp-daemon"
-provider = "azure"
-worker_index = 1
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+960s"
-host = "006"
-service = "relay"
-provider = "azure"
-worker_index = 1
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+1080s"
-host = "004"
-service = "validator-daemon"
-provider = "azure"
-worker_index = 2
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+1200s"
-host = "007"
-service = "relay"
-provider = "azure"
-worker_index = 1
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+1320s"
-host = "005"
-service = "cp-daemon"
-provider = "azure"
-worker_index = 2
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+1440s"
-host = "008"
-service = "cp-daemon"
-provider = "azure"
-worker_index = 2
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+1560s"
-host = "003"
-service = "validator-daemon"
-provider = "azure"
-worker_index = 1
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+1680s"
-host = "009"
-service = "validator-daemon"
-provider = "azure"
-worker_index = 2
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+1800s"
-host = "002"
-service = "validator-daemon"
-provider = "azure"
-worker_index = 1
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+1920s"
-host = "004"
-service = "validator-daemon"
-provider = "azure"
-worker_index = 1
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+2040s"
-host = "008"
-service = "relay"
-provider = "azure"
-worker_index = 1
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+2160s"
-host = "002"
-service = "cp-daemon"
-provider = "azure"
-worker_index = 1
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+2280s"
-host = "010"
-service = "relay"
-provider = "azure"
-worker_index = 1
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+2400s"
-host = "006"
-service = "validator-daemon"
-provider = "azure"
-worker_index = 2
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+2520s"
-host = "004"
-service = "cp-daemon"
-provider = "azure"
-worker_index = 2
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+2640s"
-host = "008"
-service = "validator-daemon"
-provider = "azure"
-worker_index = 2
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+2760s"
-host = "009"
-service = "cp-daemon"
-provider = "azure"
-worker_index = 2
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+2880s"
-host = "009"
-service = "cp-daemon"
-provider = "azure"
-worker_index = 1
-
-[[actions]]
-type = "worker.leave"
-timestamp = "+3000s"
-host = "001"
-service = "validator-daemon"
-provider = "azure"
-worker_index = 2
-
-# Teardown 5 minutes after the last chaos wave -- all 20 bot sessions.
+# Teardown: both bot sessions leave 20 minutes in.
 [[actions]]
 type = "bot.delete_room"
-timestamp = "+3300s"
+timestamp = "+400s"
 host = "001"
 bot_id = "$room0.botId"
 
 [[actions]]
 type = "bot.delete_room"
-timestamp = "+3300s"
-host = "001"
-bot_id = "$room0_h001_2.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
+timestamp = "+400s"
 host = "002"
 bot_id = "$room0_h002_1.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "002"
-bot_id = "$room0_h002_2.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "003"
-bot_id = "$room0_h003_1.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "003"
-bot_id = "$room0_h003_2.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "004"
-bot_id = "$room0_h004_1.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "004"
-bot_id = "$room0_h004_2.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "005"
-bot_id = "$room0_h005_1.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "005"
-bot_id = "$room0_h005_2.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "006"
-bot_id = "$room0_h006_1.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "006"
-bot_id = "$room0_h006_2.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "007"
-bot_id = "$room0_h007_1.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "007"
-bot_id = "$room0_h007_2.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "008"
-bot_id = "$room0_h008_1.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "008"
-bot_id = "$room0_h008_2.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "009"
-bot_id = "$room0_h009_1.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "009"
-bot_id = "$room0_h009_2.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "010"
-bot_id = "$room0_h010_1.botId"
-
-[[actions]]
-type = "bot.delete_room"
-timestamp = "+3300s"
-host = "010"
-bot_id = "$room0_h010_2.botId"

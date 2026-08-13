@@ -1,0 +1,434 @@
+{
+  "identity": {
+    "room_id": "0xcc3c518123e0e5ea4f7b81d707ef80f85bbe327453f67e89c01f9807f170c75d",
+    "status": "ready",
+    "created_at": 57,
+    "assigned_relays": [
+      "0x06ce1aacace781510cfac1a3645e3a13b6f5c0121404235d22a4f38622f0d0ab",
+      "0x314f8a00a37129a493838594e8d65b7dc145c59fad4ef94aea902bdea75c7b95",
+      "0x4720ad1a966788db2281b67c7d46b7bd3fc6445aeb41570d339def8c11fd2efc"
+    ]
+  },
+  "metrics": [
+    {
+      "timestamp": "2026-08-13T02:51:57.197781+00:00",
+      "interval_seconds": 5,
+      "peer_quality": {
+        "avg_latency_ms": 36.5,
+        "avg_packet_loss": 0.0,
+        "avg_jitter_ms": 10.0,
+        "avg_bitrate_up_kbps": 695.4155000000001,
+        "avg_bitrate_down_kbps": 695.383,
+        "freeze_count_total": 0.0,
+        "pause_count_total": 0.0,
+        "avg_connection_setup_ms": 358.5,
+        "ice_success_rate": 1.0,
+        "avg_av_sync_drift_ms": 0.0
+      },
+      "rtc_quality_server_observed": {
+        "audio": {
+          "avg_jitter_ms": 3.6822916666666665,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 43.595,
+          "avg_rtt_ms": 35.82763671875
+        },
+        "video": {
+          "avg_jitter_ms": 8.080555555555556,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 727.86075,
+          "avg_rtt_ms": 35.938262939453125
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:32.068338+00:00",
+      "interval_seconds": 5,
+      "peer_quality": {
+        "avg_latency_ms": 36.0,
+        "avg_packet_loss": 0.0,
+        "avg_jitter_ms": 8.0,
+        "avg_bitrate_up_kbps": 977.979,
+        "avg_bitrate_down_kbps": 885.0654999999999,
+        "freeze_count_total": 0.0,
+        "pause_count_total": 0.0,
+        "avg_connection_setup_ms": 358.5,
+        "ice_success_rate": 1.0,
+        "avg_av_sync_drift_ms": 0.0
+      },
+      "rtc_quality_server_observed": {
+        "audio": {
+          "avg_jitter_ms": 2.734375,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 43.6225,
+          "avg_rtt_ms": 36.285400390625
+        },
+        "video": {
+          "avg_jitter_ms": 4.997222222222222,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 893.67675,
+          "avg_rtt_ms": 35.74371337890625
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:53:09.867090+00:00",
+      "interval_seconds": 5,
+      "peer_quality": {
+        "avg_latency_ms": 36.0,
+        "avg_packet_loss": 0.0,
+        "avg_jitter_ms": 8.0,
+        "avg_bitrate_up_kbps": 731.1725,
+        "avg_bitrate_down_kbps": 705.2529999999999,
+        "freeze_count_total": 0.0,
+        "pause_count_total": 0.0,
+        "avg_connection_setup_ms": 358.5,
+        "ice_success_rate": 1.0,
+        "avg_av_sync_drift_ms": 0.0
+      },
+      "rtc_quality_server_observed": {
+        "audio": {
+          "avg_jitter_ms": 3.671875,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 43.165,
+          "avg_rtt_ms": 36.59820556640625
+        },
+        "video": {
+          "avg_jitter_ms": 6.355555555555556,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 1215.32,
+          "avg_rtt_ms": 36.685943603515625
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:53:45.452384+00:00",
+      "interval_seconds": 5,
+      "peer_quality": {
+        "avg_latency_ms": 34.0,
+        "avg_packet_loss": 0.0,
+        "avg_jitter_ms": 7.5,
+        "avg_bitrate_up_kbps": 936.4635000000001,
+        "avg_bitrate_down_kbps": 959.062,
+        "freeze_count_total": 0.0,
+        "pause_count_total": 0.0,
+        "avg_connection_setup_ms": 124.5,
+        "ice_success_rate": 1.0,
+        "avg_av_sync_drift_ms": 0.0
+      },
+      "rtc_quality_server_observed": {
+        "audio": {
+          "avg_jitter_ms": 3.9270833333333335,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 44.073499999999996,
+          "avg_rtt_ms": 35.45379638671875
+        },
+        "video": {
+          "avg_jitter_ms": 6.069444444444445,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 772.86725,
+          "avg_rtt_ms": 35.65216064453125
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:19.181421+00:00",
+      "interval_seconds": 5,
+      "peer_quality": {
+        "avg_latency_ms": 34.0,
+        "avg_packet_loss": 0.0,
+        "avg_jitter_ms": 5.0,
+        "avg_bitrate_up_kbps": 307.8495,
+        "avg_bitrate_down_kbps": 260.0775,
+        "freeze_count_total": 0.0,
+        "pause_count_total": 0.0,
+        "avg_connection_setup_ms": 124.5,
+        "ice_success_rate": 1.0,
+        "avg_av_sync_drift_ms": 0.0
+      },
+      "rtc_quality_server_observed": {
+        "audio": {
+          "avg_jitter_ms": 3.744791666666667,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 41.623999999999995,
+          "avg_rtt_ms": 35.4461669921875
+        },
+        "video": {
+          "avg_jitter_ms": 7.2027777777777775,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 208.701,
+          "avg_rtt_ms": 35.858154296875
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:55.920363+00:00",
+      "interval_seconds": 5,
+      "peer_quality": {
+        "avg_latency_ms": 35.0,
+        "avg_packet_loss": 0.0,
+        "avg_jitter_ms": 6.0,
+        "avg_bitrate_up_kbps": 778.4545,
+        "avg_bitrate_down_kbps": 734.799,
+        "freeze_count_total": 0.0,
+        "pause_count_total": 0.0,
+        "avg_connection_setup_ms": 124.5,
+        "ice_success_rate": 1.0,
+        "avg_av_sync_drift_ms": 0.0
+      },
+      "rtc_quality_server_observed": {
+        "audio": {
+          "avg_jitter_ms": 2.9114583333333335,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 43.43675,
+          "avg_rtt_ms": 34.938812255859375
+        },
+        "video": {
+          "avg_jitter_ms": 4.663888888888889,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 767.296,
+          "avg_rtt_ms": 35.205841064453125
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:32.159257+00:00",
+      "interval_seconds": 5,
+      "peer_quality": {
+        "avg_latency_ms": 36.5,
+        "avg_packet_loss": 0.0,
+        "avg_jitter_ms": 8.5,
+        "avg_bitrate_up_kbps": 878.736,
+        "avg_bitrate_down_kbps": 890.5160000000001,
+        "freeze_count_total": 0.0,
+        "pause_count_total": 0.0,
+        "avg_connection_setup_ms": 124.5,
+        "ice_success_rate": 1.0,
+        "avg_av_sync_drift_ms": 0.0
+      },
+      "rtc_quality_server_observed": {
+        "audio": {
+          "avg_jitter_ms": 3.510416666666667,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 43.552,
+          "avg_rtt_ms": 36.20147705078125
+        },
+        "video": {
+          "avg_jitter_ms": 6.613888888888889,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 823.47525,
+          "avg_rtt_ms": 36.052703857421875
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:56:08.251970+00:00",
+      "interval_seconds": 5,
+      "peer_quality": {
+        "avg_latency_ms": 36.0,
+        "avg_packet_loss": 0.0,
+        "avg_jitter_ms": 6.0,
+        "avg_bitrate_up_kbps": 710.248,
+        "avg_bitrate_down_kbps": 722.8785,
+        "freeze_count_total": 0.0,
+        "pause_count_total": 0.0,
+        "avg_connection_setup_ms": 124.5,
+        "ice_success_rate": 1.0,
+        "avg_av_sync_drift_ms": 0.0
+      },
+      "rtc_quality_server_observed": {
+        "audio": {
+          "avg_jitter_ms": 3.6979166666666665,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 43.5715,
+          "avg_rtt_ms": 36.0565185546875
+        },
+        "video": {
+          "avg_jitter_ms": 4.888888888888888,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 839.789,
+          "avg_rtt_ms": 36.701202392578125
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:56:43.710888+00:00",
+      "interval_seconds": 5,
+      "peer_quality": {
+        "avg_latency_ms": 109.0,
+        "avg_packet_loss": 0.0,
+        "avg_jitter_ms": 7.0,
+        "avg_bitrate_up_kbps": 876.683,
+        "avg_bitrate_down_kbps": 840.2515000000001,
+        "freeze_count_total": 0.0,
+        "pause_count_total": 0.0,
+        "avg_connection_setup_ms": 359.0,
+        "ice_success_rate": 1.0,
+        "avg_av_sync_drift_ms": 0.0
+      },
+      "rtc_quality_server_observed": {
+        "audio": {
+          "avg_jitter_ms": 2.84375,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 43.675,
+          "avg_rtt_ms": 109.0087890625
+        },
+        "video": {
+          "avg_jitter_ms": 5.680555555555555,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 851.629,
+          "avg_rtt_ms": 109.33685302734375
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:20.985138+00:00",
+      "interval_seconds": 5,
+      "peer_quality": {
+        "avg_latency_ms": 108.5,
+        "avg_packet_loss": 0.0,
+        "avg_jitter_ms": 6.0,
+        "avg_bitrate_up_kbps": 294.558,
+        "avg_bitrate_down_kbps": 259.2105,
+        "freeze_count_total": 0.0,
+        "pause_count_total": 0.0,
+        "avg_connection_setup_ms": 359.0,
+        "ice_success_rate": 1.0,
+        "avg_av_sync_drift_ms": 0.0
+      },
+      "rtc_quality_server_observed": {
+        "audio": {
+          "avg_jitter_ms": 3.0260416666666665,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 42.5025,
+          "avg_rtt_ms": 109.36355590820312
+        },
+        "video": {
+          "avg_jitter_ms": 5.238888888888889,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 212.805,
+          "avg_rtt_ms": 110.57662963867188
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:57.223452+00:00",
+      "interval_seconds": 5,
+      "peer_quality": {
+        "avg_latency_ms": null,
+        "avg_packet_loss": null,
+        "avg_jitter_ms": null,
+        "avg_bitrate_up_kbps": null,
+        "avg_bitrate_down_kbps": null,
+        "freeze_count_total": null,
+        "pause_count_total": null,
+        "avg_connection_setup_ms": null,
+        "ice_success_rate": null,
+        "avg_av_sync_drift_ms": null
+      },
+      "rtc_quality_server_observed": {
+        "audio": {
+          "avg_jitter_ms": 3.1979166666666665,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 43.182,
+          "avg_rtt_ms": 109.60769653320312
+        },
+        "video": {
+          "avg_jitter_ms": 7.219444444444444,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 662.57925,
+          "avg_rtt_ms": 109.02023315429688
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:33.249583+00:00",
+      "interval_seconds": 5,
+      "peer_quality": {
+        "avg_latency_ms": null,
+        "avg_packet_loss": null,
+        "avg_jitter_ms": null,
+        "avg_bitrate_up_kbps": null,
+        "avg_bitrate_down_kbps": null,
+        "freeze_count_total": null,
+        "pause_count_total": null,
+        "avg_connection_setup_ms": null,
+        "ice_success_rate": null,
+        "avg_av_sync_drift_ms": null
+      },
+      "rtc_quality_server_observed": {
+        "audio": {
+          "avg_jitter_ms": 3.1979166666666665,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 43.182,
+          "avg_rtt_ms": 109.60769653320312
+        },
+        "video": {
+          "avg_jitter_ms": 7.219444444444444,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 662.57925,
+          "avg_rtt_ms": 109.02023315429688
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:59:09.270623+00:00",
+      "interval_seconds": 5,
+      "peer_quality": {
+        "avg_latency_ms": null,
+        "avg_packet_loss": null,
+        "avg_jitter_ms": null,
+        "avg_bitrate_up_kbps": null,
+        "avg_bitrate_down_kbps": null,
+        "freeze_count_total": null,
+        "pause_count_total": null,
+        "avg_connection_setup_ms": null,
+        "ice_success_rate": null,
+        "avg_av_sync_drift_ms": null
+      },
+      "rtc_quality_server_observed": {
+        "audio": {
+          "avg_jitter_ms": 3.1979166666666665,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 43.182,
+          "avg_rtt_ms": 109.60769653320312
+        },
+        "video": {
+          "avg_jitter_ms": 7.219444444444444,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 662.57925,
+          "avg_rtt_ms": 109.02023315429688
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:59:46.092624+00:00",
+      "interval_seconds": 5,
+      "peer_quality": {
+        "avg_latency_ms": null,
+        "avg_packet_loss": null,
+        "avg_jitter_ms": null,
+        "avg_bitrate_up_kbps": null,
+        "avg_bitrate_down_kbps": null,
+        "freeze_count_total": null,
+        "pause_count_total": null,
+        "avg_connection_setup_ms": null,
+        "ice_success_rate": null,
+        "avg_av_sync_drift_ms": null
+      },
+      "rtc_quality_server_observed": {
+        "audio": {
+          "avg_jitter_ms": 3.1979166666666665,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 43.182,
+          "avg_rtt_ms": 109.60769653320312
+        },
+        "video": {
+          "avg_jitter_ms": 7.219444444444444,
+          "avg_packet_loss_ratio": 0.0,
+          "avg_bitrate_kbps": 662.57925,
+          "avg_rtt_ms": 109.02023315429688
+        }
+      }
+    }
+  ]
+}

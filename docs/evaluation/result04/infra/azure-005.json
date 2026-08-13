@@ -1,0 +1,1259 @@
+{
+  "identity": {
+    "provider": "azure",
+    "instance_name": "azure-005",
+    "host": "005",
+    "region": "eastus2",
+    "zone": null
+  },
+  "evaluation": [
+    {
+      "timestamp": "2026-08-13T03:41:26.900463+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:42:01.784313+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:42:48.517849+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:43:26.843903+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:44:03.156799+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:44:40.720383+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:45:18.618932+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:45:55.554640+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:46:31.643419+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:47:10.132947+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:47:52.017652+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:48:27.317799+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:49:03.844119+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:49:41.444767+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:50:18.569820+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:50:55.892681+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:51:31.997384+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:52:08.403877+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:52:46.012774+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:53:23.996961+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:54:01.479605+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:54:39.057356+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:55:18.456835+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:55:53.994718+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:56:32.003022+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    },
+    {
+      "timestamp": "2026-08-13T03:57:10.072974+00:00",
+      "interval_seconds": 5,
+      "cpu": {
+        "usage_percent": null,
+        "load_avg_1m": null,
+        "load_avg_5m": null,
+        "load_avg_15m": null,
+        "psi_some_percent": null
+      },
+      "memory": {
+        "total_bytes": null,
+        "used_bytes": null,
+        "used_percent": null,
+        "free_bytes": null,
+        "available_bytes": null,
+        "available_percent": null,
+        "cached_bytes": null,
+        "buffered_bytes": null,
+        "swap_total_bytes": null,
+        "swap_free_bytes": null,
+        "psi_some_percent": null,
+        "psi_full_percent": null,
+        "oom_kill_count": null
+      },
+      "disk": {
+        "partitions": [],
+        "psi_some_percent": null
+      },
+      "network": {
+        "interfaces": [],
+        "tcp": {
+          "established_connections": null
+        },
+        "conntrack": {
+          "current_entries": null,
+          "max_entries": null
+        }
+      },
+      "uptime_seconds": null,
+      "file_descriptors": {
+        "allocated": null,
+        "max": null
+      },
+      "status": {
+        "errors": "no node_exporter series matched instance filter for 20.94.90.134"
+      }
+    }
+  ]
+}

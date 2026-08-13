@@ -17,6 +17,28 @@ import timeline1990s from "../assets/timeline/timeline-1990s.png";
 import timeline2000s from "../assets/timeline/timeline-2000s.png";
 import timeline2020 from "../assets/timeline/timeline-2020.png";
 
+import r2Participants from "../assets/evaluation/result02/2-participants-per-room.png";
+import r2Ice from "../assets/evaluation/result02/15-ice-success-rate-all-users.png";
+import r2Latency from "../assets/evaluation/result02/4-latency-all-users.png";
+import r2Jitter from "../assets/evaluation/result02/5-jitter-all-users.png";
+import r2PacketLoss from "../assets/evaluation/result02/6-packet-loss-all-users.png";
+import r2Failover from "../assets/evaluation/result02/17-relay-failover-downtime-all-users.png";
+import r2Bitrate from "../assets/evaluation/result02/7-bitrate-up-down-all-users.png";
+import r2Resolution from "../assets/evaluation/result02/8-resolution-all-users.png";
+import r2FrameRate from "../assets/evaluation/result02/9-frame-rate-all-users.png";
+import r2EncodeDecode from "../assets/evaluation/result02/10-encode-decode-latency-all-users.png";
+
+import r4Participants from "../assets/evaluation/result04/2-participants-per-room.png";
+import r4Ice from "../assets/evaluation/result04/15-ice-success-rate-all-users.png";
+import r4Latency from "../assets/evaluation/result04/4-latency-all-users.png";
+import r4Jitter from "../assets/evaluation/result04/5-jitter-all-users.png";
+import r4PacketLoss from "../assets/evaluation/result04/6-packet-loss-all-users.png";
+import r4Failover from "../assets/evaluation/result04/17-relay-failover-downtime-all-users.png";
+import r4Bitrate from "../assets/evaluation/result04/7-bitrate-up-down-all-users.png";
+import r4Resolution from "../assets/evaluation/result04/8-resolution-all-users.png";
+import r4FrameRate from "../assets/evaluation/result04/9-frame-rate-all-users.png";
+import r4EncodeDecode from "../assets/evaluation/result04/10-encode-decode-latency-all-users.png";
+
 const historyPoints: TimelinePoint[] = [
   {
     year: "1927",
@@ -50,30 +72,6 @@ const historyPoints: TimelinePoint[] = [
   },
 ];
 
-const webrtcNodes: DiagramNodeData[] = [
-  { id: "browser", label: "Browser APIs", sublabel: "getUserMedia · MediaStream", x: 50, y: 8, layer: "capture" },
-  { id: "peer", label: "RTCPeerConnection", sublabel: "Core WebRTC engine", x: 50, y: 32, layer: "core" },
-  { id: "signaling", label: "Signaling Server", sublabel: "SDP offer/answer (app-defined)", x: 12, y: 60, layer: "establish" },
-  { id: "ice", label: "ICE Agent", sublabel: "STUN · TURN — NAT traversal", x: 88, y: 60, layer: "establish" },
-  { id: "security", label: "DTLS-SRTP", sublabel: "Mandatory end-to-end encryption", x: 50, y: 60, layer: "transport" },
-  { id: "media", label: "RTP/RTCP + SCTP", sublabel: "Media & data channels, direct P2P", x: 50, y: 90, layer: "transport" },
-];
-
-const webrtcBeats: DiagramBeat[] = [
-  { type: "node", id: "browser" },
-  { type: "node", id: "peer" },
-  { type: "edge", from: "browser", to: "peer", label: "capture media" },
-  { type: "node", id: "signaling" },
-  { type: "edge", from: "peer", to: "signaling", label: "SDP offer/answer" },
-  { type: "node", id: "ice" },
-  { type: "edge", from: "peer", to: "ice", label: "gather & negotiate candidates" },
-  { type: "node", id: "security" },
-  { type: "edge", from: "peer", to: "security", label: "DTLS handshake" },
-  { type: "node", id: "media" },
-  { type: "edge", from: "ice", to: "media", label: "negotiated P2P path" },
-  { type: "edge", from: "security", to: "media", label: "encrypt every packet" },
-];
-
 const gapColumns = ["Criteria", "Data-center cloud", "Idle & spare capacity"];
 const gapRows: ComparisonRow[] = [
   { criteria: "Node reliability", values: ["High — SLA-backed uptime", "Low — high churn, no SLA"], highlight: 1 },
@@ -83,28 +81,32 @@ const gapRows: ComparisonRow[] = [
 ];
 
 const archNodes: DiagramNodeData[] = [
-  { id: "client", label: "Client", sublabel: "Browser · WebRTC peer", x: 12, y: 50, layer: "client" },
-  { id: "relay", label: "Relay", sublabel: "mediasoup SFU + coturn TURN", x: 45, y: 28, layer: "offchain" },
-  { id: "validator", label: "Validator Daemon", sublabel: "Composite STUN + relay-counter probe", x: 45, y: 78, layer: "offchain" },
-  { id: "chain", label: "Sui Chain", sublabel: "Registry · SessionProof · Settlement (Move)", x: 85, y: 50, layer: "chain" },
+  { id: "client", label: "Client", sublabel: "Browser · WebRTC peer", x: 2, y: 50, layer: "client" },
+  { id: "relay", label: "Relay", sublabel: "mediasoup SFU + coturn TURN", x: 32, y: 12, layer: "offchain" },
+  { id: "validator", label: "Validator Daemon", sublabel: "Canary probe · STUN/relay-latency probe", x: 32, y: 88, layer: "offchain" },
+  { id: "cpdaemon", label: "cp-daemon", sublabel: "Control-plane: pairing quorum, TURN issuance, failover", x: 80, y: 6, layer: "control" },
+  { id: "chain", label: "Sui Chain", sublabel: "Registry · RoomAssignment · SessionProof · Settlement (Move)", x: 116, y: 50, layer: "chain" },
 ];
 
 const archBeats: DiagramBeat[] = [
   { type: "node", id: "client" },
   { type: "node", id: "relay" },
-  { type: "edge", from: "client", to: "relay", label: "media (SRTP)" },
+  { type: "edge", from: "client", to: "relay", label: "media + signaling (single WS)" },
   { type: "node", id: "validator" },
-  { type: "edge", from: "validator", to: "relay", label: "probe" },
+  { type: "edge", from: "validator", to: "relay", label: "canary probe" },
+  { type: "node", id: "cpdaemon" },
+  { type: "edge", from: "cpdaemon", to: "relay", label: "TURN credentials (HTTP)" },
   { type: "node", id: "chain" },
-  { type: "edge", from: "relay", to: "chain", label: "registration · heartbeat" },
-  { type: "edge", from: "validator", to: "chain", label: "dual-signed SessionProof" },
-  { type: "edge", from: "chain", to: "client", label: "room + relay assignment" },
+  { type: "edge", from: "relay", to: "chain", label: "register · heartbeat (relay_registry)" },
+  { type: "edge", from: "validator", to: "chain", label: "register · dual-signed SessionProof" },
+  { type: "edge", from: "cpdaemon", to: "chain", label: "pairing quorum (≥2/3) · promote_relay · CapToken" },
+  { type: "edge", from: "client", to: "chain", label: "register/create_room/create_escrow ↔ read room+relay assignment" },
 ];
 
 const lifecycleNodes: DiagramNodeData[] = [
   { id: "register", label: "Register", sublabel: "Node enrollment: stake, capability", x: 6, y: 22, layer: "lifecycle" },
   { id: "room", label: "Create Room", sublabel: "Room + escrow object", x: 21, y: 68, layer: "lifecycle" },
-  { id: "assign", label: "Assignment", sublabel: "Score-gated relay + validator pick", x: 36, y: 22, layer: "lifecycle" },
+  { id: "assign", label: "Assignment", sublabel: "cp-daemon quorum (≥2/3 active CPs) ratifies pairing proposal on-chain", x: 36, y: 22, layer: "lifecycle" },
   { id: "setup", label: "Client Setup", sublabel: "ICE, DTLS-SRTP, TURN credentials", x: 51, y: 68, layer: "lifecycle" },
   { id: "running", label: "Media Running", sublabel: "SFU forwarding, heartbeats", x: 66, y: 22, layer: "lifecycle" },
   { id: "close", label: "Close", sublabel: "Session ends", x: 81, y: 68, layer: "lifecycle" },
@@ -116,7 +118,7 @@ const lifecycleBeats: DiagramBeat[] = [
   { type: "node", id: "room" },
   { type: "edge", from: "register", to: "room", label: "escrow funded" },
   { type: "node", id: "assign" },
-  { type: "edge", from: "room", to: "assign", label: "score ranking" },
+  { type: "edge", from: "room", to: "assign", label: "cp-daemon scoring" },
   { type: "node", id: "setup" },
   { type: "edge", from: "assign", to: "setup", label: "TURN credentials issued" },
   { type: "node", id: "running" },
@@ -177,7 +179,7 @@ const economyBeats: DiagramBeat[] = [
 const failoverNodes: DiagramNodeData[] = [
   { id: "primary", label: "Primary Relay", sublabel: "Serving session media", x: 10, y: 22, layer: "relay" },
   { id: "standby", label: "Standby Relay", sublabel: "Paused DirectTransport, warm pipe", x: 10, y: 78, layer: "relay" },
-  { id: "watcher", label: "RelayHeartbeatWatcher", sublabel: "Staleness check: heartbeat > 3 epochs", x: 48, y: 50, layer: "watcher" },
+  { id: "watcher", label: "cp-daemon: Heartbeat Watcher", sublabel: "Staleness check: primary heartbeat > 3 epochs", x: 48, y: 50, layer: "watcher" },
   { id: "promote", label: "promote_relay", sublabel: "Permissionless — no AdminCap", x: 82, y: 22, layer: "chain" },
   { id: "promoted", label: "RelayPromoted", sublabel: "New primary assigned on-chain", x: 82, y: 78, layer: "chain" },
 ];
@@ -234,14 +236,6 @@ const huddle01Rows: ComparisonRow[] = [
   },
   { criteria: "Accountability evidence", values: ["Not publicly documented", "Explicit, hedged, measured vs. designed"], highlight: 1 },
   { criteria: "Maturity", values: ["Funded, mainnet, commercial", "Academic prototype, rigorously evaluated"] },
-];
-
-const implementedColumns = ["Element", "Designed (proposal / ADR)", "Implemented (measured)"];
-const implementedRows: ComparisonRow[] = [
-  { criteria: "Validator quorum", values: ["3-of-4 BFT (ADR-0006)", "2 proofs, arithmetic mean"], highlight: 1 },
-  { criteria: "Slashing enforcement", values: ["Automatic seizure", "Cooperative pay_slash deduction"], highlight: 1 },
-  { criteria: "TURN / coturn deployment", values: ["Operational relay-side coturn", "Issuance + credentials only — never deployed"], highlight: 1 },
-  { criteria: "SFU recovery target", values: ["8–15s design budget", "58 / 74 / 80ms mechanism floor (partial phases)"], highlight: 1 },
 ];
 
 // azure-devnet-sample (docs/evaluation/result01) — 11 minute-buckets over the ~10-minute
@@ -302,16 +296,11 @@ export const slides: SlideDef[] = [
     ),
   },
   {
-    id: "divider-motivation",
-    stepsCount: 0,
-    render: () => <SectionDivider index="01" title="Motivation" subtitle="Why revisit video conferencing" />,
-  },
-  {
     id: "intro-video-conferencing",
     stepsCount: 5,
     render: ({ step }) => (
       <SlideLayout
-        eyebrow="Introduction"
+        eyebrow="01 Motivation — Introduction"
         title={
           <>
             Nearly a Century of Video Calling <sup className="citation-mark">[001]</sup>
@@ -319,6 +308,7 @@ export const slides: SlideDef[] = [
         }
         wide
       >
+        <p className="slide-subtitle">Why revisit video conferencing</p>
         <Timeline points={historyPoints} step={step} />
       </SlideLayout>
     ),
@@ -347,86 +337,19 @@ export const slides: SlideDef[] = [
     ),
   },
   {
-    id: "cost-problem",
-    stepsCount: 3,
-    render: ({ step }) => (
-      <SlideLayout eyebrow="The Status Quo" title="The Infrastructure Cost Problem">
-        <div className="stat-grid">
-          {[
-            { value: "High reliability", label: "SLA-backed uptime on AWS/Azure/GCP — the default assumption for real-time media" },
-            { value: "High fixed cost", label: "Dedicated data-center capacity, priced for peak load, paid whether idle or not" },
-            { value: "Single-operator trust", label: "One company controls admission, assessment, and billing for the whole call" },
-          ].map((stat, i) => (
-            <div
-              key={stat.value}
-              className="stat-card"
-              style={{
-                opacity: i < step ? 1 : 0,
-                transform: i < step ? "translateY(0)" : "translateY(16px)",
-                transition: "opacity 0.35s ease, transform 0.35s ease",
-              }}
-            >
-              <div className="stat-value">{stat.value}</div>
-              <div className="stat-label">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </SlideLayout>
-    ),
-  },
-  {
     id: "idle-capacity-gap",
     stepsCount: gapRows.length,
     render: ({ step }) => (
       <SlideLayout
-        eyebrow="The Opportunity"
+        eyebrow="The Status Quo → The Opportunity"
         title={
           <>
-            Idle Capacity vs. Data-Center Cloud <sup className="citation-mark">[003]</sup>
+            The Cost Problem, Meet the Idle-Capacity Opportunity <sup className="citation-mark">[003]</sup>
           </>
         }
         wide
       >
         <ComparisonTable columns={gapColumns} rows={gapRows} step={step} />
-      </SlideLayout>
-    ),
-  },
-  {
-    id: "huddle01-intro",
-    stepsCount: 4,
-    render: ({ step }) => (
-      <SlideLayout
-        eyebrow="The Opportunity"
-        title={
-          <>
-            Huddle01: The Closest Existing Attempt <sup className="citation-mark">[004,011]</sup>
-          </>
-        }
-      >
-        <div className="stat-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
-          {[
-            { value: "DePIN for RTC", label: "Node operators contribute spare bandwidth for $HUDL token rewards" },
-            { value: "mediasoup SFU", label: "Same core media-server choice as DVConf — but coordinated on their own chain" },
-            { value: "Arbitrum Orbit L2/L3", label: "Purpose-built dRTC Chain hosts registration, staking, and rewards" },
-            {
-              value: "$37M node sale · 840M+ min served",
-              label: "Funded, production-stage — mainnet and $HUDL TGE live since Q1 2026",
-            },
-          ].map((stat, i) => (
-            <div
-              key={stat.value}
-              className="stat-card"
-              style={{
-                opacity: i < step ? 1 : 0,
-                transform: i < step ? "translateY(0)" : "translateY(16px)",
-                transition: "opacity 0.35s ease, transform 0.35s ease",
-              }}
-            >
-              <div className="stat-value">{stat.value}</div>
-              <div className="stat-label">{stat.label}</div>
-            </div>
-          ))}
-        </div>
       </SlideLayout>
     ),
   },
@@ -438,11 +361,16 @@ export const slides: SlideDef[] = [
         eyebrow="The Opportunity"
         title={
           <>
-            Huddle01 vs. Traditional Cloud VC <sup className="citation-mark">[003,004]</sup>
+            Huddle01: The Closest Existing Attempt <sup className="citation-mark">[004,011]</sup>
           </>
         }
         wide
       >
+        <p className="slide-subtitle">
+          DePIN for RTC: node operators contribute spare bandwidth for $HUDL token rewards, coordinated on a
+          purpose-built Arbitrum Orbit dRTC Chain — running the same mediasoup SFU as this work. Funded and
+          production-stage: $37M node sale, 840M+ minutes served, mainnet and $HUDL TGE live since Q1 2026.
+        </p>
         <ComparisonTable columns={huddle01TradeoffColumns} rows={huddle01TradeoffRows} step={step} />
       </SlideLayout>
     ),
@@ -465,44 +393,11 @@ export const slides: SlideDef[] = [
     ),
   },
   {
-    id: "webrtc-framework",
-    stepsCount: webrtcBeats.length,
-    render: ({ step }) => (
-      <SlideLayout
-        eyebrow="Background"
-        title={
-          <>
-            WebRTC: Real-Time Communication in Browsers <sup className="citation-mark">[002]</sup>
-          </>
-        }
-        wide
-      >
-        <div className="slide-columns">
-          <ul className="bullet-list">
-            <li>A W3C/IETF standard letting browsers exchange real-time audio, video, and data directly — no plugins, no installs</li>
-            <li>Three core JS APIs: MediaStream (capture), RTCPeerConnection (transport), RTCDataChannel (arbitrary data)</li>
-            <li>
-              All media is mandatorily encrypted end-to-end via DTLS-SRTP — WebRTC has no unencrypted mode{" "}
-              <sup className="citation-mark">[005,006]</sup>
-            </li>
-            <li>Signaling (exchanging SDP offers/answers) is deliberately left undefined by the spec — every app brings its own channel</li>
-          </ul>
-          <FlowDiagram nodes={webrtcNodes} beats={webrtcBeats} step={step} canvasWidth={640} canvasHeight={640} />
-        </div>
-      </SlideLayout>
-    ),
-  },
-  {
-    id: "divider-architecture",
-    stepsCount: 0,
-    render: () => <SectionDivider index="02" title="Proposed Architecture" subtitle="DVConf: off-chain media, on-chain control" />,
-  },
-  {
     id: "architecture",
     stepsCount: archBeats.length,
     render: ({ step }) => (
       <SlideLayout
-        eyebrow="System Architecture"
+        eyebrow="02 Proposed Architecture — System Architecture"
         title={
           <>
             Client, Relay, and Sui Chain <sup className="citation-mark">[007,008]</sup>
@@ -510,7 +405,8 @@ export const slides: SlideDef[] = [
         }
         wide
       >
-        <FlowDiagram nodes={archNodes} beats={archBeats} step={step} />
+        <p className="slide-subtitle">DVConf: off-chain data plane (Relay), off-chain control plane (cp-daemon + Validator), on-chain settlement</p>
+        <FlowDiagram nodes={archNodes} beats={archBeats} step={step} canvasWidth={1300} canvasHeight={480} />
       </SlideLayout>
     ),
   },
@@ -551,28 +447,13 @@ export const slides: SlideDef[] = [
     ),
   },
   {
-    id: "divider-evaluation",
-    stepsCount: 0,
-    render: () => <SectionDivider index="03" title="Evaluation" subtitle="What was measured, projected, and left open" />,
-  },
-  {
-    id: "divider-4-1",
-    stepsCount: 0,
-    render: () => (
-      <SectionDivider
-        kicker="Evaluation"
-        variant="sub"
-        index="4.1"
-        title="Origin Test"
-        subtitle="Localnet & synthetic baseline measurements"
-      />
-    ),
-  },
-  {
     id: "evaluation-methodology",
     stepsCount: 4,
     render: ({ step }) => (
-      <SlideLayout eyebrow="Evaluation" title="Four Dimensions">
+      <SlideLayout eyebrow="03 Evaluation — 3.1 Origin Test" title="Four Dimensions">
+        <p className="slide-subtitle">
+          What was measured, projected, and left open — localnet & synthetic baseline measurements
+        </p>
         <div className="stat-grid" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
           {[
             { value: "Latency", label: "Wide-area one-way component-sum, n=30 sessions — reduced-fidelity lower bound" },
@@ -713,17 +594,10 @@ export const slides: SlideDef[] = [
       <SectionDivider
         kicker="Evaluation"
         variant="sub"
-        index="4.2"
+        index="3.2"
         title="Quality Baseline"
         subtitle="azure-devnet-sample — 25 workers · 5 Azure VMs · 2 bots + 1 real join"
-      />
-    ),
-  },
-  {
-    id: "eval-r1-setup",
-    stepsCount: 0,
-    render: () => (
-      <SlideLayout eyebrow="Evaluation — 4.2" title="25 worker - 5 VM - 2 bot - 1 real" wide>
+      >
         <div className="stat-grid" style={{ gridTemplateColumns: "repeat(5, 1fr)" }}>
           {["eastus", "westus2", "centralus", "westeurope", "eastus2"].map((region) => (
             <div key={region} className="stat-card">
@@ -746,14 +620,14 @@ export const slides: SlideDef[] = [
             <div className="stat-label">Author manually joined live from Vietnam mid-call as a 3rd, real participant</div>
           </div>
         </div>
-      </SlideLayout>
+      </SectionDivider>
     ),
   },
   {
     id: "eval-r1-session-health",
     stepsCount: 0,
     render: () => (
-      <SlideLayout eyebrow="Evaluation — 4.2" title="Session & Network Health" wide>
+      <SlideLayout eyebrow="Evaluation — 3.2" title="Session & Network Health" wide>
         <div className="eval-chart-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
           {[
             {
@@ -842,7 +716,7 @@ export const slides: SlideDef[] = [
     id: "eval-r1-media-quality",
     stepsCount: 0,
     render: () => (
-      <SlideLayout eyebrow="Evaluation — 4.2" title="Media Quality" wide>
+      <SlideLayout eyebrow="Evaluation — 3.2" title="Media Quality" wide>
         <div className="eval-chart-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
           {[
             {
@@ -922,7 +796,7 @@ export const slides: SlideDef[] = [
     id: "eval-r1-summary",
     stepsCount: 4,
     render: ({ step }) => (
-      <SlideLayout eyebrow="Evaluation — 4.2" title="Summary & Conclusion">
+      <SlideLayout eyebrow="Evaluation — 3.2" title="Summary & Conclusion">
         <RevealList
           className="bullet-list"
           step={step}
@@ -957,23 +831,109 @@ export const slides: SlideDef[] = [
       <SectionDivider
         kicker="Evaluation"
         variant="sub"
-        index="4.3"
+        index="3.3"
         title="2-Bot Resilience Test"
-        subtitle="15 workers · 5 hosts · 2-of-3 relay kill — data pending"
-      />
+        subtitle="15 workers · 5 hosts · 2 relay-failover events (5.8–7.0s downtime)"
+      >
+        <div className="stat-grid" style={{ gridTemplateColumns: "repeat(5, 1fr)" }}>
+          {["eastus", "westus2", "centralus", "westeurope", "eastus2"].map((region) => (
+            <div key={region} className="stat-card">
+              <div className="stat-value">{region}</div>
+              <div className="stat-label">1 relay + 1 cp-daemon + 1 validator-daemon</div>
+            </div>
+          ))}
+        </div>
+        <div className="stat-grid" style={{ marginTop: 12 }}>
+          <div className="stat-card">
+            <div className="stat-value">15 infra workers</div>
+            <div className="stat-label">3 services × 5 VMs, Standard_D2als_v7 (2 vCPU), under a 3-vCPU/region quota</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">2 scripted bots</div>
+            <div className="stat-label">Both join one room, held for ~400s (~6.7 min)</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">2 relay kills</div>
+            <div className="stat-label">Applied manually, out-of-band — not scripted in scenario.toml; evidenced by the relay-failover-downtime panel</div>
+          </div>
+        </div>
+      </SectionDivider>
     ),
   },
   {
-    id: "divider-4-4",
+    id: "eval-r2-session-health",
     stepsCount: 0,
     render: () => (
-      <SectionDivider
-        kicker="Evaluation"
-        variant="sub"
-        index="4.4"
-        title="5-Bot Resilience Test"
-        subtitle="15 workers · 5 hosts · 2-of-3 relay kill — data pending"
-      />
+      <SlideLayout eyebrow="Evaluation — 3.3" title="Session & Network Health" wide>
+        <div className="eval-room-image-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+          {[
+            { title: "Participants per Room", src: r2Participants },
+            { title: "ICE Success Rate", src: r2Ice },
+            { title: "Latency", src: r2Latency },
+            { title: "Jitter", src: r2Jitter },
+            { title: "Packet Loss", src: r2PacketLoss },
+            { title: "Relay Failover Downtime", src: r2Failover },
+          ].map((cell) => (
+            <div key={cell.title}>
+              <h4 className="eval-chart-cell-title">{cell.title}</h4>
+              <img className="eval-room-image" src={cell.src} alt={cell.title} />
+            </div>
+          ))}
+        </div>
+      </SlideLayout>
+    ),
+  },
+  {
+    id: "eval-r2-media-quality",
+    stepsCount: 0,
+    render: () => (
+      <SlideLayout eyebrow="Evaluation — 3.3" title="Media Quality" wide>
+        <div className="eval-room-image-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
+          {[
+            { title: "Bitrate Up/Down", src: r2Bitrate },
+            { title: "Resolution", src: r2Resolution },
+            { title: "Frame Rate", src: r2FrameRate },
+            { title: "Encode/Decode Latency", src: r2EncodeDecode },
+          ].map((cell) => (
+            <div key={cell.title}>
+              <h4 className="eval-chart-cell-title">{cell.title}</h4>
+              <img className="eval-room-image" src={cell.src} alt={cell.title} />
+            </div>
+          ))}
+        </div>
+      </SlideLayout>
+    ),
+  },
+  {
+    id: "eval-r2-summary",
+    stepsCount: 4,
+    render: ({ step }) => (
+      <SlideLayout eyebrow="Evaluation — 3.3" title="Summary & Conclusion">
+        <RevealList
+          className="bullet-list"
+          step={step}
+          items={[
+            "2 relay-kill events, downtime 5.82s and 6.96s — the room recovered both times with no dropped participants",
+            "Whole-run quality stayed healthy: 50.15ms avg latency, 7.20ms avg jitter, 0.00% avg packet loss",
+            "695.25 kbps avg download bitrate — light load at 2 concurrent viewers",
+            "Smallest of the resilience scenarios — establishes the failover-recovery baseline before scaling to 5 and 10 bots",
+          ]}
+        />
+        <div className="stat-grid" style={{ marginTop: 12 }}>
+          <div className="stat-card">
+            <div className="stat-value">2 failover events</div>
+            <div className="stat-label">5.82s–6.96s downtime</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">50.15ms avg latency</div>
+            <div className="stat-label">Whole-run average</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">0.00% packet loss</div>
+            <div className="stat-label">Whole-run average</div>
+          </div>
+        </div>
+      </SlideLayout>
     ),
   },
   {
@@ -983,44 +943,108 @@ export const slides: SlideDef[] = [
       <SectionDivider
         kicker="Evaluation"
         variant="sub"
-        index="4.5"
+        index="3.4"
         title="10-Bot Resilience Test"
-        subtitle="15 workers · 5 hosts · 2-of-3 relay kill — data pending"
-      />
+        subtitle="15 workers · 5 hosts · 4 relay-failover events (7.6–19.6s downtime)"
+      >
+        <div className="stat-grid" style={{ gridTemplateColumns: "repeat(5, 1fr)" }}>
+          {["eastus", "westus2", "centralus", "westeurope", "eastus2"].map((region) => (
+            <div key={region} className="stat-card">
+              <div className="stat-value">{region}</div>
+              <div className="stat-label">1 relay + 1 cp-daemon + 1 validator-daemon</div>
+            </div>
+          ))}
+        </div>
+        <div className="stat-grid" style={{ marginTop: 12 }}>
+          <div className="stat-card">
+            <div className="stat-value">15 infra workers</div>
+            <div className="stat-label">3 services × 5 VMs, Standard_D2als_v7 (2 vCPU), under a 3-vCPU/region quota</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">10 scripted bots</div>
+            <div className="stat-label">2 concurrent sessions per bot worker, all join one room, held for ~400s (~6.7 min)</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">4 relay kills</div>
+            <div className="stat-label">Applied manually, out-of-band — not scripted in scenario.toml; evidenced by the relay-failover-downtime panel</div>
+          </div>
+        </div>
+      </SectionDivider>
     ),
   },
   {
-    id: "divider-4-6",
+    id: "eval-r4-session-health",
     stepsCount: 0,
     render: () => (
-      <SectionDivider
-        kicker="Evaluation"
-        variant="sub"
-        index="4.6"
-        title="20-Bot Resilience Test"
-        subtitle="15 workers · 5 hosts · 2-of-3 relay kill — data pending"
-      />
+      <SlideLayout eyebrow="Evaluation — 3.4" title="Session & Network Health" wide>
+        <div className="eval-room-image-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+          {[
+            { title: "Participants per Room", src: r4Participants },
+            { title: "ICE Success Rate", src: r4Ice },
+            { title: "Latency", src: r4Latency },
+            { title: "Jitter", src: r4Jitter },
+            { title: "Packet Loss", src: r4PacketLoss },
+            { title: "Relay Failover Downtime", src: r4Failover },
+          ].map((cell) => (
+            <div key={cell.title}>
+              <h4 className="eval-chart-cell-title">{cell.title}</h4>
+              <img className="eval-room-image" src={cell.src} alt={cell.title} />
+            </div>
+          ))}
+        </div>
+      </SlideLayout>
     ),
   },
   {
-    id: "divider-discussion",
+    id: "eval-r4-media-quality",
     stepsCount: 0,
-    render: () => <SectionDivider index="04" title="Discussion" subtitle="What's implemented vs. what's designed" />,
+    render: () => (
+      <SlideLayout eyebrow="Evaluation — 3.4" title="Media Quality" wide>
+        <div className="eval-room-image-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
+          {[
+            { title: "Bitrate Up/Down", src: r4Bitrate },
+            { title: "Resolution", src: r4Resolution },
+            { title: "Frame Rate", src: r4FrameRate },
+            { title: "Encode/Decode Latency", src: r4EncodeDecode },
+          ].map((cell) => (
+            <div key={cell.title}>
+              <h4 className="eval-chart-cell-title">{cell.title}</h4>
+              <img className="eval-room-image" src={cell.src} alt={cell.title} />
+            </div>
+          ))}
+        </div>
+      </SlideLayout>
+    ),
   },
   {
-    id: "designed-vs-implemented",
-    stepsCount: implementedRows.length,
+    id: "eval-r4-summary",
+    stepsCount: 4,
     render: ({ step }) => (
-      <SlideLayout
-        eyebrow="Discussion"
-        title={
-          <>
-            Designed vs. Implemented <sup className="citation-mark">[009,010]</sup>
-          </>
-        }
-        wide
-      >
-        <ComparisonTable columns={implementedColumns} rows={implementedRows} step={step} />
+      <SlideLayout eyebrow="Evaluation — 3.4" title="Summary & Conclusion">
+        <RevealList
+          className="bullet-list"
+          step={step}
+          items={[
+            "4 relay-kill events, downtime 7.61s–19.6s — the room recovered every time despite 5x the concurrency of 3.3",
+            "Whole-run avg latency actually drops to 31.68ms — no evidence of degradation as load scales to 10 bots",
+            "Packet loss stays low: 0.03% avg, 0.14% p95; 1880.99 kbps avg download bitrate at 10 concurrent viewers",
+            "Largest scenario measured so far — failover recovery holds without user-visible collapse",
+          ]}
+        />
+        <div className="stat-grid" style={{ marginTop: 12 }}>
+          <div className="stat-card">
+            <div className="stat-value">4 failover events</div>
+            <div className="stat-label">7.61s–19.6s downtime</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">31.68ms avg latency</div>
+            <div className="stat-label">Whole-run average</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">0.03% packet loss</div>
+            <div className="stat-label">Whole-run average (p95 0.14%)</div>
+          </div>
+        </div>
       </SlideLayout>
     ),
   },
@@ -1028,7 +1052,7 @@ export const slides: SlideDef[] = [
     id: "limitations",
     stepsCount: 5,
     render: ({ step }) => (
-      <SlideLayout eyebrow="Discussion" title="Limitations &amp; Future Work">
+      <SlideLayout eyebrow="04 Discussion" title="Limitations &amp; Future Work">
         <h3 className="slide-subtitle">Unresolved</h3>
         <RevealList
           className="bullet-list"

@@ -1,0 +1,665 @@
+{
+  "identity": {
+    "process_key": "node_exporter",
+    "host": "001",
+    "service": "node_exporter",
+    "provider": "azure",
+    "env": "devnet",
+    "backend": "vm",
+    "worker_index": 1,
+    "region": "eastus",
+    "zone": null
+  },
+  "logging": [
+    {
+      "timestamp": "2026-08-13T03:41:28.471009+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:41:30.007841+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:41:31.529800+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:41:33.133070+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:41:34.732414+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:42:03.386117+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:42:05.022520+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:42:06.583862+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:42:08.205865+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:42:09.923510+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:42:50.337039+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:42:52.044814+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:42:53.733395+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:42:55.455740+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:42:57.096561+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:43:28.558895+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:43:30.186712+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:43:31.860159+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:43:33.490369+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:43:35.113012+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:44:04.839736+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:44:06.535994+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:44:08.240477+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:44:09.947162+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:44:11.596309+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:44:42.475247+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:44:44.126022+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:44:45.830398+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:44:47.550863+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:44:49.225430+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:45:20.384552+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:45:22.026300+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:45:23.712169+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:45:25.383417+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:45:27.035167+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:45:57.151324+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:45:58.763422+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:46:00.451703+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:46:02.053805+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:46:03.695309+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:46:33.327101+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:46:34.977239+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:46:36.637930+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:46:38.244609+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:46:39.860505+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:47:11.843685+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:47:13.490276+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:47:15.185850+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:47:16.869707+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:47:18.463580+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:47:53.756146+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:47:55.348431+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:47:56.918929+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:47:58.553993+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:48:00.157099+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:48:29.037747+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:48:30.641696+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:48:32.282031+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:48:33.895895+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:48:35.550344+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:49:05.501167+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:49:07.114338+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:49:08.680368+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:49:10.337765+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:49:11.997931+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:49:43.026616+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:49:44.770174+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:49:46.358247+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:49:47.985864+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:49:49.626879+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:50:20.153472+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:50:21.808342+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:50:23.408459+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:50:25.066035+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:50:26.712167+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:50:57.567866+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:50:59.112062+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:51:00.733928+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:51:02.339763+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:51:03.941173+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:51:33.643508+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:51:35.224216+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:51:36.898988+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:51:38.544036+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:51:40.220553+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:52:10.032742+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:52:11.692897+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:52:13.269324+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:52:14.954675+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:52:16.762020+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:52:48.168200+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:52:49.957398+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:52:51.636866+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:52:53.241747+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:52:54.949012+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:53:25.588507+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:53:27.292859+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:53:28.908174+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:53:30.520126+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:53:32.166677+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:54:03.274463+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:54:04.914564+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:54:06.573460+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:54:08.162125+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:54:09.827441+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:54:40.710679+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:54:42.284481+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:54:43.941965+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:54:45.663290+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:54:47.323351+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:55:20.139270+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:55:21.833985+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:55:23.530027+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:55:25.239758+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:55:26.814042+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:55:55.638784+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:55:57.219625+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:55:58.895902+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:56:00.554494+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:56:02.261160+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:56:33.633683+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:56:35.326651+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:56:36.973908+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:56:38.733884+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:56:40.414844+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:57:11.757700+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:57:13.400175+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:57:15.089647+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:57:16.696977+00:00",
+      "interval_seconds": 5,
+      "application": null
+    },
+    {
+      "timestamp": "2026-08-13T03:57:18.393470+00:00",
+      "interval_seconds": 5,
+      "application": null
+    }
+  ]
+}

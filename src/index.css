@@ -468,6 +468,21 @@ body {
   margin: 4px 0 0;
 }
 
+.eval-room-image-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.eval-room-image {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
 .timeline-year {
   font-size: 16px;
   font-weight: 600;
@@ -492,9 +507,19 @@ body {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 8px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 3.2px;
+  width: 95%;
+  max-width: 95%;
   margin-top: 32px;
   z-index: 10;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.progress-dots::-webkit-scrollbar {
+  display: none;
 }
 
 .dot {
@@ -509,6 +534,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
@@ -519,7 +545,7 @@ body {
 .dot-active {
   background: var(--accent);
   background-clip: border-box;
-  transform: scale(1.15);
+  transform: scale(0.767);
 }
 
 .dot-number {
@@ -805,6 +831,11 @@ body {
 
 .section-divider-sub .section-divider-subtitle {
   font-size: 16px;
+}
+
+.section-divider-extra {
+  margin-top: 28px;
+  max-width: 960px;
 }
 
 @media (max-width: 768px) {

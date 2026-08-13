@@ -1,0 +1,31 @@
+{
+  "identity": {
+    "room_id": "0x5f91800cc51675528b7d998a9f2c4c3ce47aff4764392f9ad0df3f3f6df8472f",
+    "peer_id": "guest-fcbbf2ee-6c06-4e23-9bd6-b2d19e9432bb"
+  },
+  "metrics": [
+    {
+      "timestamp": "2026-08-13T03:46:49.713636+00:00",
+      "interval_seconds": 5,
+      "sample": {
+        "latencyMs": 250.0,
+        "packetLoss": 0.0,
+        "jitterMs": 9.0,
+        "bitrateUpKbps": 704.802,
+        "bitrateDownKbps": 2695.725,
+        "resolutionWidth": 1274.0,
+        "resolutionHeight": 720.0,
+        "framerate": 28.0,
+        "packetReorderingRate": 29.99610714285715,
+        "encodeLatencyMs": 0.0,
+        "decodeLatencyMs": 1.5658035714285716,
+        "freezeCount": 0.0,
+        "pauseCount": 0.0,
+        "connectionSetupMs": 0.0,
+        "iceSuccess": 0.0,
+        "reconnectMs": 0.0,
+        "avSyncDriftMs": -23.0
+      }
+    }
+  ]
+}

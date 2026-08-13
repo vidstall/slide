@@ -297,4 +297,3 @@ type = "bot.delete_room"
 timestamp = "+600s"
 host = "002"
 bot_id = "$room0_bot2.botId"
-

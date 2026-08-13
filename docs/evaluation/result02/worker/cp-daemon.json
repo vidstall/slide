@@ -1,0 +1,2415 @@
+{
+  "identity": {
+    "process_key": "cp-daemon",
+    "host": "001",
+    "service": "cp-daemon",
+    "provider": "azure",
+    "env": "devnet",
+    "backend": "vm",
+    "worker_index": 1,
+    "region": "eastus",
+    "zone": null
+  },
+  "logging": [
+    {
+      "timestamp": "2026-08-13T02:51:13.866716+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:15.419909+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:17.009092+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:18.646887+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:20.296569+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:42.234356+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:43.888079+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:45.489489+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:47.154064+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:48.702943+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:17.680031+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:19.313505+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:20.884793+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:22.478963+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:24.080926+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:52.733312+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:54.328778+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:55.974960+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:57.596949+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:59.199646+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:53:30.402460+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:53:31.945466+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:53:33.605018+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:53:35.193861+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:53:36.829208+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:06.042819+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:07.618595+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:09.288051+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:10.900148+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:12.614264+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:40.071998+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:41.713727+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:43.286095+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:44.905611+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:46.508654+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:16.486438+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:18.028333+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:19.648973+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:21.297649+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:22.966447+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:53.025453+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:54.644146+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:56.292477+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:57.927328+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:59.504179+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:56:28.939701+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:56:30.435985+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:56:31.975459+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:56:33.467109+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:56:35.009617+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:04.145200+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:05.676755+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:07.118743+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:08.639615+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:10.224750+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:41.641885+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:43.184203+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:44.723921+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:46.313332+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:47.847289+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:17.811239+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:19.367685+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:21.002813+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:22.485648+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:24.078769+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:53.748294+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:55.321220+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:56.895730+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:58.505216+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:59:00.057760+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:59:29.861775+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:59:31.409064+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:59:32.959871+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:59:34.500865+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:59:36.058481+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "role_votes_cast_total": 1.0,
+        "role_vote_latency_avg_seconds": null,
+        "chain_tx_avg_duration_seconds_by_method": {},
+        "chain_tx_retries_total_by_method": {
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-003-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-004-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-002-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 4.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=provision-turn-secret,role=cp-daemon,service=cp-daemon": 1.0,
+          "instance=azure-005-cpl-1,job=xaisen-cp-daemon,method=cast-role-vote,role=cp-daemon,service=cp-daemon": 3.0,
+          "instance=azure-001-cpl-1,job=xaisen-cp-daemon,method=submit-pairing-proposal,role=cp-daemon,service=cp-daemon": 1.0
+        },
+        "chain_poll_avg_duration_seconds_by_module": {},
+        "chain_poll_events_processed_total_by_module": {},
+        "role_assignments_total": {
+          "instance=azure-004-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-005-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-002-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-003-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0,
+          "instance=azure-001-val-1,job=xaisen-validator-daemon,role=validator-daemon,service=validator-daemon": 1.0
+        },
+        "role_assignment_wait_avg_seconds": {}
+      }
+    }
+  ]
+}

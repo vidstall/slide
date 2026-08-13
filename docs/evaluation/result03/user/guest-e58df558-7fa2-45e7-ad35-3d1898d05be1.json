@@ -1,0 +1,54 @@
+{
+  "identity": {
+    "room_id": "0xed36b0b7e12751fafaaffa6c192aa5a98017771297f2d417101bcc5d9ed46edd",
+    "peer_id": "guest-e58df558-7fa2-45e7-ad35-3d1898d05be1"
+  },
+  "metrics": [
+    {
+      "timestamp": "2026-08-13T01:54:54.537761+00:00",
+      "interval_seconds": 5,
+      "sample": {
+        "latencyMs": 248.0,
+        "packetLoss": 0.0,
+        "jitterMs": 12.0,
+        "bitrateUpKbps": 701.462,
+        "bitrateDownKbps": 2616.983,
+        "resolutionWidth": 1274.0,
+        "resolutionHeight": 720.0,
+        "framerate": 30.0,
+        "packetReorderingRate": 42.34938333333333,
+        "encodeLatencyMs": 0.0,
+        "decodeLatencyMs": 2.3314500000000016,
+        "freezeCount": 0.0,
+        "pauseCount": 0.0,
+        "connectionSetupMs": 0.0,
+        "iceSuccess": 0.0,
+        "reconnectMs": 0.0,
+        "avSyncDriftMs": 23.0
+      }
+    },
+    {
+      "timestamp": "2026-08-13T01:55:28.995811+00:00",
+      "interval_seconds": 5,
+      "sample": {
+        "latencyMs": 248.0,
+        "packetLoss": 0.0,
+        "jitterMs": 9.0,
+        "bitrateUpKbps": 740.674,
+        "bitrateDownKbps": 218.289,
+        "resolutionWidth": 1274.0,
+        "resolutionHeight": 720.0,
+        "framerate": 2.0,
+        "packetReorderingRate": 53.03644444444444,
+        "encodeLatencyMs": 0.0,
+        "decodeLatencyMs": 1.6486111111111177,
+        "freezeCount": 0.0,
+        "pauseCount": 0.0,
+        "connectionSetupMs": 0.0,
+        "iceSuccess": 0.0,
+        "reconnectMs": 0.0,
+        "avSyncDriftMs": 22.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+action_index,action_id,action_type,host,timestamp,duration_seconds,status,error,container_action_confirmed_at,health_observed_at,detection_latency_seconds
+0,room0,bot.create_room,001,2026-08-13T02:50:53.394116+00:00,17.060173708945513,ok,,,,
+1,room0_h002_1,bot.join_room,002,2026-08-13T02:51:10.458932+00:00,9.37771991698537,ok,,,,
+2,,bot.delete_room,001,2026-08-13T02:51:19.841601+00:00,0.5571220000274479,ok,,,,
+3,,bot.delete_room,002,2026-08-13T02:57:34.024123+00:00,0.43039620900526643,ok,,,,

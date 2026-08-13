@@ -1,0 +1,1783 @@
+{
+  "identity": {
+    "process_key": "bot",
+    "host": "001",
+    "service": "bot",
+    "provider": "azure",
+    "env": "devnet",
+    "backend": "vm",
+    "worker_index": 1,
+    "region": "eastus",
+    "zone": null
+  },
+  "logging": [
+    {
+      "timestamp": "2026-08-13T02:51:14.886361+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {},
+        "frame_drops_total": {},
+        "underruns_total": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:16.453581+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {},
+        "frame_drops_total": {},
+        "underruns_total": {}
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:18.101494+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 23.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 40.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:19.748689+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 23.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 40.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:21.362228+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 23.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 40.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:43.323347+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 44.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 53.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 39.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 40.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:44.943676+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 44.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 53.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 39.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 40.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:46.618377+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 44.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 53.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 39.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 40.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:48.197947+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 73.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 82.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 39.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 40.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:51:49.726652+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 73.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 82.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 69.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 66.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 40.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:18.782052+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 133.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 142.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 98.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 96.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:20.383581+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 133.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 142.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 128.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 126.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:21.958367+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 133.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 142.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 128.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 126.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:23.529210+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 133.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 142.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 128.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 126.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:25.063963+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 133.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 142.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 128.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 126.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:53.788844+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 192.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 201.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 188.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 185.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:55.410179+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 192.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 201.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 188.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 185.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:57.045227+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 192.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 201.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 188.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 185.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:52:58.690307+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 192.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 201.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 188.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 185.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:53:00.229305+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 192.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 201.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 188.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 185.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:53:31.419622+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 252.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 261.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 247.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 244.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:53:33.080861+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 281.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 290.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 247.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 244.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 36.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:53:34.658201+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 281.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 290.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 277.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 274.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:53:36.297517+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 281.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 290.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 277.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 274.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:53:37.941395+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 281.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 290.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 277.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 274.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:07.074938+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 341.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 350.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 336.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 333.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:08.708974+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 341.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 350.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 336.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 333.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:10.364120+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 341.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 350.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 336.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 333.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:12.050057+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 341.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 350.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 336.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 333.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:13.689461+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 341.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 350.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 336.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 333.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:41.166003+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 400.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 409.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 395.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 393.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:42.783805+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 400.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 409.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 395.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 393.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:44.401132+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 400.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 409.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 395.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 393.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:45.960155+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 400.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 409.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 395.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 393.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:54:47.609556+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 430.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 439.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 395.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 393.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:17.483116+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 489.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 498.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 455.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 452.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:19.134765+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 489.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 498.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 455.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 452.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:20.752122+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 489.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 498.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 485.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 482.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:22.403596+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 489.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 498.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 485.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 482.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:24.060514+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 489.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 498.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 485.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 482.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:54.093852+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 549.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 557.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 544.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 541.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:55.753706+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 549.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 557.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 544.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 541.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:57.368531+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 549.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 557.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 544.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 541.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:55:58.981502+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 549.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 557.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 544.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 541.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:56:00.579141+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 549.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 557.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 544.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 541.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:56:29.980769+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 608.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 617.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 603.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 601.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:56:31.499124+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 608.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 617.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 603.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 601.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:56:33.009488+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 638.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 646.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 603.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 601.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:56:34.554787+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 638.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 646.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 603.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 601.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:56:36.097648+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 638.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 646.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 633.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 630.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:05.193198+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 697.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 706.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 693.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 690.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:06.658034+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 697.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 706.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 693.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 690.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:08.165173+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 697.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 706.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 693.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 690.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:09.725814+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 697.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 706.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 693.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 690.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:11.319713+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 697.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 706.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 693.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 690.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:42.690446+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 756.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 765.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:44.265301+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 756.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 765.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:45.838537+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 1.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 756.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 765.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:47.399205+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:57:48.910963+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:18.878941+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:20.519053+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:22.051209+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:23.600049+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:25.115044+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:54.837143+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:56.403836+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:58.007095+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:58:59.576034+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:59:01.184505+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:59:30.933595+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:59:32.470151+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:59:34.053101+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:59:35.585646+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-13T02:59:37.114210+00:00",
+      "interval_seconds": 5,
+      "application": {
+        "sessions_active": 0.0,
+        "sessions_total": 1.0,
+        "session_errors_total": 0.0,
+        "join_phase_avg_seconds": {},
+        "ffmpeg_respawns_total": {},
+        "ffmpeg_stderr_lines_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 763.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 770.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 754.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 750.0
+        },
+        "frame_drops_total": {},
+        "underruns_total": {
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 41.0,
+          "instance=azure-001-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 14.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=audio": 37.0,
+          "instance=azure-002-bot-1,job=xaisen-bot,role=bot,service=bot,track=video": 11.0
+        }
+      }
+    }
+  ]
+}

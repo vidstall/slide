@@ -1,0 +1,339 @@
+# Simple stress test: 15 core workers over 5 Azure instances (1 relay + 1
+# cp-daemon + 1 validator-daemon per host), plus 10 bots (2 concurrent
+# sessions per bot WORKER -- apps/bot supports multiple live sessions per
+# process, see bot_client.list_sessions()'s docstring) all joining ONE room.
+# Bots hold the room for 20 minutes (+400s) then leave. No chaos/kill actions.
+#
+# Same topology as scenario/evaluation/simple-15wk-5host-20bot.toml -- only
+# the bot session count/action list differs (10 sessions, 2 per host, instead
+# of 20/4-per-host).
+#
+# Regions/size: reuses the 5 confirmed-working Azure regions from
+# scenario/example/azure.toml (eastus/westus2/centralus/westeurope/eastus2),
+# Standard_D2als_v7 -- one host per region keeps each region at 2 vCPU, under
+# this subscription's 3-vCPU-per-region cap (worker count doesn't affect
+# vCPU usage, only VM size/count does -- all workers on a host share one VM).
+
+name = "simple-15wk-5host-10bot"
+env = "devnet"
+
+[contract]
+gas_budget = ""
+create_registry_if_missing = false
+force = false
+
+[registry]
+provider = "digitalocean"
+tag = ""
+
+[[frontends]]
+name = "site-2-bucket"
+object = "frontend"
+provider = "alibaba"
+
+# --- host 001 (eastus) ---
+[[workers]]
+host = "001"
+service = "relay"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "eastus"
+
+[[workers]]
+host = "001"
+service = "cp-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "eastus"
+
+[[workers]]
+host = "001"
+service = "validator-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "eastus"
+
+[[workers]]
+host = "001"
+service = "bot"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "eastus"
+
+# --- host 002 (westus2) ---
+[[workers]]
+host = "002"
+service = "relay"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "westus2"
+
+[[workers]]
+host = "002"
+service = "cp-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "westus2"
+
+[[workers]]
+host = "002"
+service = "validator-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "westus2"
+
+[[workers]]
+host = "002"
+service = "bot"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "westus2"
+
+# --- host 003 (centralus) ---
+[[workers]]
+host = "003"
+service = "relay"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "centralus"
+
+[[workers]]
+host = "003"
+service = "cp-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "centralus"
+
+[[workers]]
+host = "003"
+service = "validator-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "centralus"
+
+[[workers]]
+host = "003"
+service = "bot"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "centralus"
+
+# --- host 004 (westeurope) ---
+[[workers]]
+host = "004"
+service = "relay"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "westeurope"
+
+[[workers]]
+host = "004"
+service = "cp-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "westeurope"
+
+[[workers]]
+host = "004"
+service = "validator-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "westeurope"
+
+[[workers]]
+host = "004"
+service = "bot"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "westeurope"
+
+# --- host 005 (eastus2) ---
+[[workers]]
+host = "005"
+service = "relay"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "eastus2"
+
+[[workers]]
+host = "005"
+service = "cp-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "eastus2"
+
+[[workers]]
+host = "005"
+service = "validator-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "eastus2"
+
+[[workers]]
+host = "005"
+service = "bot"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "eastus2"
+
+# bot1 (host 001) creates the room; the remaining 9 bot sessions join the
+# same room, staggered 3s apart, 2-per-host across all 5 bot workers.
+[[actions]]
+id = "room0"
+type = "bot.create_room"
+timestamp = "+0s"
+host = "001"
+media_mode = "both"
+
+[[actions]]
+id = "room0_h001_1"
+type = "bot.join_room"
+timestamp = "+3s"
+host = "001"
+room_id = "$room0.roomId"
+media_mode = "both"
+
+[[actions]]
+id = "room0_h002_1"
+type = "bot.join_room"
+timestamp = "+6s"
+host = "002"
+room_id = "$room0.roomId"
+media_mode = "both"
+
+[[actions]]
+id = "room0_h002_2"
+type = "bot.join_room"
+timestamp = "+9s"
+host = "002"
+room_id = "$room0.roomId"
+media_mode = "both"
+
+[[actions]]
+id = "room0_h003_1"
+type = "bot.join_room"
+timestamp = "+12s"
+host = "003"
+room_id = "$room0.roomId"
+media_mode = "both"
+
+[[actions]]
+id = "room0_h003_2"
+type = "bot.join_room"
+timestamp = "+15s"
+host = "003"
+room_id = "$room0.roomId"
+media_mode = "both"
+
+[[actions]]
+id = "room0_h004_1"
+type = "bot.join_room"
+timestamp = "+18s"
+host = "004"
+room_id = "$room0.roomId"
+media_mode = "both"
+
+[[actions]]
+id = "room0_h004_2"
+type = "bot.join_room"
+timestamp = "+21s"
+host = "004"
+room_id = "$room0.roomId"
+media_mode = "both"
+
+[[actions]]
+id = "room0_h005_1"
+type = "bot.join_room"
+timestamp = "+24s"
+host = "005"
+room_id = "$room0.roomId"
+media_mode = "both"
+
+[[actions]]
+id = "room0_h005_2"
+type = "bot.join_room"
+timestamp = "+27s"
+host = "005"
+room_id = "$room0.roomId"
+media_mode = "both"
+
+# Teardown: all 10 bot sessions leave 20 minutes in.
+[[actions]]
+type = "bot.delete_room"
+timestamp = "+400s"
+host = "001"
+bot_id = "$room0.botId"
+
+[[actions]]
+type = "bot.delete_room"
+timestamp = "+400s"
+host = "001"
+bot_id = "$room0_h001_1.botId"
+
+[[actions]]
+type = "bot.delete_room"
+timestamp = "+400s"
+host = "002"
+bot_id = "$room0_h002_1.botId"
+
+[[actions]]
+type = "bot.delete_room"
+timestamp = "+400s"
+host = "002"
+bot_id = "$room0_h002_2.botId"
+
+[[actions]]
+type = "bot.delete_room"
+timestamp = "+400s"
+host = "003"
+bot_id = "$room0_h003_1.botId"
+
+[[actions]]
+type = "bot.delete_room"
+timestamp = "+400s"
+host = "003"
+bot_id = "$room0_h003_2.botId"
+
+[[actions]]
+type = "bot.delete_room"
+timestamp = "+400s"
+host = "004"
+bot_id = "$room0_h004_1.botId"
+
+[[actions]]
+type = "bot.delete_room"
+timestamp = "+400s"
+host = "004"
+bot_id = "$room0_h004_2.botId"
+
+[[actions]]
+type = "bot.delete_room"
+timestamp = "+400s"
+host = "005"
+bot_id = "$room0_h005_1.botId"
+
+[[actions]]
+type = "bot.delete_room"
+timestamp = "+400s"
+host = "005"
+bot_id = "$room0_h005_2.botId"

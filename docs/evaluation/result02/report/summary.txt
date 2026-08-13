@@ -1,0 +1,23 @@
+Scenario:  simple-15wk-5host-2bot
+Env:       devnet
+Run:       20260813T095040
+Started:   2026-08-13T02:50:53.394000+00:00
+Ended:     2026-08-13T02:57:44.456000+00:00
+Duration:  411s
+
+Actions:
+  bot.create_room: ok=1 error=0 no_after_event=0
+  bot.delete_room: ok=2 error=0 no_after_event=0
+  bot.join_room: ok=1 error=0 no_after_event=0
+
+Steps (concurrent clients -> room quality avg/p95/max):
+  step=    #0 (2 clients)  duration=374s  ticks=10
+    avg_latency_ms           avg=50.15 p95=109.00 max=109.00
+    avg_jitter_ms            avg=7.20 p95=10.00 max=10.00
+    avg_packet_loss          avg=0.00 p95=0.00 max=0.00
+    avg_bitrate_down_kbps    avg=695.25 p95=959.06 max=959.06
+  step=         whole_run  duration=-s  ticks=14
+    avg_latency_ms           avg=50.15 p95=109.00 max=109.00
+    avg_jitter_ms            avg=7.20 p95=10.00 max=10.00
+    avg_packet_loss          avg=0.00 p95=0.00 max=0.00
+    avg_bitrate_down_kbps    avg=695.25 p95=959.06 max=959.06
