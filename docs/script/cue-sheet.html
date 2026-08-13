@@ -5,21 +5,21 @@
     --bg: #f6f7f9; --card: #ffffff; --ink: #14161a; --muted: #5b6572;
     --line: #e2e6ec; --accent: #2a6df4; --accent-ink: #fff;
     --band: #eef1f6; --pending: #b23b3b; --pending-band: #fbeeee;
-    --cue: #7a4d00; --cue-band: #fff6e6;
+    --cue: #7a4d00; --cue-band: #fff6e6; --clk: #106b34; --clk-band: #e8f6ed;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --bg: #0e1013; --card: #171a1f; --ink: #eef1f5; --muted: #9aa4b2;
       --line: #262b33; --accent: #5b8bff; --accent-ink: #0e1013;
       --band: #1c2129; --pending: #ff8a8a; --pending-band: #241a1a;
-      --cue: #ffcf7a; --cue-band: #241f16;
+      --cue: #ffcf7a; --cue-band: #241f16; --clk: #7fd8a0; --clk-band: #14251b;
     }
   }
   :root[data-theme="dark"] {
     --bg: #0e1013; --card: #171a1f; --ink: #eef1f5; --muted: #9aa4b2;
     --line: #262b33; --accent: #5b8bff; --accent-ink: #0e1013;
     --band: #1c2129; --pending: #ff8a8a; --pending-band: #241a1a;
-    --cue: #ffcf7a; --cue-band: #241f16;
+    --cue: #ffcf7a; --cue-band: #241f16; --clk: #7fd8a0; --clk-band: #14251b;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -66,6 +66,13 @@
   .say p { margin: 0 0 .58em; }
   .say p:last-child { margin-bottom: 0; }
   .say b { background: color-mix(in srgb, var(--accent) 16%, transparent); padding: 0 2px; border-radius: 3px; }
+  .clk {
+    display: inline-flex; align-items: center; vertical-align: baseline;
+    background: var(--clk-band); color: var(--clk);
+    font-size: 13px; font-weight: 700; letter-spacing: .3px;
+    padding: 1px 7px; border-radius: 6px; margin-right: 6px;
+    font-family: ui-monospace, Menlo, monospace;
+  }
   .cue {
     margin-top: 14px; padding: 8px 12px; border-radius: 8px;
     background: var(--cue-band); color: var(--cue);
@@ -77,7 +84,6 @@
     padding: 12px; border-radius: 12px; margin: 0 0 16px;
     font-size: 14px; letter-spacing: .3px;
   }
-  .divider .num { background: var(--muted); }
   .handoff {
     background: var(--pending-band); border: 1px solid var(--pending);
     color: var(--pending); border-radius: 14px; padding: 16px 20px; margin: 0 0 16px;
@@ -90,350 +96,288 @@
 
 <div class="bar">
   <b>DVConf — presenter cue sheet</b>
-  <span class="hint">Match the number in the deck's active dot → jump here.</span>
-  <input id="jump" type="number" min="1" max="37" placeholder="#" title="Type a slide number, press Enter" />
+  <span class="hint">Deck @ 0621fee · 31 slides. Match the deck's active dot → jump here. <span style="font-family:ui-monospace,Menlo,monospace">▸</span> = press next.</span>
+  <input id="jump" type="number" min="1" max="31" placeholder="#" title="Type a slide number, press Enter" />
   <button id="theme">Light / Dark</button>
   <span class="hint">Keys: ↓/↑ or n/p = next/prev card · digit = jump box</span>
 </div>
 
 <div class="wrap">
 
-  <div class="sec">Quang — Cover → Discussion (and 4.1)</div>
+  <div class="sec">Quang — slides 1–16 · ~10:40 at 130 wpm</div>
 
   <div class="card" id="s1">
-    <div class="head"><span class="num">1</span><span class="title">Cover</span><span class="id">title · ~20s</span></div>
+    <div class="head"><span class="num">1</span><span class="title">Cover</span><span class="id">title · 0:00 · ~20s</span></div>
     <div class="say">
       <p>Good morning.</p>
       <p>Our thesis is <b>Innovating Video Conferencing Systems Through Blockchain</b>.</p>
       <p>I'm Duong Minh Quang; with me is Le Quoc Van.</p>
-      <p>This is the Advanced Program in Computer Science at the University of Science, under the supervision of Assoc. Prof. Nguyen Dinh Thuc.</p>
+      <p>We work under the supervision of Assoc. Prof. Nguyen Dinh Thuc, at the University of Science.</p>
       <p>Van and I will split the talk.</p>
     </div>
-    <div class="cue">Verify supervisor name before rehearsal. Credit him verbally even though the cover slide omits it.</div>
+    <div class="cue">Verify supervisor name before rehearsal. Credit him aloud — the cover slide omits it (L-5).</div>
   </div>
 
-  <div class="divider"><span class="num">2</span> &nbsp; 01 · MOTIVATION — <em>Why revisit video conferencing</em></div>
-
-  <div class="card" id="s3">
-    <div class="head"><span class="num">3</span><span class="title">Nearly a Century of Video Calling</span><span class="id">intro-video-conferencing · ~55s</span></div>
+  <div class="card" id="s2">
+    <div class="head"><span class="num">2</span><span class="title">Nearly a Century of Video Calling</span><span class="id">intro-video-conferencing · 0:20 · ~34s</span></div>
     <div class="say">
       <p>Video calling is almost a hundred years old.</p>
-      <p>In 1927 AT&amp;T demonstrated the first public video call, scanned line by line off a mechanical disk.</p>
-      <p>In 1964 Bell Labs' Picturephone launched — and flopped; it never reached even one percent of its projected hundred thousand units.</p>
-      <p>The 1990s put camera kits on consumer PCs; the 2000s built life-size telepresence rooms.</p>
-      <p>And in 2020, COVID made it universal overnight — Zoom's monthly meeting minutes grew roughly two-and-a-half-thousand-fold in three months.</p>
-      <p>Across all of it, one thing never changed: what video conferencing <em>is</em>.</p>
-      <p>What kept changing was the infrastructure underneath it — and that infrastructure is what we revisit.</p>
+      <p><span class="clk">▸</span>1927 — AT&amp;T shows the first public video call.</p>
+      <p><span class="clk">▸</span>1964 — Bell Labs' Picturephone launches, and flops.</p>
+      <p><span class="clk">▸</span>The nineties put cameras on home PCs.</p>
+      <p><span class="clk">▸</span>The two-thousands built life-size telepresence rooms.</p>
+      <p><span class="clk">▸</span>And in 2020, COVID makes it universal overnight.</p>
+      <p>Through all of it, one thing never changed: what video conferencing <em>is</em>.</p>
+      <p>What kept changing was the infrastructure underneath.</p>
+      <p>That infrastructure is what we revisit.</p>
     </div>
-    <div class="cue">Advances step-by-step (5 timeline points). Land on "infrastructure is what we revisit."</div>
+  </div>
+
+  <div class="card" id="s3">
+    <div class="head"><span class="num">3</span><span class="title">What is Video Conferencing?</span><span class="id">call-mesh · 0:54 · ~18s</span></div>
+    <div class="say">
+      <p>One definition, so we're precise.</p>
+      <p>Video conferencing is real-time, <em>two-way</em> audio and video between people in different places.</p>
+      <p>Two-way is what makes it a conference — the 1927 call was one-way.</p>
+      <p>The technology kept changing; this definition never did.</p>
+    </div>
   </div>
 
   <div class="card" id="s4">
-    <div class="head"><span class="num">4</span><span class="title">What is Video Conferencing?</span><span class="id">call-mesh · ~35s</span></div>
+    <div class="head"><span class="num">4</span><span class="title">Idle Capacity vs. Data-Center Cloud</span><span class="id">idle-capacity-gap · 1:12 · ~36s</span></div>
     <div class="say">
-      <p>So let's be precise about the term.</p>
-      <p>Video conferencing is real-time, two-way transmission of audio and video between people in different places.</p>
-      <p>The <em>two-way</em> part is what makes it "conferencing" — that 1927 call was one-way, image only.</p>
-      <p>And it's a <em>conference</em> of participants, not just a single point-to-point link.</p>
-      <p>The technology went from mechanical and analog to IP-based and cloud-delivered — but that definition held constant the whole way.</p>
+      <p>Today, video calls run on the data-center cloud.</p>
+      <p>Put that beside idle, spare capacity — machines people already own and aren't using.</p>
+      <p><span class="clk">▸</span>Reliability — the cloud wins. SLA-backed uptime against churn.</p>
+      <p><span class="clk">▸</span>Marginal cost — reversed. Dedicated capacity is paid for even when idle; spare capacity would otherwise sit unused.</p>
+      <p><span class="clk">▸</span>Trust — a single operator, against an untrusted, permissionless pool.</p>
+      <p><span class="clk">▸</span>And real-time media — mature on the cloud. On spare capacity: <em>unaddressed</em>.</p>
+      <p>That last cell is our gap.</p>
     </div>
+    <div class="cue">First sentence carries the removed cost-problem slide. One ▸ per table row.</div>
   </div>
 
   <div class="card" id="s5">
-    <div class="head"><span class="num">5</span><span class="title">The Infrastructure Cost Problem</span><span class="id">cost-problem · ~40s</span></div>
+    <div class="head"><span class="num">5</span><span class="title">Huddle01 vs. Traditional Cloud VC</span><span class="id">huddle01-tradeoffs · 1:48 · ~39s</span></div>
     <div class="say">
-      <p>Today's answer is the data-center cloud — AWS, Azure, GCP.</p>
-      <p>It buys you three things.</p>
-      <p>High reliability, on SLA-backed uptime — that's the default assumption for real-time media.</p>
-      <p>But also high <em>fixed</em> cost: dedicated capacity, priced for peak load, paid whether it's idle or not.</p>
-      <p>And single-operator trust: one company controls admission, quality assessment, and billing for the entire call.</p>
-      <p>Those last two are the pressure points.</p>
-      <p>That's where we ask whether there's a different substrate.</p>
+      <p>We're not first here.</p>
+      <p>Huddle01 is the closest attempt — a DePIN network where node operators earn tokens for spare bandwidth.</p>
+      <p>It even runs the same media server we chose: mediasoup.</p>
+      <p><span class="clk">▸</span>Against the cloud, it loses on SLA.</p>
+      <p><span class="clk">▸</span>It wins on cost economics.</p>
+      <p><span class="clk">▸</span>It wins on custody — no single operator holds admission, data, and billing.</p>
+      <p><span class="clk">▸</span>It is behind on QoS maturity.</p>
+      <p><span class="clk">▸</span>And the last row: accountability evidence. Node-level quality is <em>not</em> publicly documented.</p>
+      <p>That missing row is what we build.</p>
     </div>
+    <div class="cue">Do NOT volunteer Livepeer / Theta / Helium. $37M / 840M-min figures are off the deck now — Q&amp;A only.</div>
   </div>
 
   <div class="card" id="s6">
-    <div class="head"><span class="num">6</span><span class="title">Idle Capacity vs. Data-Center Cloud</span><span class="id">idle-capacity-gap · ~50s</span></div>
+    <div class="head"><span class="num">6</span><span class="title">What We Inherit — and Where We Differ</span><span class="id">inheritance-advantages · 2:27 · ~36s</span></div>
     <div class="say">
-      <p>Put the data-center cloud beside idle, spare capacity — the machines and bandwidth people already own and aren't using.</p>
-      <p>On reliability the cloud wins: SLA-backed uptime versus high churn and no SLA.</p>
-      <p>But on marginal cost it's reversed — dedicated capacity you pay for regardless, against capacity that would otherwise sit unused.</p>
-      <p>On trust, a single operator against an untrusted, permissionless pool.</p>
-      <p>And on real-time media, the cloud is mature — Zoom, Meet, LiveKit — while spare-capacity systems leave it <em>unaddressed</em>.</p>
-      <p>That last cell is the gap this thesis targets: real-time conferencing on untrusted, spare capacity.</p>
+      <p>So, side by side with Huddle01.</p>
+      <p><span class="clk">▸</span>We inherit mediasoup — a proven media layer.</p>
+      <p><span class="clk">▸</span>We differ on the chain: general-purpose Sui and Move, not a custom one.</p>
+      <p><span class="clk">▸</span>We differ most on incentives. They reward uptime and bandwidth. We reward a <b>dual-signed SessionProof</b> — per-session quality evidence.</p>
+      <p><span class="clk">▸</span>Our accountability is explicit, and reported as measured-versus-designed.</p>
+      <p><span class="clk">▸</span>The honest trade is maturity: they are commercial; we are an academic prototype, rigorously evaluated.</p>
+      <p>We claim the integration — not complete decentralisation.</p>
     </div>
   </div>
 
   <div class="card" id="s7">
-    <div class="head"><span class="num">7</span><span class="title">Huddle01: The Closest Existing Attempt</span><span class="id">huddle01-intro · ~45s</span></div>
+    <div class="head"><span class="num">7</span><span class="title">Client, Relay, and Sui Chain</span><span class="id">architecture · 3:03 · ~72s</span></div>
     <div class="say">
-      <p>We're not first to the idea.</p>
-      <p>Huddle01 is the closest existing attempt: a DePIN network where node operators contribute spare bandwidth for token rewards.</p>
-      <p>Notably, it runs the <em>same</em> core media server we chose — mediasoup — but coordinates on its own purpose-built chain on Arbitrum Orbit.</p>
-      <p>And it's real: a thirty-seven-million-dollar node sale, over eight hundred and forty million minutes served, mainnet live.</p>
-      <p>So the question isn't "can this work at all" — Huddle01 shows it can.</p>
-      <p>Our question is narrower: what does per-session <em>accountability</em> look like on that kind of substrate.</p>
+      <p>Here is DVConf — four off-chain roles and a chain.</p>
+      <p><span class="clk">▸×3</span>The client is a browser — a standard WebRTC peer. It reaches the relay over one WebSocket, media and signaling together. The relay is a mediasoup SFU: it forwards everyone's media to everyone else.</p>
+      <p><span class="clk">▸×2</span>The validator daemon probes that relay from outside — a canary probe plus STUN latency checks — so quality is not self-reported.</p>
+      <p><span class="clk">▸×2</span>The cp-daemon is the control plane: pairing, TURN credentials, failover.</p>
+      <p><span class="clk">▸×5</span>And the Sui chain holds the registry, the assignments, the SessionProofs, and settlement — in Move.</p>
+      <p>Media never touches the chain.</p>
+      <p>Two honest notes.</p>
+      <p>The box says coturn — in our build, TURN was credential issuance only; the data plane never ran.</p>
+      <p>And the relay terminates transport encryption, so by itself it <em>can</em> see media.</p>
+      <p>Content-blindness is an opt-in layer — SFrame — and it fails open.</p>
+      <p>In a matched cloud-WAN test, the encrypted arm differed by about <b>+1.86 milliseconds</b> on the mean — an upper bound on SFrame overhead; the tail is unresolved.</p>
     </div>
-    <div class="cue">Do NOT volunteer Livepeer / Theta / Helium — not in our surveyed corpus. If asked: one positioning line, pivot back to Huddle01 / Datagram / Akash.</div>
+    <div class="cue">Never "the encryption costs 1.86 ms". Never bare "the relay never sees your video". SHORT VARIANT: drop the +1.86 sentence, keep "opt-in SFrame that fails open" — number moves to Q&amp;A.</div>
   </div>
 
   <div class="card" id="s8">
-    <div class="head"><span class="num">8</span><span class="title">Huddle01 vs. Traditional Cloud VC</span><span class="id">huddle01-tradeoffs · ~40s</span></div>
+    <div class="head"><span class="num">8</span><span class="title">Session Lifecycle</span><span class="id">session-lifecycle · 4:15 · ~37s</span></div>
     <div class="say">
-      <p>Line them up honestly.</p>
-      <p>Traditional cloud wins reliability — SLA-backed — and QoS maturity, from years of global routing.</p>
-      <p>The DePIN model wins on cost economics and on custody: a permissionless node network, no single operator holding admission, data, and billing.</p>
-      <p>But look at the last row — accountability evidence.</p>
-      <p>Cloud vendors publish SLAs and audits; node-level quality in a DePIN network is <em>not</em> publicly documented.</p>
-      <p>That missing row — verifiable, per-session quality evidence — is exactly what we set out to build.</p>
+      <p>One session, end to end.</p>
+      <p><span class="clk">▸×3</span>A node registers — stake and capability. A caller creates a room, and an escrow that funds it.</p>
+      <p><span class="clk">▸×2</span>Assignment: the cp-daemons score candidates, and a quorum — more than two-thirds — ratifies the pairing on-chain.</p>
+      <p><span class="clk">▸×2</span>Setup issues ICE, DTLS, and TURN credentials.</p>
+      <p><span class="clk">▸×2</span>Then media runs — the SFU forwards, nodes heartbeat.</p>
+      <p><span class="clk">▸×4</span>Close ends the session, and settlement pays the relay — or records a slash obligation.</p>
+      <p>Evidence flows on-chain. Packets don't.</p>
     </div>
+    <div class="cue">Quorum wording matches the new sublabel (≥2/3 active CPs). The 4-of-5 / single-host boundary stays in Q&amp;A.</div>
   </div>
 
   <div class="card" id="s9">
-    <div class="head"><span class="num">9</span><span class="title">What We Inherit — and Where We Differ</span><span class="id">inheritance-advantages · ~50s</span></div>
+    <div class="head"><span class="num">9</span><span class="title">Dual-Signed SessionProof</span><span class="id">session-proof · 4:52 · ~51s</span></div>
     <div class="say">
-      <p>So here's what we inherit and where we diverge.</p>
-      <p>We inherit mediasoup as the media layer — a deliberate, proven choice.</p>
-      <p>We differ on the chain: not a custom purpose-built one, but a general-purpose chain, Sui with Move.</p>
-      <p>We differ most on incentives: instead of rewarding raw uptime or bandwidth, we reward on a <em>dual-signed SessionProof</em> — per-session quality evidence.</p>
-      <p>And on accountability, ours is explicit, hedged, and reported as measured-versus-designed.</p>
-      <p>The honest trade is maturity: Huddle01 is funded and commercial; ours is an academic prototype — but a rigorously evaluated one.</p>
-      <p>Our contribution is that integrated boundary, not a claim of complete decentralisation.</p>
+      <p>This is the accountability core.</p>
+      <p><span class="clk">▸×2</span>One validator holds two wallets — an identity wallet, and a session wallet publicly mapped to it.</p>
+      <p><span class="clk">▸×3</span>Both sign the <em>same</em> nine-field measurement message: room, relay, packets, bytes, peers, duration, latency, loss, jitter.</p>
+      <p><span class="clk">▸×2</span>Both public keys and both Ed25519 signatures go into the transaction.</p>
+      <p><span class="clk">▸×2</span>The chain verifies them, stores the measurement — and discards the signatures.</p>
+      <p>Two things to be exact about.</p>
+      <p>This is dual-signing, not consensus — validators agree only later, at settlement.</p>
+      <p>And the probe leans on relay-reported counters; it does not prove this relay served this room.</p>
+      <p>That binding gap is ours, and it's in the limitations.</p>
     </div>
+    <div class="cue">Say "dual-signed", NEVER "consensus-signed". State the binding gap unprompted (W-03).</div>
   </div>
 
   <div class="card" id="s10">
-    <div class="head"><span class="num">10</span><span class="title">WebRTC: Real-Time Communication in Browsers</span><span class="id">webrtc-framework · ~55s</span></div>
+    <div class="head"><span class="num">10</span><span class="title">Economic Layer: Rewards &amp; Slashing</span><span class="id">economic-layer · 5:43 · ~43s</span></div>
     <div class="say">
-      <p>One piece of background, because everything sits on it.</p>
-      <p>WebRTC is the W3C and IETF standard that lets browsers exchange real-time audio, video, and data directly — no plugins, no installs.</p>
-      <p>Three core APIs: MediaStream to capture, RTCPeerConnection to transport, RTCDataChannel for arbitrary data.</p>
-      <p>Two properties matter for us.</p>
-      <p>First, all WebRTC media is mandatorily encrypted <b>on the wire</b> by DTLS-SRTP — there is no unencrypted mode.</p>
-      <p>Second — and this is deliberate — the standard leaves <em>signaling</em> undefined.</p>
-      <p>How you exchange the session descriptions is left to the application.</p>
-      <p>That undefined slot is precisely where a blockchain control plane can sit.</p>
-      <p>Hold the encryption point, though — I'll come back to what it does and doesn't protect once a relay is in the path.</p>
+      <p>The economics run off that proof.</p>
+      <p><span class="clk">▸×3</span>A stored proof feeds a quality check.</p>
+      <p><span class="clk">▸×2</span>Good quality: a permissionless <em>distribute_rewards</em> splits the room's escrow across four role pools. Payout follows <b>attested quality</b> — not bytes, not stake.</p>
+      <p><span class="clk">▸×2</span>Zero quality: the chain records a <em>RelaySlashed</em> obligation.</p>
+      <p><span class="clk">▸×2</span>Collecting it is <em>pay_slash</em> — a <em>cooperative</em> call, authorised by the relay.</p>
+      <p>Designed: automatic seizure. Implemented: this obligation ledger.</p>
+      <p>Same honesty on settlement — designed three-of-four; implemented two proofs and their mean.</p>
+      <p>One proof drives both outcomes, with no operator in the loop.</p>
     </div>
-    <div class="cue">Say "encrypted ON THE WIRE" — not bare "end-to-end". Defer content-blindness to slide 12. (The relay terminates DTLS-SRTP.)</div>
+    <div class="cue">Designed-vs-Implemented slide is GONE — the W-01/W-02 concessions live in these two spoken breaths now. Still banned: "automatic slashing", "three-of-four ships".</div>
   </div>
 
-  <div class="divider"><span class="num">11</span> &nbsp; 02 · PROPOSED ARCHITECTURE — <em>off-chain media, on-chain control</em></div>
+  <div class="card" id="s11">
+    <div class="head"><span class="num">11</span><span class="title">Self-Healing: Relay Failover</span><span class="id">failover · 6:26 · ~39s</span></div>
+    <div class="say">
+      <p>Failover, concretely.</p>
+      <p><span class="clk">▸×2</span>Every room carries a warm standby — a paused transport, pipe already up.</p>
+      <p><span class="clk">▸×3</span>The cp-daemon watches heartbeats. Three epochs stale, and the primary is out.</p>
+      <p><span class="clk">▸×2</span>Then <em>anyone</em> can call <em>promote_relay</em>. No admin key. No capability object.</p>
+      <p><span class="clk">▸×2</span>The on-chain commit lands in about <b>one-and-a-half to two seconds</b> — median one-point-six.</p>
+      <p>That number is the chain commit — not what a user sees.</p>
+      <p>The full recovery story is in the evaluation: mine, and Van's live kills.</p>
+    </div>
+  </div>
 
   <div class="card" id="s12">
-    <div class="head"><span class="num">12</span><span class="title">Client, Relay, and Sui Chain</span><span class="id">architecture · ~75s</span></div>
+    <div class="head"><span class="num">12</span><span class="title">3.1 Origin Test · Four Dimensions</span><span class="id">evaluation-methodology · 7:05 · ~36s</span></div>
     <div class="say">
-      <p>Here's DVConf.</p>
-      <p>Three roles.</p>
-      <p>The <b>client</b> is an ordinary WebRTC browser peer.</p>
-      <p>The <b>relay</b> is a mediasoup SFU — it forwards each participant's media to the others.</p>
-      <p>The <b>validator daemon</b> independently probes the relay — a composite STUN plus relay-counter measurement — so quality isn't self-reported.</p>
-      <p>And the <b>Sui chain</b> holds three things in Move: the registry of nodes, the SessionProofs, and settlement.</p>
-      <p>Media stays off-chain, client-to-relay under DTLS-SRTP; only control and evidence go on-chain.</p>
-      <p>Two honest boundaries here.</p>
-      <p>One — that relay box lists coturn TURN, but in our build TURN was only ever <em>credential issuance</em>; the coturn data plane was never deployed.</p>
-      <p>Two, on the encryption I flagged: DTLS-SRTP protects the wire, but the SFU terminates it, so on its own the relay <em>can</em> see plaintext media.</p>
-      <p>Content-blindness is an additional, opt-in layer — SFrame — and it fails open.</p>
-      <p>In a matched cloud-WAN test the encryption-enabled arm differed by about <b>+1.86 milliseconds</b> on the mean, interval excluding zero; because only that arm logged per frame, we treat it as an <em>upper bound</em> on SFrame overhead, and the tail is unresolved.</p>
+      <p>Our origin test — section 3.1 — has four dimensions.</p>
+      <p>The evidence class comes before any number.</p>
+      <p><span class="clk">▸</span><b>Latency</b>: a wide-area component sum, thirty sessions — a declared <em>lower bound</em>.</p>
+      <p><span class="clk">▸</span><b>Fee</b> — the thesis chapter is titled Fee: one full session, on a pinned localnet only.</p>
+      <p><span class="clk">▸</span><b>Capacity</b>: measured to fifteen viewers; one hundred is a <em>projection</em>.</p>
+      <p><span class="clk">▸</span><b>Failover</b>: a mechanism floor from thirty cutovers — not full recovery.</p>
+      <p>Nothing here is dressed up as more than it is.</p>
     </div>
-    <div class="cue">Never "the encryption costs 1.86 ms" → "upper bound on SFrame overhead, tail unresolved". Never "the relay never sees your video" unqualified. SHORT VARIANT: drop the +1.86 ms sentence, keep "opt-in SFrame that fails open", move the number to Q&A.</div>
+    <div class="cue">Card on the slide reads "Cost" → SAY "Fee" (L-2).</div>
   </div>
 
   <div class="card" id="s13">
-    <div class="head"><span class="num">13</span><span class="title">Session Lifecycle</span><span class="id">session-lifecycle · ~55s</span></div>
+    <div class="head"><span class="num">13</span><span class="title">Latency</span><span class="id">eval-latency · 7:41 · ~48s</span></div>
     <div class="say">
-      <p>One session, end to end.</p>
-      <p>A node <b>registers</b> — it stakes and declares capability.</p>
-      <p>A caller <b>creates a room</b>, which also creates an escrow object that funds it.</p>
-      <p><b>Assignment</b> is score-gated: the chain ranks eligible relays and validators and picks them.</p>
-      <p><b>Client setup</b> issues ICE, DTLS-SRTP, and TURN credentials.</p>
-      <p>Then <b>media runs</b> — the SFU forwards, and nodes emit heartbeats.</p>
-      <p>On <b>close</b>, the session ends.</p>
-      <p>And <b>settlement</b> either rewards the relay or records a slash obligation.</p>
-      <p>The important design point: admission and settlement are on-chain and rule-driven, while the media itself never touches the chain.</p>
-      <p>Evidence flows on-chain; packets don't.</p>
+      <p>Latency. Thirty wide-area sessions.</p>
+      <p>The one-way component-sum: <b>64.8 milliseconds</b> at the median, <b>70.9</b> at the ninety-fifth percentile.</p>
+      <p>Now the boundary, because it <em>is</em> the result.</p>
+      <p>This is a component sum — not capture-to-paint.</p>
+      <p>The camera is synthetic.</p>
+      <p>The capture term is set to zero, which biases the number <em>downward</em>.</p>
+      <p>And both peers ran on one laptop, one access network, one relay.</p>
+      <p>So: seventy-point-nine is a declared <b>lower bound</b>.</p>
+      <p>The full-path sub-two-hundred-millisecond target is <b>unresolved</b> — the thesis refuses that claim, and so do I.</p>
+      <p>What the number does show: the on-chain control plane adds nothing to the media path.</p>
     </div>
+    <div class="cue">Slide STILL shows p99=72.0 and the banned title "Below the 200ms Ceiling" — do NOT read p99, do NOT say the target was met. SHORT: "p95 70.9 ms — a declared lower bound; synthetic camera, one access network; sub-200 unresolved."</div>
   </div>
 
   <div class="card" id="s14">
-    <div class="head"><span class="num">14</span><span class="title">Dual-Signed SessionProof</span><span class="id">session-proof · ~70s</span></div>
+    <div class="head"><span class="num">14</span><span class="title">Fee</span><span class="id">eval-cost · 8:29 · ~46s</span></div>
     <div class="say">
-      <p>This is the accountability core.</p>
-      <p>A SessionProof is a nine-field measurement message in BCS — room, relay, packets, bytes, peers, duration, latency, loss, jitter.</p>
-      <p>It is <b>dual-signed by one validator's two wallets</b>: its identity wallet, and a session wallet that is publicly mapped to that identity — both signing the <em>same</em> message.</p>
-      <p>Both public keys and both Ed25519 signatures go into the transaction; the chain verifies them, then stores only the measurement fields — the signatures are discarded once verified.</p>
-      <p>Two things I want to be exact about.</p>
-      <p>This is <em>not</em> consensus-signing — cross-validator agreement happens only later, at settlement.</p>
-      <p>And the probe combines the validator's own STUN observations with <em>relay-reported</em> counters, and it does not independently prove the relay actually forwarded the media, or that this relay was assigned to this room.</p>
-      <p>We disclose that binding gap directly; it's in the limitations.</p>
+      <p>The on-chain <b>fee</b>.</p>
+      <p>One full session, executed end to end: two relays, four validators — thirteen transactions, on a pinned localnet.</p>
+      <p>The two cards carry the session totals.</p>
+      <p>Irreversible: about <b>0.017 SUI</b>. Net, counting refundable storage: about <b>0.035 SUI</b>.</p>
+      <p>At a <em>labelled</em> one-dollar-fifty per SUI, that net is <b>about five cents</b>.</p>
+      <p>The boundary. Pinned localnet — not mainnet.</p>
+      <p>Localnet fixes the gas schedule and has no fee contention.</p>
+      <p>And it does not validate the three-of-four settlement rule.</p>
+      <p>Gas is a property of the bytecode and storage rebate; the real SUI price is not ours to claim.</p>
     </div>
-    <div class="cue">Say "dual-signed", NOT "consensus-signed". State the binding gap unprompted (W-03).</div>
+    <div class="cue">SAY "Fee" (title still "Cost"). Do NOT read the six gas bars (not governed, M-1). USD 0.0257 = Q&amp;A only, never as "SUI". SHORT: "irreversible ~0.017 SUI, ~five cents net at a labelled 1.50-dollar SUI — localnet, not mainnet, not three-of-four."</div>
   </div>
 
   <div class="card" id="s15">
-    <div class="head"><span class="num">15</span><span class="title">Economic Layer: Rewards &amp; Slashing</span><span class="id">economic-layer · ~65s</span></div>
+    <div class="head"><span class="num">15</span><span class="title">Capacity: Measured to N=15, Projected to N=100</span><span class="id">eval-capacity · 9:15 · ~38s</span></div>
     <div class="say">
-      <p>The economics run off that proof.</p>
-      <p>A permissionless <em>distribute_rewards</em> call reads the stored proofs, checks per-relay median quality, and splits the room's escrow across four role pools — inverse-count shares, clamped and normalised.</p>
-      <p>Two honest boundaries.</p>
-      <p>Reward is <b>not</b> proportional to forwarded bytes and <b>not</b> stake-weighted — bytes are an attested input, nothing more.</p>
-      <p>And on the penalty side: a zero-quality relay gets no reward and a RelaySlashed event — but that event records an <em>obligation</em>.</p>
-      <p>It is <b>not</b> automatic seizure.</p>
-      <p>The actual deduction needs a later, relay-authorised <em>pay_slash</em> — collection is cooperative.</p>
-      <p>Settlement itself accepts <b>two</b> proofs and takes their arithmetic mean; the three-of-four design target is configured but not enforced.</p>
-      <p>We concede that plainly rather than dress it up.</p>
+      <p>Capacity. One room, ramped to fifteen viewers.</p>
+      <p>Look at the line: relay CPU goes from about two percent of a core to five.</p>
+      <p>At fifteen viewers, that is <b>0.05 of one core</b>.</p>
+      <p>The run records it plainly: <em>not saturated</em>.</p>
+      <p>A hundred users is a different kind of claim, so it gets a different label: <b>projection</b>.</p>
+      <p>A configured hundred-megabit egress cap gives a floor of <b>three relays</b>; with headroom, <b>five to six</b>.</p>
+      <p>A model — not a run. And auto-scaling is not implemented.</p>
     </div>
-    <div class="cue">Never "automatic slashing" · never "three-of-four ships". "Obligation, cooperative pay_slash" · "configured but not enforced".</div>
+    <div class="cue">Never "100 users" as achieved → "measured through N=15; N=100 is a projected planning estimate".</div>
   </div>
 
   <div class="card" id="s16">
-    <div class="head"><span class="num">16</span><span class="title">Self-Healing: Relay Failover</span><span class="id">failover · ~60s</span></div>
+    <div class="head"><span class="num">16</span><span class="title">Failover: Warm-Pipe Mechanism Floor</span><span class="id">eval-failover · 9:53 · ~46s</span></div>
     <div class="say">
-      <p>Failover is where decentralisation gets concrete.</p>
-      <p>Each room carries a warm standby relay — a paused transport, pipe already up.</p>
-      <p>A heartbeat watcher checks staleness; if the primary's heartbeat is more than three epochs old, any assigned relay can call <em>promote_relay</em>.</p>
-      <p>And that call is genuinely <b>permissionless</b> — it takes no AdminCap, no capability object.</p>
-      <p>On-chain, the promotion commits in about <b>one-and-a-half to two seconds</b>, median one-point-six.</p>
-      <p>That's the one part of failover we instrumented.</p>
-      <p>I'll be careful about what it means: it's the <em>on-chain</em> commit time, not the user-visible recovery.</p>
-      <p>Full kill-to-rendered-media recovery we did not measure — I'll show the mechanism number in the evaluation and say exactly what it does and doesn't cover.</p>
+      <p>Failover, measured. Thirty cutovers on a real mediasoup warm pipe. <b>Zero failures.</b></p>
+      <p>Detection-plus-resume: <b>58 milliseconds</b> median, <b>74</b> at p95, <b>80</b> at p99.</p>
+      <p>The honest label: this is a <b>mechanism floor</b> — not recovery time.</p>
+      <p>The bench closes the primary's sink while the pipe stays live, so it is optimistic by construction.</p>
+      <p>Our design budget for full recovery was eight to fifteen seconds — and in this origin test, we did not measure it.</p>
+      <p>That open end is exactly where Van picks up.</p>
+      <p>His resilience runs kill real relays, on live Azure hosts — and measure the downtime users actually see.</p>
+      <p>Van, over to you.</p>
     </div>
+    <div class="cue">Failover p99=80 IS reportable (unlike latency p99). "Mechanism floor, not MTTR." Last line = live hand-off to Van.</div>
   </div>
 
-  <div class="divider"><span class="num">17</span> &nbsp; 03 · EVALUATION — <em>measured, projected, and left open</em></div>
+  <div class="handoff" id="s17">
+    <h3>▸ VAN — slides 17–28 · 3.2 Quality Baseline + 3.3/3.4 Resilience (pending-van)</h3>
+    <p class="ids">17 divider-4-2 (3.2) · 18–20 eval-r1-* · 21 divider-4-3 (3.3, 2 kills, 5.8–7.0s) · 22–24 eval-r2-* · 25 divider-4-5 (3.4, 4 kills, 7.6–19.6s) · 26–28 eval-r4-*</p>
+    <p>Numbers not in <em>00-facts</em> — Van confirms before anyone speaks them. Traps:</p>
+    <p>R-1 · 3.2's "~70–80 ms" ≠ 3.1's 70.9 ms lower bound — different methods; never merge them.</p>
+    <p>R-4 · "25 workers" / "15 workers" = infra processes (services × VMs), NOT users.</p>
+    <p>W-08-live · 3.4's 19.6 s tail EXCEEDS the 8–15 s design budget — report it as a finding, don't average it away.</p>
+    <p>Relay kills were manual, out-of-band (not in scenario.toml) — keep that disclosed. And eval-r2-summary still says "5 and 10 bots" but there is no 5-bot section.</p>
+  </div>
 
-  <div class="card" id="s18">
-    <div class="head"><span class="num">18</span><span class="title">4.1 Origin Test</span><span class="id">divider-4-1 · ~15s</span></div>
+  <div class="sec">Quang resumes — slides 29–31 · ~1:20</div>
+
+  <div class="card" id="s29">
+    <div class="head"><span class="num">29</span><span class="title">Limitations &amp; Future Work</span><span class="id">limitations · ~48s</span></div>
     <div class="say">
-      <p>Onto evaluation.</p>
-      <p>Van structured this into three tracks.</p>
-      <p>First, the origin test — the thesis's own localnet and synthetic-baseline measurements.</p>
-      <p>Four dimensions, each with an evidence class stated up front.</p>
+      <p>Thank you, Van. The limits we name ourselves.</p>
+      <p><span class="clk">▸</span>A proof does not cryptographically bind the relay to the room — the gap I flagged at the SessionProof.</p>
+      <p><span class="clk">▸</span>The fee is localnet-only. No mainnet cross-check.</p>
+      <p><span class="clk">▸</span>Latency and failover are lower bounds — no capture-to-paint measurement in the origin test.</p>
+      <p>Three more the slide keeps short: encryption is opt-in and it fails open. A broad set of operations still sits under the deployer's AdminCap. And there is no project-wide threat model yet.</p>
+      <p><span class="clk">▸×2</span>The forward point is the real one. This architecture is designed for idle, churning nodes — but every experiment ran on reliable infrastructure.</p>
+      <p>Real volunteer churn is the honest next step.</p>
     </div>
+    <div class="cue">The three added concessions (E2EE opt-in, AdminCap, no threat model) are SPOKEN, not on the slide. SHORT: keep the three slide items + churn point; move the adds to Q&amp;A.</div>
   </div>
 
-  <div class="card" id="s19">
-    <div class="head"><span class="num">19</span><span class="title">Four Dimensions</span><span class="id">evaluation-methodology · ~45s</span></div>
+  <div class="card" id="s30">
+    <div class="head"><span class="num">30</span><span class="title">References</span><span class="id">references · ~8s</span></div>
     <div class="say">
-      <p>Four dimensions, and I want the evidence class visible before any number.</p>
-      <p><b>Latency</b> — a wide-area one-way component-sum over thirty sessions; a reduced-fidelity <em>lower bound</em>, not a full-path measurement.</p>
-      <p><b>Fee</b> — per-function gas plus one full session, on a pinned localnet only.</p>
-      <p><b>Capacity</b> — relay CPU and egress measured through fifteen viewers; a hundred users is a <em>projection</em>, not a run.</p>
-      <p><b>Failover</b> — a warm-pipe mechanism floor from thirty cutovers, not full user-visible recovery.</p>
-      <p>Notice none of these is dressed up as more than it is.</p>
-      <p>That discipline is the point.</p>
+      <p>Our sources are on screen — the WebRTC and DTLS-SRTP RFCs, Huddle01's documentation, and the BFT literature.</p>
     </div>
-    <div class="cue">Card on the slide reads "Cost" → SAY "Fee".</div>
+    <div class="cue">Optional — can stay silent while setting up Q&amp;A.</div>
   </div>
 
-  <div class="card" id="s20">
-    <div class="head"><span class="num">20</span><span class="title">Latency</span><span class="id">eval-latency · ~75s</span></div>
+  <div class="card" id="s31">
+    <div class="head"><span class="num">31</span><span class="title">Questions?</span><span class="id">closing · ~22s</span></div>
     <div class="say">
-      <p>Latency.</p>
-      <p>Over thirty wide-area sessions, the one-way component-sum was <b>64.8 milliseconds at the median and 70.9 at the ninety-fifth percentile</b>.</p>
-      <p>Now the boundary, because it <em>is</em> the result: this is a component sum, not capture-to-paint.</p>
-      <p>It uses a synthetic camera; the present-time term is set to zero, which biases the estimate <em>downward</em>; scan-out is a fixed constant; and both browser peers ran on one laptop and one access network against a single relay — so ISP and NAT asymmetry isn't exercised at all.</p>
-      <p>So I'll state it precisely: seventy-point-nine milliseconds is a declared <b>lower bound</b>.</p>
-      <p>The full-path, sub-two-hundred-millisecond target is <b>unresolved</b> — the thesis refuses that headroom claim, and so do I.</p>
-      <p>What this does show is that the on-chain control plane adds nothing to the media path — the number is dominated by network legs, not by our design.</p>
-    </div>
-    <div class="cue">DECK SLIDE STILL SHOWS p99=72.0 and title "Below the 200ms Ceiling" — do NOT read p99, do NOT say the target was met. Say "sub-200 ms target is unresolved". SHORT: "one-way component-sum, p95 70.9 ms — a declared lower bound, synthetic camera, both peers one access network; full-path sub-200 ms unresolved."</div>
-  </div>
-
-  <div class="card" id="s21">
-    <div class="head"><span class="num">21</span><span class="title">Fee</span><span class="id">eval-cost · ~70s</span></div>
-    <div class="say">
-      <p>The on-chain <b>fee</b> — and I say fee deliberately; the thesis chapter is titled <em>Fee</em>, not cost.</p>
-      <p>We ran one full executed trajectory: two assigned relays, four validators — that's eight proof submissions plus five fixed lifecycle calls, thirteen transactions in all — on a pinned localnet.</p>
-      <p>The whole session's <b>irreversible fee was about 0.017 SUI</b>; <b>net, including refundable storage, about 0.035 SUI</b>.</p>
-      <p>At a <em>labelled</em> scenario of one-and-a-half US dollars per SUI, that net is <b>about five cents</b> — a cent-scale fee.</p>
-      <p>The boundary: this is pinned-localnet gas, <b>not</b> mainnet fee, and <b>not</b> validation of the three-of-four settlement rule.</p>
-      <p>Gas is a property of bytecode execution and storage rebate; what localnet can't tell you is the real SUI price and fee contention — and the thesis says exactly that.</p>
-    </div>
-    <div class="cue">SAY "Fee" (slide says "Cost"). The slide's "0.0257 SUI irreversible" is a MISLABEL — that's the USD figure; irreversible in SUI is 0.017. Do NOT read the six per-function gas bars aloud (not governed). SHORT: "irreversible ~0.017 SUI, ~five cents net at a labelled 1.50-dollar SUI — pinned localnet, not mainnet, not a check of three-of-four."</div>
-  </div>
-
-  <div class="card" id="s22">
-    <div class="head"><span class="num">22</span><span class="title">Capacity: Measured to N=15, Projected to N=100</span><span class="id">eval-capacity · ~55s</span></div>
-    <div class="say">
-      <p>Capacity.</p>
-      <p>We ramped a single room to fifteen viewers.</p>
-      <p>Relay CPU rose from about two to five percent of one core — that's <b>0.05 of a core at fifteen viewers</b>, nowhere near saturation; the run explicitly records "not saturated".</p>
-      <p>So through fifteen, the relay is not the bottleneck.</p>
-      <p>A hundred users is a different kind of claim, and I'll label it as such: it's a <b>projection</b>.</p>
-      <p>A configured hundred-megabit-per-relay egress limit gives a floor of <b>three relays</b>; with burst and utilisation headroom, a planning estimate of <b>five to six</b>.</p>
-      <p>That's a model, not a hundred-user run — and importantly, participant-driven auto-scaling isn't implemented.</p>
-      <p>But the projection doesn't lean on anything we didn't measure at fifteen.</p>
-    </div>
-    <div class="cue">Never say "100 users" as achieved → "measured through N=15; N=100 is a projected planning estimate of five to six relays".</div>
-  </div>
-
-  <div class="card" id="s23">
-    <div class="head"><span class="num">23</span><span class="title">Failover: Warm-Pipe Mechanism Floor</span><span class="id">eval-failover · ~55s</span></div>
-    <div class="say">
-      <p>Failover, measured.</p>
-      <p>In an in-process bench with a real mediasoup warm pipe, thirty cutovers, <b>zero failures</b>, detection-plus-resume was <b>58 milliseconds at the median, 74 at the ninety-fifth, 80 at the ninety-ninth</b>.</p>
-      <p>And on-chain, as I showed, the promotion commits in about one-and-a-half to two seconds.</p>
-      <p>Here's the honest label: this is a <b>mechanism floor</b>, not mean-time-to-recovery.</p>
-      <p>The bench models primary failure by closing the primary's client sink while the publisher and pipe stay live — it's an <em>optimistic</em> floor.</p>
-      <p>The ADR design budget was eight to fifteen seconds for a full SFU recovery, and that full interval we did <b>not</b> measure.</p>
-      <p>So: strong evidence for the switching mechanism, an open question on end-to-end recovery.</p>
-    </div>
-    <div class="cue">Failover p99=80 IS reportable (unlike latency p99). "Mechanism floor, not MTTR." 8–15 s full recovery not measured.</div>
-  </div>
-
-  <div class="handoff" id="s24">
-    <h3>▸ HAND-OFF TO VAN &nbsp;—&nbsp; slide 24 onward</h3>
-    <p>4.2 Quality Baseline + 4.3–4.6 Resilience are Van's runs — not in <em>00-facts</em>, not scripted yet (Option A). No spoken numbers here until Van confirms Gate 0.</p>
-    <p class="ids">24 divider-4-2 · 25 eval-r1-setup · 26 eval-r1-session-health · 27 eval-r1-media-quality · 28 eval-r1-summary · 29–32 divider-4-3…4-6 (data pending)</p>
-    <p>Traps to remember if you narrate any of it: R-1 the ~70–80 ms here collides with 4.1's 70.9 ms lower bound (different method) · R-4 "25 workers" = 5 services × 5 VMs, NOT 25 users.</p>
-  </div>
-
-  <div class="divider"><span class="num">33</span> &nbsp; 04 · DISCUSSION — <em>implemented vs. designed</em> &nbsp;(Quang resumes)</div>
-
-  <div class="card" id="s34">
-    <div class="head"><span class="num">34</span><span class="title">Designed vs. Implemented</span><span class="id">designed-vs-implemented · ~65s</span></div>
-    <div class="say">
-      <p>Four rows, and every one is a place we scaled the claim down to what we built.</p>
-      <p>We designed a three-of-four BFT quorum; we implemented settlement on two proofs and their arithmetic mean.</p>
-      <p>We designed automatic seizure on misbehaviour; we implemented a <em>cooperative</em> pay_slash — an obligation, collected with the relay's authorisation.</p>
-      <p>We designed an operational relay-side coturn; we implemented credential issuance only — the TURN data plane was never deployed.</p>
-      <p>And we set an eight-to-fifteen-second recovery budget; what we measured is a fifty-eight-to-eighty-millisecond mechanism floor — a different, narrower thing.</p>
-      <p>I show this table on purpose.</p>
-      <p>The contribution is decentralised <em>evidence and settlement over an operator-run media plane</em> — not complete decentralisation — and being precise about that line is what makes the rest credible.</p>
-    </div>
-    <div class="cue">This is the honesty centerpiece — do not rush it. Backs the coturn-never-deployed point from slide 12.</div>
-  </div>
-
-  <div class="card" id="s35">
-    <div class="head"><span class="num">35</span><span class="title">Limitations &amp; Future Work</span><span class="id">limitations · ~70s</span></div>
-    <div class="say">
-      <p>The limits we name ourselves.</p>
-      <p>Three unresolved.</p>
-      <p>A submitted proof does <b>not</b> cryptographically bind the relay to the room — the binding gap I flagged earlier.</p>
-      <p>The fee figures are localnet-only, with no mainnet price cross-check.</p>
-      <p>And the latency and failover numbers are reduced-fidelity lower bounds — no real-camera, capture-to-paint measurement.</p>
-      <p>I'll add three more the slide keeps short but the thesis raises: end-to-end encryption is <b>opt-in and fails open</b>; a broad set of operations still sits under the deployer's AdminCap; and there is <b>no project-wide threat model</b> — no STRIDE analysis or attack tree yet.</p>
-      <p>Then the forward point, which is the real one: this architecture is <em>designed</em> for idle, high-churn nodes, but every experiment ran on reliable, single-workstation or data-center infrastructure.</p>
-      <p>Validating DVConf under genuine volunteer churn — not controlled kill-tests on reliable infra — is the honest next step.</p>
-    </div>
-    <div class="cue">Three added concessions (E2EE opt-in, AdminCap, no threat model) are SPOKEN, not on the slide. SHORT: keep the three slide items + churn point; move added concessions to Q&A.</div>
-  </div>
-
-  <div class="card" id="s36">
-    <div class="head"><span class="num">36</span><span class="title">References</span><span class="id">references · ~8s</span></div>
-    <div class="say">
-      <p>Our sources are on screen — WebRTC and DTLS-SRTP RFCs, the Huddle01 documentation, the BFT literature, and the survey work.</p>
-    </div>
-    <div class="cue">Optional to speak — can stay silent while setting up Q&A.</div>
-  </div>
-
-  <div class="card" id="s37">
-    <div class="head"><span class="num">37</span><span class="title">Questions?</span><span class="id">closing · ~20s</span></div>
-    <div class="say">
-      <p>To close: DVConf puts real-time conferencing on untrusted, spare capacity, with per-session, dual-signed evidence anchoring reward and failover on-chain — and we've been deliberate about what's measured, what's projected, and what's still open.</p>
-      <p>Thank you.</p>
-      <p>We'd be glad to take your questions.</p>
+      <p>To close. DVConf's contribution is decentralised <em>evidence and settlement</em> over an operator-run media plane — per-session, dual-signed, driving reward and failover on-chain.</p>
+      <p>We measured what we could, labelled our projections, and named what stays open.</p>
+      <p>Thank you. We'd be glad to take your questions.</p>
     </div>
   </div>
 
