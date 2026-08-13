@@ -96,15 +96,15 @@
 
 <div class="bar">
   <b>DVConf — presenter cue sheet</b>
-  <span class="hint">Deck @ 0621fee · 31 slides. Match the deck's active dot → jump here. <span style="font-family:ui-monospace,Menlo,monospace">▸</span> = press next.</span>
-  <input id="jump" type="number" min="1" max="31" placeholder="#" title="Type a slide number, press Enter" />
+  <span class="hint">Deck @ 2e34cbc · 32 slides. Match the deck's active dot → jump here. <span style="font-family:ui-monospace,Menlo,monospace">▸</span> = press next.</span>
+  <input id="jump" type="number" min="1" max="32" placeholder="#" title="Type a slide number, press Enter" />
   <button id="theme">Light / Dark</button>
   <span class="hint">Keys: ↓/↑ or n/p = next/prev card · digit = jump box</span>
 </div>
 
 <div class="wrap">
 
-  <div class="sec">Quang — slides 1–16 · ~10:40 at 130 wpm</div>
+  <div class="sec">Quang — slides 1–17 · ~10:40 at 130 wpm</div>
 
   <div class="card" id="s1">
     <div class="head"><span class="num">1</span><span class="title">Cover</span><span class="id">title · 0:00 · ~20s</span></div>
@@ -187,38 +187,40 @@
   </div>
 
   <div class="card" id="s7">
-    <div class="head"><span class="num">7</span><span class="title">Client, Relay, and Sui Chain</span><span class="id">architecture · 3:03 · ~78s</span></div>
+    <div class="head"><span class="num">7</span><span class="title">Client, Relay, and Sui Chain</span><span class="id">architecture · 3:03 · ~83s · NO CLICKS</span></div>
     <div class="say">
-      <p>Here is DVConf — four off-chain roles and a chain.</p>
-      <p><span class="clk">▸×3</span>The client is a browser — a standard WebRTC peer. It reaches the relay over one WebSocket, media and signaling together. The relay is a mediasoup SFU: it forwards everyone's media to everyone else.</p>
-      <p><span class="clk">▸×2</span>The validator daemon probes that relay from outside — a canary probe plus STUN latency checks — so quality is not self-reported.</p>
-      <p><span class="clk">▸×2</span>The cp-daemon is the control plane: pairing, TURN credentials, failover.</p>
-      <p><span class="clk">▸×5</span>And the Sui chain holds the registry, the assignments, the SessionProofs, and settlement — in Move.</p>
+      <p>Here is DVConf — four off-chain roles around a chain. <em>(Static diagram — nothing to click; walk it by pointing.)</em></p>
+      <p>In the middle: the Sui chain — registry, assignments, SessionProofs, settlement, in Move — the one ledger every role reads and writes independently.</p>
+      <p>The client is a browser — a standard WebRTC peer. It reaches the relay over one WebSocket, media and signaling together. The relay is a mediasoup SFU: it forwards everyone's media to everyone else.</p>
+      <p>The validator daemon probes that relay from outside — a canary probe plus STUN latency checks — so quality is not self-reported.</p>
+      <p>The cp-daemon is the control plane: pairing, TURN credentials, failover.</p>
       <p>Media never touches the chain.</p>
       <p>One honest note: TURN, in our build, was credential issuance only — the TURN data plane never ran.</p>
       <p>And the relay terminates transport encryption, so by itself it <em>can</em> see media.</p>
       <p>Our answer is SFrame content encryption: frames encrypt in the user's browser, and with it on, the relay forwards ciphertext it holds no media key for.</p>
       <p>In a matched cloud-WAN test, the encrypted arm differed by about <b>+1.86 milliseconds</b> on the mean — an upper bound on SFrame overhead; the tail is unresolved.</p>
     </div>
-    <div class="cue">Never "the encryption costs 1.86 ms". Never bare "the relay never sees your video" — "with it on" is the qualifier that must survive. Opt-in / fails-open: NOT spoken anywhere on stage (08-13 2nd round) — Q&amp;A owns them (W-04). SHORT VARIANT: drop the +1.86 sentence — number moves to Q&amp;A.</div>
+    <div class="cue">@2e34cbc: static ArchitectureMesh, stepsCount 0 — the old ▸×12 cues are GONE. Never "the encryption costs 1.86 ms". Never bare "the relay never sees your video" — "with it on" must survive. Opt-in / fails-open: NOT spoken anywhere on stage — Q&amp;A owns them (W-04). SHORT VARIANT: drop the +1.86 sentence — number moves to Q&amp;A.</div>
   </div>
 
   <div class="card" id="s8">
-    <div class="head"><span class="num">8</span><span class="title">Session Lifecycle</span><span class="id">session-lifecycle · 4:15 · ~37s</span></div>
+    <div class="head"><span class="num">8</span><span class="title">Session Lifecycle</span><span class="id">session-lifecycle · 4:28 · ~43s</span></div>
     <div class="say">
-      <p>One session, end to end.</p>
-      <p><span class="clk">▸×3</span>A node registers — stake and capability. A caller creates a room, and an escrow that funds it.</p>
-      <p><span class="clk">▸×2</span>Assignment: the cp-daemons score candidates, and a quorum — more than two-thirds — ratifies the pairing on-chain.</p>
-      <p><span class="clk">▸×2</span>Setup issues ICE, DTLS, and TURN credentials.</p>
-      <p><span class="clk">▸×2</span>Then media runs — the SFU forwards, nodes heartbeat.</p>
-      <p><span class="clk">▸×4</span>Close ends the session, and settlement pays the relay — or records a slash obligation.</p>
+      <p>One session — two tracks that meet in the middle.</p>
+      <p><span class="clk">▸</span>A node stakes; the CP quorum votes its role in.</p>
+      <p><span class="clk">▸×3</span>A caller creates a room — no relay yet — and funds it with an escrow, a separate transaction.</p>
+      <p><span class="clk">▸×3</span>Assignment is where they meet: the cp-daemons score the funded room, and a quorum — more than two-thirds — ratifies the pairing on-chain.</p>
+      <p><span class="clk">▸×2</span>Setup: ICE and DTLS; the relay fetches its TURN credential from the cp-daemon.</p>
+      <p><span class="clk">▸×2</span>Media runs — the SFU forwards; standby and canary alongside.</p>
+      <p><span class="clk">▸×2</span>Close is creator-only.</p>
+      <p><span class="clk">▸×2</span>Settlement pays — or records a slash obligation.</p>
       <p>Evidence flows on-chain. Packets don't.</p>
     </div>
-    <div class="cue">Quorum wording matches the new sublabel (≥2/3 active CPs). The 4-of-5 / single-host boundary stays in Q&amp;A.</div>
+    <div class="cue">15 beats (1+3+3+2+2+2+2) @2e34cbc: role is CP-quorum-voted (old "stake and capability" is gone); escrow = separate tx; the relay fetches TURN from cp-daemon. Speak one quorum number only (pairing ≥2/3); role-vote's 2/3 unspoken. 4-of-5 / single-host stays Q&amp;A.</div>
   </div>
 
   <div class="card" id="s9">
-    <div class="head"><span class="num">9</span><span class="title">Dual-Signed SessionProof</span><span class="id">session-proof · 4:52 · ~39s</span></div>
+    <div class="head"><span class="num">9</span><span class="title">Dual-Signed SessionProof</span><span class="id">session-proof · 5:13 · ~39s</span></div>
     <div class="say">
       <p>This is the accountability core.</p>
       <p><span class="clk">▸×2</span>One validator holds two wallets — an identity wallet, and a session wallet publicly mapped to it.</p>
@@ -231,33 +233,50 @@
   </div>
 
   <div class="card" id="s10">
-    <div class="head"><span class="num">10</span><span class="title">Economic Layer: Rewards &amp; Slashing</span><span class="id">economic-layer · 5:43 · ~30s</span></div>
+    <div class="head"><span class="num">10</span><span class="title">Economic Layer: Funding, Measurement &amp; Rewards</span><span class="id">economic-layer · 5:52 · ~33s</span></div>
     <div class="say">
-      <p>The economics run off that proof.</p>
-      <p><span class="clk">▸×3</span>A stored proof feeds a quality check.</p>
-      <p><span class="clk">▸×2</span>Good quality: a permissionless <em>distribute_rewards</em> splits the room's escrow across four role pools. Payout follows <b>attested quality</b> — not bytes, not stake.</p>
-      <p><span class="clk">▸×2</span>Zero quality: the chain records a <em>RelaySlashed</em> obligation.</p>
-      <p><span class="clk">▸×2</span>Collecting it is <em>pay_slash</em> — a <em>cooperative</em> call, authorised by the relay.</p>
-      <p>One proof drives both outcomes, with no operator in the loop.</p>
+      <p>The economics follow the escrow.</p>
+      <p><span class="clk">▸×3</span>The client funds it up front; the session runs; every validator measures independently.</p>
+      <p><span class="clk">▸×2</span>Each submits a dual-signed proof.</p>
+      <p><span class="clk">▸×2</span>The chain takes a per-relay median — fewer than two distinct validators, no payout at all.</p>
+      <p><span class="clk">▸×2</span>The median sets a quality multiplier — the tiers are on the card.</p>
+      <p><span class="clk">▸×2</span>Then a permissionless <em>distribute_rewards</em> splits it across the role pools, scarcity-weighted.</p>
+      <p>Payout follows <b>attested quality</b>, with no operator in the loop.</p>
     </div>
-    <div class="cue">W-01/W-02 NOT spoken here (08-13 2nd round) — Q&amp;A-only; "obligation" + "cooperative call, authorised by the relay" are the load-bearing qualifiers, keep them. Still banned: "automatic slashing", "three-of-four ships".</div>
+    <div class="cue">DO NOT read the on-slide base_rate × median_bytes formula (F-43: post-submission only — graded build is NOT byte-proportional; if probed, answer from F-43's scarcity-ratio computation). Do NOT count the pools aloud (card says three, F-43 says four — deck-fix pending Van). Tiers + 500–8,000 bps clamp: point at the cards. Slashing = next slide. W-01/W-02 stay Q&amp;A-only; banned: "automatic slashing", "three-of-four ships".</div>
   </div>
 
   <div class="card" id="s11">
-    <div class="head"><span class="num">11</span><span class="title">Self-Healing: Relay Failover</span><span class="id">failover · 6:26 · ~39s</span></div>
+    <div class="head"><span class="num">11</span><span class="title">Three Distinct Ways to Lose Stake</span><span class="id">economic-layer-slashing · 6:27 · ~31s · NEW @2e34cbc</span></div>
     <div class="say">
-      <p>Failover, concretely.</p>
-      <p><span class="clk">▸×2</span>Every room carries a warm standby — a paused transport, pipe already up.</p>
-      <p><span class="clk">▸×3</span>The cp-daemon watches heartbeats. Three epochs stale, and the primary is out.</p>
-      <p><span class="clk">▸×2</span>Then <em>anyone</em> can call <em>promote_relay</em>. No admin key. No capability object.</p>
-      <p><span class="clk">▸×2</span>The on-chain commit lands in about <b>one-and-a-half to two seconds</b> — median one-point-six.</p>
-      <p>That number is the chain commit — not what a user sees.</p>
-      <p>The full recovery story is in the evaluation: mine, and Van's live kills.</p>
+      <p>Three ways to lose stake, all on-chain.</p>
+      <p><span class="clk">▸</span>The triggers: a zero-quality session, proven canary fraud, or a liveness vote.</p>
+      <p><span class="clk">▸</span>Two are punitive; the liveness path only ejects.</p>
+      <p><span class="clk">▸</span>Stake: the QoS slash is an <em>obligation</em> — collected by <em>pay_slash</em>, a <em>cooperative</em>, relay-authorised call. Ejection returns the stake in full.</p>
+      <p><span class="clk">▸</span>Proven fraud pays the room creator.</p>
+      <p><span class="clk">▸</span>And ejection applies to any role.</p>
+      <p>Self-reported degradation is advisory; it never touches stake.</p>
     </div>
+    <div class="cue">5 clicks = 5 table rows. The cell numbers (10% slash, canary fixed %, 2/3 vote, &gt;10% loss) are NOT in 00-facts — point at the table, never read them; if probed → F-30/W-02 + F-43. "Obligation" + "cooperative, relay-authorised" are mandatory. NEVER "automatic slashing". W-01/W-02 = Q&amp;A-only.</div>
   </div>
 
   <div class="card" id="s12">
-    <div class="head"><span class="num">12</span><span class="title">3.1 Origin Test · Four Dimensions</span><span class="id">evaluation-methodology · 7:05 · ~32s</span></div>
+    <div class="head"><span class="num">12</span><span class="title">Self-Healing: Local Recovery, Chain Confirms Later</span><span class="id">failover · 7:01 · ~48s</span></div>
+    <div class="say">
+      <p>Failover. Recovery is local — the chain confirms later.</p>
+      <p><span class="clk">▸×3</span>Every room runs a warm standby that probes the primary every second, relay to relay.</p>
+      <p><span class="clk">▸×3</span>The client holds a pre-warmed, paused line to that same standby.</p>
+      <p><span class="clk">▸×2</span>Three missed probes — about three seconds — and the standby promotes itself. No chain transaction.</p>
+      <p><span class="clk">▸×2</span>The client cuts over on its own when the stream goes silent — also chain-free.</p>
+      <p><span class="clk">▸×2</span>The chain trails behind: <em>promote_relay</em>, permissionless — no admin key, no capability object.</p>
+      <p><span class="clk">▸×2</span>Its commit lands in about <b>one-and-a-half to two seconds</b> — median one-point-six — an audit record, not the recovery.</p>
+      <p>The user-visible story is the evaluation's job: mine, and Van's live kills.</p>
+    </div>
+    <div class="cue">Rebuilt @2e34cbc: fast path = relay-local self-promotion + independent client cutover; promote_relay = trailing audit record. 1000 ms probe / ~3 s are design constants printed on the slide — echo, never present as measured results. Governed anchors: F-25 (permissionless, no AdminCap), F-44a (~1.6–2.0 s, median 1.6). Measured artifacts stay slide 17 + Van's 3.3/3.4.</div>
+  </div>
+
+  <div class="card" id="s13">
+    <div class="head"><span class="num">13</span><span class="title">3.1 Origin Test · Four Dimensions</span><span class="id">evaluation-methodology · 7:51 · ~32s</span></div>
     <div class="say">
       <p>Our origin test — section 3.1 — has four dimensions.</p>
       <p>The evidence class comes before any number.</p>
@@ -269,8 +288,8 @@
     <div class="cue">Card now reads "Fee" (L-2 fixed 08-13) — say it as printed.</div>
   </div>
 
-  <div class="card" id="s13">
-    <div class="head"><span class="num">13</span><span class="title">Latency</span><span class="id">eval-latency · 7:41 · ~48s</span></div>
+  <div class="card" id="s14">
+    <div class="head"><span class="num">14</span><span class="title">Latency</span><span class="id">eval-latency · 8:23 · ~48s</span></div>
     <div class="say">
       <p>Latency. Thirty wide-area sessions.</p>
       <p>The one-way component-sum: <b>64.8 milliseconds</b> at the median, <b>70.9</b> at the ninety-fifth percentile.</p>
@@ -286,8 +305,8 @@
     <div class="cue">Deck fixed 08-13: p99 bar removed, neutral title. Discipline unchanged — speak p50/p95 only, never say the target was met. SHORT: "p95 70.9 ms — a declared lower bound; synthetic camera, one access network; sub-200 unresolved."</div>
   </div>
 
-  <div class="card" id="s14">
-    <div class="head"><span class="num">14</span><span class="title">Fee</span><span class="id">eval-cost · 8:29 · ~46s</span></div>
+  <div class="card" id="s15">
+    <div class="head"><span class="num">15</span><span class="title">Fee</span><span class="id">eval-cost · 9:11 · ~46s</span></div>
     <div class="say">
       <p>The on-chain <b>fee</b>.</p>
       <p>One full session, executed end to end: two relays, four validators — thirteen transactions, on a pinned localnet.</p>
@@ -302,8 +321,8 @@
     <div class="cue">Title now "On-Chain Fee per Session" (M-2 fixed 08-13). Six gas bars now governed (F-46, thesis §5.3.2) — discuss if asked, don't read all six in the talk. USD 0.0257 = Q&amp;A only, never as "SUI". SHORT: "irreversible ~0.017 SUI, ~five cents net at a labelled 1.50-dollar SUI — localnet, not mainnet, not three-of-four."</div>
   </div>
 
-  <div class="card" id="s15">
-    <div class="head"><span class="num">15</span><span class="title">Capacity: Measured to N=15, Projected to N=100</span><span class="id">eval-capacity · 9:15 · ~38s</span></div>
+  <div class="card" id="s16">
+    <div class="head"><span class="num">16</span><span class="title">Capacity: Measured to N=15, Projected to N=100</span><span class="id">eval-capacity · 9:57 · ~38s</span></div>
     <div class="say">
       <p>Capacity. One room, ramped to fifteen viewers.</p>
       <p>Look at the line: relay CPU goes from about two percent of a core to five.</p>
@@ -316,8 +335,8 @@
     <div class="cue">Never "100 users" as achieved → "measured through N=15; N=100 is a projected planning estimate".</div>
   </div>
 
-  <div class="card" id="s16">
-    <div class="head"><span class="num">16</span><span class="title">Failover: Warm-Pipe Mechanism Floor</span><span class="id">eval-failover · 9:53 · ~39s</span></div>
+  <div class="card" id="s17">
+    <div class="head"><span class="num">17</span><span class="title">Failover: Warm-Pipe Mechanism Floor</span><span class="id">eval-failover · 10:35 · ~39s</span></div>
     <div class="say">
       <p>Failover, measured. Thirty cutovers on a real mediasoup warm pipe. <b>Zero failures.</b></p>
       <p>Detection-plus-resume: <b>58 milliseconds</b> median, <b>74</b> at p95, <b>80</b> at p99.</p>
@@ -331,9 +350,9 @@
     <div class="cue">Failover p99=80 IS reportable (unlike latency p99). "Mechanism floor, not MTTR." Last line = live hand-off to Van.</div>
   </div>
 
-  <div class="handoff" id="s17">
-    <h3>▸ VAN — slides 17–28 · 3.2 Quality Baseline + 3.3/3.4 Resilience (pending-van)</h3>
-    <p class="ids">17 divider-4-2 (3.2) · 18–20 eval-r1-* · 21 divider-4-3 (3.3, 2 kills, 5.8–7.0s) · 22–24 eval-r2-* · 25 divider-4-5 (3.4, 4 kills, 7.6–19.6s) · 26–28 eval-r4-*</p>
+  <div class="handoff" id="s18">
+    <h3>▸ VAN — slides 18–29 · 3.2 Quality Baseline + 3.3/3.4 Resilience (pending-van)</h3>
+    <p class="ids">18 divider-4-2 (3.2) · 19–21 eval-r1-* · 22 divider-4-3 (3.3, 2 kills, 5.8–7.0s) · 23–25 eval-r2-* · 26 divider-4-5 (3.4, 4 kills, 7.6–19.6s) · 27–29 eval-r4-*</p>
     <p>Numbers not in <em>00-facts</em> — Van confirms before anyone speaks them. Traps:</p>
     <p>R-1 · 3.2's "~70–80 ms" ≠ 3.1's 70.9 ms lower bound — different methods; never merge them.</p>
     <p>R-4 · "25 workers" / "15 workers" = infra processes (services × VMs), NOT users.</p>
@@ -341,10 +360,10 @@
     <p>Relay kills were manual, out-of-band (not in scenario.toml) — keep that disclosed. The eval-r2-summary "5 and 10 bots" bullet was fixed 08-13 (now "baseline for the 10-bot run in 3.4").</p>
   </div>
 
-  <div class="sec">Quang resumes — slides 29–31 · ~1:20</div>
+  <div class="sec">Quang resumes — slides 30–32 · ~1:20</div>
 
-  <div class="card" id="s29">
-    <div class="head"><span class="num">29</span><span class="title">Limitations &amp; Future Work</span><span class="id">limitations · ~32s</span></div>
+  <div class="card" id="s30">
+    <div class="head"><span class="num">30</span><span class="title">Limitations &amp; Future Work</span><span class="id">limitations · ~32s</span></div>
     <div class="say">
       <p>Thank you, Van. The limits we name ourselves.</p>
       <p><span class="clk">▸</span>A proof does not cryptographically bind the relay to the room.</p>
@@ -356,16 +375,16 @@
     <div class="cue">08-13 2nd round: the three verbal adds (E2EE fail-open, AdminCap, no threat model) are CUT — Q&amp;A-only (pack rows Q-C4-1, Q-C5-5, E2EE disposition). Speak only what the slide shows. Fail-open is now spoken NOWHERE on stage.</div>
   </div>
 
-  <div class="card" id="s30">
-    <div class="head"><span class="num">30</span><span class="title">References</span><span class="id">references · ~8s</span></div>
+  <div class="card" id="s31">
+    <div class="head"><span class="num">31</span><span class="title">References</span><span class="id">references · ~8s</span></div>
     <div class="say">
       <p>Our sources are on screen — the WebRTC and DTLS-SRTP RFCs, Huddle01's documentation, and the BFT literature.</p>
     </div>
     <div class="cue">Optional — can stay silent while setting up Q&amp;A.</div>
   </div>
 
-  <div class="card" id="s31">
-    <div class="head"><span class="num">31</span><span class="title">Questions?</span><span class="id">closing · ~22s</span></div>
+  <div class="card" id="s32">
+    <div class="head"><span class="num">32</span><span class="title">Questions?</span><span class="id">closing · ~22s</span></div>
     <div class="say">
       <p>To close. DVConf's contribution is decentralised <em>evidence and settlement</em> over an operator-run media plane — per-session, dual-signed, driving reward and failover on-chain.</p>
       <p>We measured what we could, labelled our projections, and named what stays open.</p>
