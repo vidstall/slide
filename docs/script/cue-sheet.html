@@ -187,7 +187,7 @@
   </div>
 
   <div class="card" id="s7">
-    <div class="head"><span class="num">7</span><span class="title">Client, Relay, and Sui Chain</span><span class="id">architecture · 3:03 · ~72s</span></div>
+    <div class="head"><span class="num">7</span><span class="title">Client, Relay, and Sui Chain</span><span class="id">architecture · 3:03 · ~78s</span></div>
     <div class="say">
       <p>Here is DVConf — four off-chain roles and a chain.</p>
       <p><span class="clk">▸×3</span>The client is a browser — a standard WebRTC peer. It reaches the relay over one WebSocket, media and signaling together. The relay is a mediasoup SFU: it forwards everyone's media to everyone else.</p>
@@ -195,13 +195,12 @@
       <p><span class="clk">▸×2</span>The cp-daemon is the control plane: pairing, TURN credentials, failover.</p>
       <p><span class="clk">▸×5</span>And the Sui chain holds the registry, the assignments, the SessionProofs, and settlement — in Move.</p>
       <p>Media never touches the chain.</p>
-      <p>Two honest notes.</p>
-      <p>TURN, in our build, was credential issuance only — the TURN data plane never ran.</p>
+      <p>One honest note: TURN, in our build, was credential issuance only — the TURN data plane never ran.</p>
       <p>And the relay terminates transport encryption, so by itself it <em>can</em> see media.</p>
-      <p>Content-blindness is an opt-in layer — SFrame — and it fails open.</p>
+      <p>Our answer is SFrame content encryption: frames encrypt in the user's browser, and with it on, the relay forwards ciphertext it holds no media key for.</p>
       <p>In a matched cloud-WAN test, the encrypted arm differed by about <b>+1.86 milliseconds</b> on the mean — an upper bound on SFrame overhead; the tail is unresolved.</p>
     </div>
-    <div class="cue">Never "the encryption costs 1.86 ms". Never bare "the relay never sees your video". SHORT VARIANT: drop the +1.86 sentence, keep "opt-in SFrame that fails open" — number moves to Q&amp;A.</div>
+    <div class="cue">Never "the encryption costs 1.86 ms". Never bare "the relay never sees your video" — "with it on" is the qualifier that must survive. Opt-in / fails-open: NOT spoken anywhere on stage (08-13 2nd round) — Q&amp;A owns them (W-04). SHORT VARIANT: drop the +1.86 sentence — number moves to Q&amp;A.</div>
   </div>
 
   <div class="card" id="s8">
@@ -219,34 +218,29 @@
   </div>
 
   <div class="card" id="s9">
-    <div class="head"><span class="num">9</span><span class="title">Dual-Signed SessionProof</span><span class="id">session-proof · 4:52 · ~51s</span></div>
+    <div class="head"><span class="num">9</span><span class="title">Dual-Signed SessionProof</span><span class="id">session-proof · 4:52 · ~39s</span></div>
     <div class="say">
       <p>This is the accountability core.</p>
       <p><span class="clk">▸×2</span>One validator holds two wallets — an identity wallet, and a session wallet publicly mapped to it.</p>
       <p><span class="clk">▸×3</span>Both sign the <em>same</em> nine-field measurement message: room, relay, packets, bytes, peers, duration, latency, loss, jitter.</p>
       <p><span class="clk">▸×2</span>Both public keys and both Ed25519 signatures go into the transaction.</p>
       <p><span class="clk">▸×2</span>The chain verifies them, stores the measurement — and discards the signatures.</p>
-      <p>Two things to be exact about.</p>
-      <p>This is dual-signing, not consensus — validators agree only later, at settlement.</p>
-      <p>And the probe leans on relay-reported counters; it does not prove this relay served this room.</p>
-      <p>That binding gap is ours, and it's in the limitations.</p>
+      <p>One thing to be exact about: this is dual-signing, not consensus — validators agree only later, at settlement.</p>
     </div>
-    <div class="cue">Say "dual-signed", NEVER "consensus-signed". State the binding gap unprompted (W-03).</div>
+    <div class="cue">Say "dual-signed", NEVER "consensus-signed". 08-13 2nd round: W-03 binding gap NOT flagged here — slide 29 bullet + Q&amp;A own it; if probed, answer from the pack's trap row.</div>
   </div>
 
   <div class="card" id="s10">
-    <div class="head"><span class="num">10</span><span class="title">Economic Layer: Rewards &amp; Slashing</span><span class="id">economic-layer · 5:43 · ~43s</span></div>
+    <div class="head"><span class="num">10</span><span class="title">Economic Layer: Rewards &amp; Slashing</span><span class="id">economic-layer · 5:43 · ~30s</span></div>
     <div class="say">
       <p>The economics run off that proof.</p>
       <p><span class="clk">▸×3</span>A stored proof feeds a quality check.</p>
       <p><span class="clk">▸×2</span>Good quality: a permissionless <em>distribute_rewards</em> splits the room's escrow across four role pools. Payout follows <b>attested quality</b> — not bytes, not stake.</p>
       <p><span class="clk">▸×2</span>Zero quality: the chain records a <em>RelaySlashed</em> obligation.</p>
       <p><span class="clk">▸×2</span>Collecting it is <em>pay_slash</em> — a <em>cooperative</em> call, authorised by the relay.</p>
-      <p>Designed: automatic seizure. Implemented: this obligation ledger.</p>
-      <p>Same honesty on settlement — designed three-of-four; implemented two proofs and their mean.</p>
       <p>One proof drives both outcomes, with no operator in the loop.</p>
     </div>
-    <div class="cue">Designed-vs-Implemented slide is GONE — the W-01/W-02 concessions live in these two spoken breaths now. Still banned: "automatic slashing", "three-of-four ships".</div>
+    <div class="cue">W-01/W-02 NOT spoken here (08-13 2nd round) — Q&amp;A-only; "obligation" + "cooperative call, authorised by the relay" are the load-bearing qualifiers, keep them. Still banned: "automatic slashing", "three-of-four ships".</div>
   </div>
 
   <div class="card" id="s11">
@@ -263,7 +257,7 @@
   </div>
 
   <div class="card" id="s12">
-    <div class="head"><span class="num">12</span><span class="title">3.1 Origin Test · Four Dimensions</span><span class="id">evaluation-methodology · 7:05 · ~36s</span></div>
+    <div class="head"><span class="num">12</span><span class="title">3.1 Origin Test · Four Dimensions</span><span class="id">evaluation-methodology · 7:05 · ~32s</span></div>
     <div class="say">
       <p>Our origin test — section 3.1 — has four dimensions.</p>
       <p>The evidence class comes before any number.</p>
@@ -271,7 +265,6 @@
       <p><span class="clk">▸</span><b>Fee</b> — the thesis chapter is titled Fee: one full session, on a pinned localnet only.</p>
       <p><span class="clk">▸</span><b>Capacity</b>: measured to fifteen viewers; one hundred is a <em>projection</em>.</p>
       <p><span class="clk">▸</span><b>Failover</b>: a mechanism floor from thirty cutovers — not full recovery.</p>
-      <p>Nothing here is dressed up as more than it is.</p>
     </div>
     <div class="cue">Card now reads "Fee" (L-2 fixed 08-13) — say it as printed.</div>
   </div>
@@ -324,12 +317,12 @@
   </div>
 
   <div class="card" id="s16">
-    <div class="head"><span class="num">16</span><span class="title">Failover: Warm-Pipe Mechanism Floor</span><span class="id">eval-failover · 9:53 · ~46s</span></div>
+    <div class="head"><span class="num">16</span><span class="title">Failover: Warm-Pipe Mechanism Floor</span><span class="id">eval-failover · 9:53 · ~39s</span></div>
     <div class="say">
       <p>Failover, measured. Thirty cutovers on a real mediasoup warm pipe. <b>Zero failures.</b></p>
       <p>Detection-plus-resume: <b>58 milliseconds</b> median, <b>74</b> at p95, <b>80</b> at p99.</p>
       <p>The honest label: this is a <b>mechanism floor</b> — not recovery time.</p>
-      <p>The bench closes the primary's sink while the pipe stays live, so it is optimistic by construction.</p>
+      <p>The bench closes the primary's sink while the pipe stays live.</p>
       <p>And full user-visible recovery was not measured in this origin test.</p>
       <p>That open end is exactly where Van picks up.</p>
       <p>His resilience runs kill real relays, on live Azure hosts — and measure the downtime users actually see.</p>
@@ -351,17 +344,16 @@
   <div class="sec">Quang resumes — slides 29–31 · ~1:20</div>
 
   <div class="card" id="s29">
-    <div class="head"><span class="num">29</span><span class="title">Limitations &amp; Future Work</span><span class="id">limitations · ~48s</span></div>
+    <div class="head"><span class="num">29</span><span class="title">Limitations &amp; Future Work</span><span class="id">limitations · ~32s</span></div>
     <div class="say">
       <p>Thank you, Van. The limits we name ourselves.</p>
-      <p><span class="clk">▸</span>A proof does not cryptographically bind the relay to the room — the gap I flagged at the SessionProof.</p>
+      <p><span class="clk">▸</span>A proof does not cryptographically bind the relay to the room.</p>
       <p><span class="clk">▸</span>The fee is localnet-only. No mainnet cross-check.</p>
       <p><span class="clk">▸</span>Latency and failover are lower bounds — no capture-to-paint measurement in the origin test.</p>
-      <p>Three more the slide keeps short: encryption is opt-in and it fails open. A broad set of operations still sits under the deployer's AdminCap. And there is no project-wide threat model yet.</p>
       <p><span class="clk">▸×2</span>The forward point is the real one. This architecture is designed for idle, churning nodes — but every experiment ran on reliable infrastructure.</p>
       <p>Real volunteer churn is the honest next step.</p>
     </div>
-    <div class="cue">The three added concessions (E2EE opt-in, AdminCap, no threat model) are SPOKEN, not on the slide. SHORT: keep the three slide items + churn point; move the adds to Q&amp;A.</div>
+    <div class="cue">08-13 2nd round: the three verbal adds (E2EE fail-open, AdminCap, no threat model) are CUT — Q&amp;A-only (pack rows Q-C4-1, Q-C5-5, E2EE disposition). Speak only what the slide shows. Fail-open is now spoken NOWHERE on stage.</div>
   </div>
 
   <div class="card" id="s30">

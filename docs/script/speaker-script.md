@@ -30,21 +30,21 @@ Number authority: **`00-facts.md`** (Section A registry, Section C stances, Sect
 | `title` | 1 | ok (deck-fixed 08-13) | Cover now carries "Supervisor: Assoc. Prof. Nguyen Dinh Thuc" (L-5 closed). 08-13 decision: Assoc. Prof. Thuc only — the progress form also names Sr. Lect. Do Hoang Cuong, kept off the cover. Project code stays off; verbal credit kept. |
 | `idle-capacity-gap` | 4 | note | `cost-problem` slide was removed — the cloud-cost framing survives as one spoken sentence here. |
 | `huddle01-tradeoffs` | 5 | note | `huddle01-intro` slide was removed — who-Huddle01-is is one spoken sentence here. Subtitle trimmed 08-13: the $37M / 840M-min figures are now truly off the deck; do not volunteer them (Q&A only, cited [004,011]). |
-| `architecture` | 7 | diverge -> H-4 | (L-3 closed 08-13: "coturn TURN" removed from the relay node; the TURN-issuance-only note stays spoken.) (H-4) still **no E2EE slide** — the +1.86 ms upper bound is a spoken aside; short variant drops it. Also absorbs a one-breath WebRTC gloss (the `webrtc-framework` slide was removed). |
+| `architecture` | 7 | diverge -> H-4 | (L-3 closed 08-13: "coturn TURN" removed from the relay node; the TURN-issuance-only note stays spoken.) (H-4) still **no E2EE slide** — the +1.86 ms upper bound is a spoken aside; short variant drops it. Also absorbs a one-breath WebRTC gloss (the `webrtc-framework` slide was removed). 08-13 2nd round: E2EE framing flipped **solution-first** — opt-in/fails-open unspoken here (slide 29 + Q&A own W-04); the "with it on" qualifier is mandatory (Section D). |
 | `session-lifecycle` | 8 | ok (deck-change) | Assignment is now "cp-daemon quorum (>=2/3 active CPs) ratifies pairing on-chain" — script updated to match; single-host boundary of the quorum run stays Q&A. |
-| `economic-layer` | 10 | note | `designed-vs-implemented` slide was removed. The two mandatory concessions (W-01 settlement = 2 proofs + mean; W-02 slashing = cooperative obligation, not seizure) are now **spoken here**, one breath each. Never "automatic slashing", never "three-of-four ships". |
+| `economic-layer` | 10 | note | `designed-vs-implemented` slide was removed. 08-13 2nd round: **W-01/W-02 no longer spoken** — Q&A-only; the spoken mechanism keeps the qualifiers ("obligation", "cooperative call, authorised by the relay"). Never "automatic slashing", never "three-of-four ships". |
 | `evaluation-methodology` | 12 | ok (deck-fixed 08-13) | Card now reads **"Fee"** (L-2 closed — Section D / F-41). |
 | `eval-latency` | 13 | ok (deck-fixed 08-13) | H-1/H-2 closed: **p99 bar removed** (F-02) and title now neutral ("Wide-Area One-Way Component-Sum"). Discipline unchanged: p50/p95 only, target **unresolved**. |
 | `eval-cost` | 14 | ok (F-46 enrolled 08-13) | Title **"On-Chain Fee per Session"** (M-2 closed). Six gas bars now governed by **F-46** (§5.3.2 table + `m8-cost-empirical` raw) — fine to discuss if asked; don't read all six in the talk (time). Stat cards 0.017 / 0.035 SUI correct (H-3, L-1 fixed 2026-08-13). |
 | `eval-failover` | 16 | ok (+bridge) | Adds a hand-off bridge: origin test did not measure full recovery; **Van's 3.3/3.4 kill real relays and measure downtime**. Keeps W-08 discipline: mechanism floor, not MTTR. 08-13 decision: the spoken **8-15 s budget line was removed** from this block — budget is Q&A-only (see W-08-live note in Phase B). |
 | `divider-4-2` .. `eval-r4-summary` | 17-28 | pending-van | Van's runs; numbers not in `00-facts`. See PHASE B notes — includes the **new 19.6 s vs 8-15 s budget trap**. |
-| `limitations` | 29 | diverge -> M-3 | Script adds, verbally: E2EE opt-in/fails-open (W-04), AdminCap breadth (W-10), no threat model (W-17). All raised by the thesis itself. |
+| `limitations` | 29 | ok (08-13 2nd round) | The M-3 verbal adds (W-04, W-10, W-17) were **cut** — script speaks only the slide's three Unresolved items + Forward. All three are Q&A-only now; fail-open is spoken nowhere on stage (s7's line carries "with it on"). |
 
 ### Delivery discipline (carried from `01-script-15min.md`)
 
 130 words/min planning ceiling. Short sentences — one idea per breath. Point at the slide ("look at the chart"). **Every number carries its boundary in the same breath.** `▸` = advance the deck one step; `▸xN` = N steps across the following sentences. Word counts approximate.
 Speaker split: **Quang** slides 1-16, **Van** slides 17-28, **Quang** resumes 29-31.
-Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Quang's first segment.
+Quang budget: **~1,470 words ≈ 11:18** (trimmed 08-13 2nd round: s9 + s10 + s12 + s16 + s29 concession cuts). Timestamps below are cumulative for Quang's first segment.
 
 ---
 
@@ -54,7 +54,7 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 
 > Good morning. Our thesis is *Innovating Video Conferencing Systems Through Blockchain*. I'm Duong Minh Quang; with me is Le Quoc Van. We work under the supervision of Assoc. Prof. Nguyen Dinh Thuc, at the University of Science. Van and I will split the talk.
 
-**Cue:** Cover now shows "Supervisor: Assoc. Prof. Nguyen Dinh Thuc" (L-5 closed; verified vs `02-slides.md` + the progress form — which also names Sr. Lect. Do Hoang Cuong; 08-13 decision keeps Thuc only). Verbal credit kept.
+**Cue:** Cover now shows "Supervisor: Assoc. Prof. Nguyen Dinh Thuc" (L-5 closed; verified vs `02-slides.md` + the progress form — which also names Sr. Lect. Do Hoang Cuong; 08-13 decision keeps Thuc only). Verbal credit kept. 08-13 2nd round: cover-authors now carries Student IDs — Le Quoc Van 22125119, Duong Minh Quang 22125081 (per the progress-report draft; the form template's 22125123 is a placeholder typo). IDs are shown, not spoken.
 
 ### 2 · `intro-video-conferencing` — Nearly a Century of Video Calling  |  0:20 · ~34s · ~74 words  |  SYNC: ok
 
@@ -107,7 +107,7 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 
 **Trace:** Matches F-39 / W-14 (combination-level novelty — DEFEND). Last line pre-empts "did you really decentralise it".
 
-### 7 · `architecture` — Client, Relay, and Sui Chain  |  3:03 · ~72s · ~156 words  |  SYNC: diverge -> H-4
+### 7 · `architecture` — Client, Relay, and Sui Chain  |  3:03 · ~78s · ~170 words  |  SYNC: diverge -> H-4
 
 > Here is DVConf — four off-chain roles and a chain.
 > ▸x3 The client is a browser — a standard WebRTC peer. It reaches the relay over one WebSocket, media and signaling together. The relay is a mediasoup SFU: it forwards everyone's media to everyone else.
@@ -115,10 +115,11 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 > ▸x2 The cp-daemon is the control plane: pairing, TURN credentials, failover.
 > ▸x5 And the Sui chain holds the registry, the assignments, the SessionProofs, and settlement — in Move.
 > Media never touches the chain.
-> Two honest notes. TURN, in our build, was credential issuance only — the TURN data plane never ran. And the relay terminates transport encryption, so by itself it *can* see media. Content-blindness is an opt-in layer — SFrame — and it fails open. In a matched cloud-WAN test, the encrypted arm differed by about **+1.86 milliseconds** on the mean — an upper bound on SFrame overhead; the tail is unresolved.
+> One honest note: TURN, in our build, was credential issuance only — the TURN data plane never ran.
+> And the relay terminates transport encryption, so by itself it *can* see media. Our answer is SFrame content encryption: frames encrypt in the user's browser, and with it on, the relay forwards ciphertext it holds no media key for. In a matched cloud-WAN test, the encrypted arm differed by about **+1.86 milliseconds** on the mean — an upper bound on SFrame overhead; the tail is unresolved.
 
-**Trace:** F-28 (TURN issuance only, data plane never ran — said aloud; L-3 closed 08-13, coturn off the relay node), F-32 (E2EE opt-in, fails open), F-06 (+1.86 ms upper bound; never "the encryption costs 1.86 ms"). **H-4:** still no E2EE slide — the aside has no visual home. Deck-change: cp-daemon node + canary-probe sublabel narrated. The removed WebRTC slide survives as "standard WebRTC peer" + the transport-encryption note; never say bare "end-to-end encrypted" of the relay path (Section D).
-**Short variant:** drop the +1.86 ms sentence — keep "opt-in SFrame that fails open"; number moves to Q&A.
+**Trace:** F-28 (TURN issuance only, data plane never ran — said aloud; L-3 closed 08-13, coturn off the relay node). F-32 reframed 08-13 (2nd round): **opt-in / fails-open are NOT spoken on this slide** — solution-first framing; the load-bearing qualifier is **"with it on"** (Section D: never bare "end-to-end encrypted", never unqualified relay-blindness). W-04 CONCEDE unchanged — **Q&A-only** (the s29 verbal add was also cut, 08-13 2nd round). F-06 (+1.86 ms upper bound; never "the encryption costs 1.86 ms"). **H-4:** still no E2EE slide — the aside has no visual home. Deck-change: cp-daemon node + canary-probe sublabel narrated. The removed WebRTC slide survives as "standard WebRTC peer" + the transport-encryption note.
+**Short variant:** drop the +1.86 ms sentence — keep the SFrame answer line ("with it on" must survive); number moves to Q&A.
 
 ### 8 · `session-lifecycle` — Session Lifecycle  |  4:15 · ~37s · ~81 words  |  SYNC: ok (deck-change)
 
@@ -132,27 +133,27 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 
 **Trace:** Quorum wording matches the new sublabel (>=2/3 active CPs). The 4-of-5 / single-host boundary stays in Q&A unless asked.
 
-### 9 · `session-proof` — Dual-Signed SessionProof  |  4:52 · ~51s · ~110 words  |  SYNC: ok
+### 9 · `session-proof` — Dual-Signed SessionProof  |  4:52 · ~39s · ~84 words  |  SYNC: ok (08-13 2nd round — W-03 unflagged)
 
 > This is the accountability core.
 > ▸x2 One validator holds two wallets — an identity wallet, and a session wallet publicly mapped to it.
 > ▸x3 Both sign the *same* nine-field measurement message: room, relay, packets, bytes, peers, duration, latency, loss, jitter.
 > ▸x2 Both public keys and both Ed25519 signatures go into the transaction.
 > ▸x2 The chain verifies them, stores the measurement — and discards the signatures.
-> Two things to be exact about. This is dual-signing, not consensus — validators agree only later, at settlement. And the probe leans on relay-reported counters; it does not prove this relay served this room. That binding gap is ours, and it's in the limitations.
+> One thing to be exact about: this is dual-signing, not consensus — validators agree only later, at settlement.
 
-**Cue:** Say "dual-signed", never "consensus-signed". State the binding gap unprompted (W-03).
+**Cue:** Say "dual-signed", never "consensus-signed". 08-13 2nd round: the W-03 binding gap is **no longer flagged here** — slide 29's on-slide bullet + Q&A own it; if probed at this slide, answer from the Q&A pack (relay-reported counters, no room binding — the pack's most-probed trap row).
 
-### 10 · `economic-layer` — Economic Layer: Rewards & Slashing  |  5:43 · ~43s · ~93 words  |  SYNC: note
+### 10 · `economic-layer` — Economic Layer: Rewards & Slashing  |  5:43 · ~30s · ~65 words  |  SYNC: note
 
 > The economics run off that proof.
 > ▸x3 A stored proof feeds a quality check.
 > ▸x2 Good quality: a permissionless `distribute_rewards` splits the room's escrow across four role pools. Payout follows *attested quality* — not bytes, not stake.
 > ▸x2 Zero quality: the chain records a `RelaySlashed` obligation.
-> ▸x2 Collecting it is `pay_slash` — a *cooperative* call, authorised by the relay. Designed: automatic seizure. Implemented: this obligation ledger. Same honesty on settlement — designed three-of-four; implemented two proofs and their mean.
+> ▸x2 Collecting it is `pay_slash` — a *cooperative* call, authorised by the relay.
 > One proof drives both outcomes, with no operator in the loop.
 
-**Trace:** F-43 (permissionless distribute_rewards, four pools; payout tracks attested quality). W-01 + W-02 spoken here — the `designed-vs-implemented` slide is gone, so the two concessions moved into this block (one breath each). Still banned: "automatic slashing", "three-of-four ships".
+**Trace:** F-43 (permissionless distribute_rewards, four pools; payout tracks attested quality). 08-13 2nd round: **W-01 + W-02 no longer spoken here** — the designed-vs-implemented pair is **Q&A-only** (Q&A pack owns "designed 3-of-4 / automatic seizure vs obligation ledger"); the mechanism wording itself carries the truth — "obligation" + "*cooperative* call, authorised by the relay" are the load-bearing qualifiers and must survive edits. Still banned: "automatic slashing", "three-of-four ships".
 
 ### 11 · `failover` — Self-Healing: Relay Failover  |  6:26 · ~39s · ~85 words  |  SYNC: ok (deck-change)
 
@@ -165,14 +166,13 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 
 **Trace:** F-25 (permissionless, >3 epochs, no AdminCap — DEFEND for W-10), F-44a (~1.6-2.0 s, median 1.6). Watcher is now labelled "cp-daemon: Heartbeat Watcher" — narrated as cp-daemon. Sets up slide 16 and Van's 3.3/3.4.
 
-### 12 · `evaluation-methodology` — 3.1 Origin Test · Four Dimensions  |  7:05 · ~36s · ~78 words  |  SYNC: ok (deck-fixed 08-13)
+### 12 · `evaluation-methodology` — 3.1 Origin Test · Four Dimensions  |  7:05 · ~32s · ~69 words  |  SYNC: ok (deck-fixed 08-13)
 
 > Our origin test — section 3.1 — has four dimensions. The evidence class comes before any number.
 > ▸ Latency: a wide-area component sum, thirty sessions — a declared *lower bound*.
 > ▸ Fee — the thesis chapter is titled Fee: one full session, on a pinned localnet only.
 > ▸ Capacity: measured to fifteen viewers; one hundred is a *projection*.
 > ▸ Failover: a mechanism floor from thirty cutovers — not full recovery.
-> Nothing here is dressed up as more than it is.
 
 **Cue:** Card now reads "Fee" (L-2 fixed 08-13) — say it as printed.
 
@@ -203,10 +203,10 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 
 **Trace:** F-16/F-17 (0.05 core at N=15, not saturated), F-20 (floor 3, planning 5-6), W-06 (labelled a model), W-15 (no auto-scaling). Never "100 users" as achieved.
 
-### 16 · `eval-failover` — Failover: Warm-Pipe Mechanism Floor  |  9:53 · ~42s · ~87 words  |  SYNC: ok (+bridge)
+### 16 · `eval-failover` — Failover: Warm-Pipe Mechanism Floor  |  9:53 · ~39s · ~81 words  |  SYNC: ok (+bridge)
 
 > Failover, measured. Thirty cutovers on a real mediasoup warm pipe. **Zero failures.** Detection-plus-resume: **58 milliseconds** median, **74** at p95, **80** at p99.
-> The honest label: this is a **mechanism floor** — not recovery time. The bench closes the primary's sink while the pipe stays live, so it is optimistic by construction. And full user-visible recovery was not measured in this origin test.
+> The honest label: this is a **mechanism floor** — not recovery time. The bench closes the primary's sink while the pipe stays live. And full user-visible recovery was not measured in this origin test.
 > That open end is exactly where Van picks up. His resilience runs kill real relays, on live Azure hosts — and measure the downtime users actually see. Van, over to you.
 
 **Trace:** F-23 (58/74/80, 30 cutovers, zero failures — failover p99 IS reportable), F-24 (8-15 s budget — 08-13 decision: **not spoken on stage**, Q&A-only; reduces the visible collision with Van's 19.6 s tail), W-08 (CONCEDE MTTR, DEFEND mechanism). The last line is the live hand-off to Van.
@@ -236,17 +236,15 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 
 # PHASE A — Quang resumes, slides 29-31
 
-### 29 · `limitations` — Limitations & Future Work  |  V+0:00 · ~48s · ~105 words  |  SYNC: diverge -> M-3
+### 29 · `limitations` — Limitations & Future Work  |  V+0:00 · ~32s · ~70 words  |  SYNC: ok (08-13 2nd round — M-3 adds cut)
 
 > Thank you, Van. The limits we name ourselves.
-> ▸ A proof does not cryptographically bind the relay to the room — the gap I flagged at the SessionProof.
+> ▸ A proof does not cryptographically bind the relay to the room.
 > ▸ The fee is localnet-only. No mainnet cross-check.
 > ▸ Latency and failover are lower bounds — no capture-to-paint measurement in the origin test.
-> Three more the slide keeps short: encryption is opt-in and it fails open. A broad set of operations still sits under the deployer's AdminCap. And there is no project-wide threat model yet.
 > ▸x2 The forward point is the real one. This architecture is designed for idle, churning nodes — but every experiment ran on reliable infrastructure. Real volunteer churn is the honest next step.
 
-**Trace:** Slide items = W-03, W-07, W-05/W-08. **M-3:** W-04, W-10, W-17 added verbally — all CONCEDE stances the thesis raises itself.
-**Short variant:** keep the three slide items + the churn point; move the three spoken adds to Q&A.
+**Trace:** Slide items = W-03, W-07, W-05/W-08 — script now speaks only what the slide shows. 08-13 2nd round: the M-3 verbal adds (W-04, W-10, W-17) are **cut — Q&A-only** (all CONCEDE stances the thesis itself raises in §6.3). Consequence to know when answering: **fail-open is spoken nowhere on stage** — s7's solution line carries the "with it on" qualifier; the full W-04 answer lives in the Q&A pack.
 
 ### 30 · `references` — References  |  ~8s · ~17 words  |  SYNC: ok
 
@@ -264,10 +262,10 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 
 ## Word budget (Quang)
 
-Slides 1-16: ~1,390 words ≈ **10:40**. Slides 29-31: ~170 words ≈ **1:20**. Quang total ≈ **12:00** at 130 wpm — matches the 20-minute joint-talk plan (Van 3.2-3.4 ≈ 6-8 min). If rehearsal runs long, apply short variants in this order: `architecture` (drop +1.86), `eval-latency`, `eval-cost`, `limitations`.
+Slides 1-16: ~1,335 words ≈ **10:16**. Slides 29-31: ~135 words ≈ **1:02**. Quang total ≈ **11:18** at 130 wpm — matches the 20-minute joint-talk plan (Van 3.2-3.4 ≈ 6-8 min), now with ~20s of slack. If rehearsal runs long, apply short variants in this order: `architecture` (drop +1.86), `eval-latency`, `eval-cost`.
 
 ## Open items feeding back to the deck
 
 **Applied 2026-08-13 (certain batch):** H-1 (p99 bar removed — F-02), H-2 (latency retitled), M-2/L-2 (Cost -> Fee on title + methodology card + limitations bullet), L-3 (coturn off the relay node), the `eval-r2-summary` "5 and 10 bots" bullet, plus a text-density pass (huddle01 subtitle, call-mesh, dividers collapsed, summary bullets deduped, closing hint replaced with the Section-D framing line).
-**Decided 2026-08-13 (interview round):** M-1 CLOSED — six gas bars promoted into `00-facts` as **F-46** (thesis §5.3.2 + `m8-cost-empirical` raw). L-5 CLOSED — cover now carries the supervisor (Assoc. Prof. Thuc only). H-4 — decision: **keep the +1.86 ms as a spoken aside**, no E2EE slide (H-4 retired as a deck item; the aside + Q&A carry it). W-08-live — framing: **budget 8-15 s not spoken on stage**; 19.6 s disclosed on the slide, answered only if asked.
+**Decided 2026-08-13 (interview round):** M-1 CLOSED — six gas bars promoted into `00-facts` as **F-46** (thesis §5.3.2 + `m8-cost-empirical` raw). L-5 CLOSED — cover now carries the supervisor (Assoc. Prof. Thuc only). H-4 — decision: **keep the +1.86 ms as a spoken aside**, no E2EE slide (H-4 retired as a deck item; the aside + Q&A carry it). W-08-live — framing: **budget 8-15 s not spoken on stage**; 19.6 s disclosed on the slide, answered only if asked. s7 E2EE framing (08-13 follow-up): **solution-first** — "Our answer is SFrame content encryption … with it on …"; opt-in / fails-open dropped from the spoken block (W-04 CONCEDE unchanged; after the s29 cut below, **Q&A-only for the whole talk**); the Section D minimum qualifier "with it on" must survive any further edit. s29 (08-13 follow-up): the three M-3 verbal adds (W-04/W-10/W-17) **cut** — script speaks only what the slide shows; Q&A pack rows verified (E2EE disposition, Q-C4-1 AdminCap, Q-C5-5 threat model). s9 (08-13 follow-up): the W-03 binding-gap flag **cut** — slide 29's on-slide bullet + Q&A own it; s29's "the gap I flagged" callback reworded; the "dual-signing, not consensus" vocabulary guard stays (Section D). Also 08-13 follow-up: s12 "Nothing here is dressed up..." cut (meta-commentary), s16 "so it is optimistic by construction" cut (the mechanism-floor label carries the boundary), s7 TURN note KEPT (guards the visible "TURN credentials" diagram label), and cover-authors now carries Student IDs (22125119 / 22125081) on both `slides.tsx` and `Landing.tsx`. s10 (08-13 follow-up): the W-01/W-02 designed-vs-implemented pair **cut from the spoken block** — Q&A-only (Q&A pack rows verified: 3-of-4 at "Precise" §5.3.6 answer; pay_slash obligation at the slashing trap row); spoken qualifiers "obligation" + "cooperative, relay-authorised" must survive.
 **Still open for Van:** confirm the 3.2-3.4 numbers into `00-facts` before anyone speaks them; R-1 (~70-80 ms vs 70.9 ms collision) stays a spoken-discipline note.
