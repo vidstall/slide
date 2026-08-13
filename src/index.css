@@ -612,6 +612,10 @@ body {
   height: 46vh;
   min-height: 320px;
   margin: 16px auto 0;
+  /* Diagram canvases are often wider than .slide-content-wide (1200px);
+     auto margins can't center an overflowing box, this can. */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .device-mesh-canvas {

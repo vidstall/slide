@@ -91,6 +91,8 @@ export function FlowDiagram({
         revealed: i < step,
         justRevealed: i === step - 1,
         label: beat.label,
+        labelT: beat.labelT,
+        labelDy: beat.labelDy,
         sourcePoint: posById.get(beat.from)!,
         targetPoint: posById.get(beat.to)!,
       } satisfies RevealEdgeData,

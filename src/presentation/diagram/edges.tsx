@@ -15,6 +15,13 @@ export interface RevealEdgeData extends Record<string, unknown> {
    *  share an axis, so it's safe to set on every edge in a mesh/topology
    *  diagram uniformly — only genuinely diagonal pairs get a bend. */
   orthogonal?: boolean;
+  /** Label position along the straight source→target line (0..1, default
+   *  midpoint). Ignored for orthogonal edges, whose bend point makes the
+   *  path-computed label position the right one. */
+  labelT?: number;
+  /** Vertical label offset in flow px (positive = down), applied after
+   *  labelT. Lifts a label clear of a horizontal edge's node row. */
+  labelDy?: number;
 }
 
 /** Exit/entry side for a right-angle path, picked from which axis dominates
@@ -38,7 +45,7 @@ function orthogonalPositions(dx: number, dy: number): { source: Position; target
 export function RevealEdge({ markerStart, markerEnd, style, data }: EdgeProps & { data: RevealEdgeData }) {
   const { x: sourceX, y: sourceY } = data.sourcePoint;
   const { x: targetX, y: targetY } = data.targetPoint;
-  const [path, labelX, labelY] = data.orthogonal
+  const [path, midX, midY] = data.orthogonal
     ? (() => {
         const { source, target } = orthogonalPositions(targetX - sourceX, targetY - sourceY);
         return getSmoothStepPath({
@@ -52,6 +59,9 @@ export function RevealEdge({ markerStart, markerEnd, style, data }: EdgeProps & 
         });
       })()
     : getStraightPath({ sourceX, sourceY, targetX, targetY });
+  const t = data.orthogonal ? undefined : data.labelT;
+  const labelX = t === undefined ? midX : sourceX + (targetX - sourceX) * t;
+  const labelY = (t === undefined ? midY : sourceY + (targetY - sourceY) * t) + (data.labelDy ?? 0);
 
   return (
     <>
