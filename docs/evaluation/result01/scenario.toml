@@ -1,0 +1,300 @@
+name = "azure-devnet-sample"
+env = "devnet"
+
+[contract]
+gas_budget = ""
+create_registry_if_missing = false
+force = false
+
+# Reuse the DigitalOcean-hosted registry -- images are already published there
+# (scenario/example/digitalocean.toml); pushing the same images to a second,
+# separately-billed registry would be pure waste. Azure instances just pull
+# from it like any other host.
+[registry]
+provider = "digitalocean"
+tag = ""
+
+# Same shared static frontend bucket digitalocean.toml points at (see that
+# file's [[frontends]] entry) -- this scenario had none before, so it
+# provisioned no client frontend at all.
+[[frontends]]
+name = "site-2-bucket"
+object = "frontend"
+provider = "alibaba"
+
+# Uniform topology: every host runs 1 relay + 2 cp-daemon + 2 validator-daemon
+# (5 colocated containers on one VM). One host per Azure region, each on
+# Standard_D2als_v7 (2 vCPU -- see cli/infra/_constants.py's VM_INSTANCE_SIZES
+# comment on why this is the floor SKU for this subscription) -- keeps every
+# region's total at 2 vCPU, under this subscription's 3-vCPU-per-region cap.
+# Do NOT add a second host to any region already used below without also
+# shrinking VM size, or that region's total crosses the 3-vCPU limit.
+# (signaling is deprecated/removed -- not part of this topology.)
+
+# --- host 001 (region EXPLICIT below, "eastus" -- do NOT leave this unset:
+# this subscription's actual azure default is "eastus2" (secrets/cloud/
+# azure.env's AZURE_LOCATION=eastus2), NOT the "eastus" hardcoded fallback
+# in IaC/pulumi/app/common/regions.py, and host 005 below already lives in
+# eastus2. Confirmed live: an earlier version of this file left host 001's
+# region unset, so it silently collided with host 005 in eastus2 and blew
+# the 3-vCPU-per-region LowPriorityCores quota (2+2=4>3, host 001's VM
+# create failed with OperationNotAllowed) -- host 005 was already
+# successfully provisioned by then, so host 001 is the one pinned to a
+# still-free region instead, not host 005.) --------------------------------
+[[workers]]
+host = "001"
+service = "relay"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "eastus"
+
+[[workers]]
+host = "001"
+service = "cp-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "eastus"
+
+[[workers]]
+host = "001"
+service = "cp-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 2
+region = "eastus"
+
+[[workers]]
+host = "001"
+service = "validator-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "eastus"
+
+[[workers]]
+host = "001"
+service = "validator-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 2
+region = "eastus"
+
+# --- host 002 (westus2) ---------------------------------------------------
+[[workers]]
+host = "002"
+service = "relay"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "westus2"
+
+[[workers]]
+host = "002"
+service = "cp-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "westus2"
+
+[[workers]]
+host = "002"
+service = "cp-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 2
+region = "westus2"
+
+[[workers]]
+host = "002"
+service = "validator-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "westus2"
+
+[[workers]]
+host = "002"
+service = "validator-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 2
+region = "westus2"
+
+# --- host 003 (centralus) -------------------------------------------------
+[[workers]]
+host = "003"
+service = "relay"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "centralus"
+
+[[workers]]
+host = "003"
+service = "cp-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "centralus"
+
+[[workers]]
+host = "003"
+service = "cp-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 2
+region = "centralus"
+
+[[workers]]
+host = "003"
+service = "validator-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "centralus"
+
+[[workers]]
+host = "003"
+service = "validator-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 2
+region = "centralus"
+
+# --- host 004 (westeurope) ------------------------------------------------
+[[workers]]
+host = "004"
+service = "relay"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "westeurope"
+
+[[workers]]
+host = "004"
+service = "cp-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "westeurope"
+
+[[workers]]
+host = "004"
+service = "cp-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 2
+region = "westeurope"
+
+[[workers]]
+host = "004"
+service = "validator-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "westeurope"
+
+[[workers]]
+host = "004"
+service = "validator-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 2
+region = "westeurope"
+
+# --- host 005 (eastus2 -- confirmed-working region for this subscription,
+# see cli/infra/_constants.py's VM_INSTANCE_SIZES comment) ----------------
+[[workers]]
+host = "005"
+service = "relay"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "eastus2"
+
+[[workers]]
+host = "005"
+service = "cp-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "eastus2"
+
+[[workers]]
+host = "005"
+service = "cp-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 2
+region = "eastus2"
+
+[[workers]]
+host = "005"
+service = "validator-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "eastus2"
+
+[[workers]]
+host = "005"
+service = "validator-daemon"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 2
+region = "eastus2"
+
+# Two bot workers, colocated onto two already-provisioned hosts (001/002) --
+# `bot` adds no vCPUs of its own (just another container on the same VM),
+# so this doesn't touch either region's 3-vCPU-per-region quota. Each bot
+# gets its own host (a scenario action's `host` field picks a bot WORKER by
+# host id, not a specific colocated instance -- two bot workers on the same
+# host would be ambiguous).
+[[workers]]
+host = "001"
+service = "bot"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "eastus"
+
+[[workers]]
+host = "002"
+service = "bot"
+provider = "azure"
+size = "Standard_D2als_v7"
+worker_index = 1
+region = "westus2"
+
+# bot1 creates the room; bot2 joins the SAME room 5s later and streams
+# alongside it. Both stay in the room for 10 minutes (+600s) before tearing
+# down.
+[[actions]]
+id = "room0"
+type = "bot.create_room"
+timestamp = "+0s"
+host = "001"
+media_mode = "both"
+
+[[actions]]
+id = "room0_bot2"
+type = "bot.join_room"
+timestamp = "+5s"
+host = "002"
+room_id = "$room0.roomId"
+media_mode = "both"
+
+[[actions]]
+type = "bot.delete_room"
+timestamp = "+600s"
+host = "001"
+bot_id = "$room0.botId"
+
+[[actions]]
+type = "bot.delete_room"
+timestamp = "+600s"
+host = "002"
+bot_id = "$room0_bot2.botId"
+

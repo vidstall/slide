@@ -194,6 +194,48 @@ const failoverBeats: DiagramBeat[] = [
   { type: "edge", from: "promote", to: "promoted", label: "on-chain commit ~1.6–2.0s" },
 ];
 
+const huddle01TradeoffColumns = ["Dimension", "Traditional Cloud VC", "Huddle01"];
+const huddle01TradeoffRows: ComparisonRow[] = [
+  {
+    criteria: "Reliability / SLA",
+    values: ["99.9%+ SLA-backed uptime, data-center hosted", "Node uptime market-driven — no formal SLA"],
+    highlight: 0,
+  },
+  {
+    criteria: "Infrastructure cost",
+    values: ["High fixed cost — dedicated capacity, paid whether idle or not", "Spare-capacity node economics — lower marginal cost"],
+    highlight: 1,
+  },
+  {
+    criteria: "Control & data custody",
+    values: ["Single vendor controls admission, data, and billing", "Permissionless node network — no single custodian"],
+    highlight: 1,
+  },
+  {
+    criteria: "QoS maturity",
+    values: ["Years of global routing optimization — Zoom, Meet, Teams", "Early-stage DePIN network — node density still growing"],
+    highlight: 0,
+  },
+  {
+    criteria: "Accountability evidence",
+    values: ["Vendor-published SLAs and compliance audits", "Node-level QoS not publicly documented"],
+    highlight: 0,
+  },
+];
+
+const huddle01Columns = ["Dimension", "Huddle01", "DVConf (this work)"];
+const huddle01Rows: ComparisonRow[] = [
+  { criteria: "SFU / media layer", values: ["mediasoup", "mediasoup — inherited choice"], highlight: 1 },
+  { criteria: "Coordination chain", values: ["Custom dRTC Chain (Arbitrum Orbit)", "General-purpose Sui / Move"], highlight: 1 },
+  {
+    criteria: "Node incentive model",
+    values: ["Uptime/bandwidth-based PoS rewards", "Dual-signed SessionProof — per-session quality evidence"],
+    highlight: 1,
+  },
+  { criteria: "Accountability evidence", values: ["Not publicly documented", "Explicit, hedged, measured vs. designed"], highlight: 1 },
+  { criteria: "Maturity", values: ["Funded, mainnet, commercial", "Academic prototype, rigorously evaluated"] },
+];
+
 const implementedColumns = ["Element", "Designed (proposal / ADR)", "Implemented (measured)"];
 const implementedRows: ComparisonRow[] = [
   { criteria: "Validator quorum", values: ["3-of-4 BFT (ADR-0006)", "2 proofs, arithmetic mean"], highlight: 1 },
@@ -201,6 +243,42 @@ const implementedRows: ComparisonRow[] = [
   { criteria: "TURN / coturn deployment", values: ["Operational relay-side coturn", "Issuance + credentials only — never deployed"], highlight: 1 },
   { criteria: "SFU recovery target", values: ["8–15s design budget", "58 / 74 / 80ms mechanism floor (partial phases)"], highlight: 1 },
 ];
+
+// azure-devnet-sample (docs/evaluation/result01) — 11 minute-buckets over the ~10-minute
+// session. Values are read off the Grafana panel screenshots at each visible inflection point
+// (baseline, the manual Vietnam-join spike/dip around minute 2-4, recovery, steady-state) —
+// a faithful visual approximation of the real run, not exported per-second telemetry.
+const r1XLabels = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+
+const r1Participants = [1, 2, 2, 3, 3, 3, 2, 2, 2, 2, 2];
+
+const r1IceAvg = [0, 100, 100, 65, 65, 100, 100, 100, 100, 100, 100];
+const r1IceMin = [0, 100, 100, 0, 0, 100, 100, 100, 100, 100, 100];
+const r1IceMax = [0, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
+
+const r1LatencyAvg = [0, 25, 25, 100, 100, 75, 75, 75, 78, 78, 78];
+const r1LatencyMin = [0, 10, 10, 40, 40, 60, 60, 60, 65, 65, 65];
+const r1LatencyMax = [0, 35, 35, 200, 200, 90, 90, 90, 90, 90, 90];
+
+const r1JitterAvg = [0, 8, 7, 10, 8, 6, 7, 6, 7, 7, 7];
+const r1JitterMin = [0, 5, 4, 2, 1, 0, 0, 0, 0, 0, 0];
+const r1JitterMax = [0, 11, 10, 15, 12, 9, 11, 10, 13, 14, 13];
+
+const r1PacketLoss = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+const r1BitrateUp = [0, 0.6, 0.9, 1.0, 1.1, 1.0, 0.9, 1.0, 0.9, 1.0, 0.9];
+const r1BitrateDown = [0, 0.6, 0.9, 1.0, 1.2, 1.1, 0.9, 1.0, 0.9, 1.0, 0.9];
+
+const r1ResolutionAvg = [0, 900, 900, 900, 620, 620, 500, 500, 500, 500, 500];
+const r1ResolutionMin = [0, 900, 900, 900, 100, 80, 80, 80, 80, 80, 80];
+const r1ResolutionMax = [0, 900, 900, 900, 900, 900, 900, 900, 900, 900, 900];
+
+const r1FpsAvg = [0, 28, 29, 28, 27, 26, 28, 29, 28, 27, 29];
+const r1FpsMin = [0, 25, 27, 23, 22, 24, 26, 27, 25, 24, 28];
+const r1FpsMax = [0, 30, 31, 30, 29, 29, 30, 31, 30, 29, 31];
+
+const r1EncodeAvg = [0, 5, 6, 7, 7, 6, 7, 8, 7, 7, 7];
+const r1DecodeAvg = [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
 export const slides: SlideDef[] = [
   {
@@ -300,26 +378,89 @@ export const slides: SlideDef[] = [
     id: "idle-capacity-gap",
     stepsCount: gapRows.length,
     render: ({ step }) => (
-      <SlideLayout eyebrow="The Opportunity" title="Idle Capacity vs. Data-Center Cloud" wide>
+      <SlideLayout
+        eyebrow="The Opportunity"
+        title={
+          <>
+            Idle Capacity vs. Data-Center Cloud <sup className="citation-mark">[003]</sup>
+          </>
+        }
+        wide
+      >
         <ComparisonTable columns={gapColumns} rows={gapRows} step={step} />
       </SlideLayout>
     ),
   },
   {
-    id: "research-gap",
+    id: "huddle01-intro",
     stepsCount: 4,
     render: ({ step }) => (
-      <SlideLayout eyebrow="The Opportunity" title="The Research Gap">
-        <RevealList
-          className="bullet-list"
-          step={step}
-          items={[
-            "Video conferencing has always assumed data-center-grade reliability — because voice/video is uniquely latency- and jitter-intolerant",
-            "Emerging decentralized and idle compute (DePIN-style networks) is cheap but high-churn — nobody has targeted real-time media at that regime",
-            "Blockchain coordination (post-2008) enables incentive-compatible use of untrusted, unreliable nodes — proven for batch compute, not for RTC",
-            "DVConf proposes the coordination architecture this regime needs: chain-anchored assignment, evidence, and settlement around an off-chain SFU",
-          ]}
-        />
+      <SlideLayout
+        eyebrow="The Opportunity"
+        title={
+          <>
+            Huddle01: The Closest Existing Attempt <sup className="citation-mark">[004,011]</sup>
+          </>
+        }
+      >
+        <div className="stat-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
+          {[
+            { value: "DePIN for RTC", label: "Node operators contribute spare bandwidth for $HUDL token rewards" },
+            { value: "mediasoup SFU", label: "Same core media-server choice as DVConf — but coordinated on their own chain" },
+            { value: "Arbitrum Orbit L2/L3", label: "Purpose-built dRTC Chain hosts registration, staking, and rewards" },
+            {
+              value: "$37M node sale · 840M+ min served",
+              label: "Funded, production-stage — mainnet and $HUDL TGE live since Q1 2026",
+            },
+          ].map((stat, i) => (
+            <div
+              key={stat.value}
+              className="stat-card"
+              style={{
+                opacity: i < step ? 1 : 0,
+                transform: i < step ? "translateY(0)" : "translateY(16px)",
+                transition: "opacity 0.35s ease, transform 0.35s ease",
+              }}
+            >
+              <div className="stat-value">{stat.value}</div>
+              <div className="stat-label">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </SlideLayout>
+    ),
+  },
+  {
+    id: "huddle01-tradeoffs",
+    stepsCount: huddle01TradeoffRows.length,
+    render: ({ step }) => (
+      <SlideLayout
+        eyebrow="The Opportunity"
+        title={
+          <>
+            Huddle01 vs. Traditional Cloud VC <sup className="citation-mark">[003,004]</sup>
+          </>
+        }
+        wide
+      >
+        <ComparisonTable columns={huddle01TradeoffColumns} rows={huddle01TradeoffRows} step={step} />
+      </SlideLayout>
+    ),
+  },
+  {
+    id: "inheritance-advantages",
+    stepsCount: huddle01Rows.length,
+    render: ({ step }) => (
+      <SlideLayout
+        eyebrow="The Opportunity"
+        title={
+          <>
+            What We Inherit — and Where We Differ <sup className="citation-mark">[004]</sup>
+          </>
+        }
+        wide
+      >
+        <ComparisonTable columns={huddle01Columns} rows={huddle01Rows} step={step} />
       </SlideLayout>
     ),
   },
@@ -340,7 +481,10 @@ export const slides: SlideDef[] = [
           <ul className="bullet-list">
             <li>A W3C/IETF standard letting browsers exchange real-time audio, video, and data directly — no plugins, no installs</li>
             <li>Three core JS APIs: MediaStream (capture), RTCPeerConnection (transport), RTCDataChannel (arbitrary data)</li>
-            <li>All media is mandatorily encrypted end-to-end via DTLS-SRTP — WebRTC has no unencrypted mode</li>
+            <li>
+              All media is mandatorily encrypted end-to-end via DTLS-SRTP — WebRTC has no unencrypted mode{" "}
+              <sup className="citation-mark">[005,006]</sup>
+            </li>
             <li>Signaling (exchanging SDP offers/answers) is deliberately left undefined by the spec — every app brings its own channel</li>
           </ul>
           <FlowDiagram nodes={webrtcNodes} beats={webrtcBeats} step={step} canvasWidth={640} canvasHeight={640} />
@@ -357,7 +501,15 @@ export const slides: SlideDef[] = [
     id: "architecture",
     stepsCount: archBeats.length,
     render: ({ step }) => (
-      <SlideLayout eyebrow="System Architecture" title="Client, Relay, and Sui Chain" wide>
+      <SlideLayout
+        eyebrow="System Architecture"
+        title={
+          <>
+            Client, Relay, and Sui Chain <sup className="citation-mark">[007,008]</sup>
+          </>
+        }
+        wide
+      >
         <FlowDiagram nodes={archNodes} beats={archBeats} step={step} />
       </SlideLayout>
     ),
@@ -402,6 +554,19 @@ export const slides: SlideDef[] = [
     id: "divider-evaluation",
     stepsCount: 0,
     render: () => <SectionDivider index="03" title="Evaluation" subtitle="What was measured, projected, and left open" />,
+  },
+  {
+    id: "divider-4-1",
+    stepsCount: 0,
+    render: () => (
+      <SectionDivider
+        kicker="Evaluation"
+        variant="sub"
+        index="4.1"
+        title="Origin Test"
+        subtitle="Localnet & synthetic baseline measurements"
+      />
+    ),
   },
   {
     id: "evaluation-methodology",
@@ -542,6 +707,302 @@ export const slides: SlideDef[] = [
     ),
   },
   {
+    id: "divider-4-2",
+    stepsCount: 0,
+    render: () => (
+      <SectionDivider
+        kicker="Evaluation"
+        variant="sub"
+        index="4.2"
+        title="Quality Baseline"
+        subtitle="azure-devnet-sample — 25 workers · 5 Azure VMs · 2 bots + 1 real join"
+      />
+    ),
+  },
+  {
+    id: "eval-r1-setup",
+    stepsCount: 0,
+    render: () => (
+      <SlideLayout eyebrow="Evaluation — 4.2" title="25 worker - 5 VM - 2 bot - 1 real" wide>
+        <div className="stat-grid" style={{ gridTemplateColumns: "repeat(5, 1fr)" }}>
+          {["eastus", "westus2", "centralus", "westeurope", "eastus2"].map((region) => (
+            <div key={region} className="stat-card">
+              <div className="stat-value">{region}</div>
+              <div className="stat-label">1 relay + 2 cp-daemon + 2 validator-daemon</div>
+            </div>
+          ))}
+        </div>
+        <div className="stat-grid" style={{ marginTop: 12 }}>
+          <div className="stat-card">
+            <div className="stat-value">25 infra workers</div>
+            <div className="stat-label">5 services × 5 VMs, Standard_D2als_v7 (2 vCPU), under a 3-vCPU/region quota</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">2 scripted bots + 1 real</div>
+            <div className="stat-label">bot1 creates the room, bot2 joins 5s later, both stream media_mode=both</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">10-minute session</div>
+            <div className="stat-label">Author manually joined live from Vietnam mid-call as a 3rd, real participant</div>
+          </div>
+        </div>
+      </SlideLayout>
+    ),
+  },
+  {
+    id: "eval-r1-session-health",
+    stepsCount: 0,
+    render: () => (
+      <SlideLayout eyebrow="Evaluation — 4.2" title="Session & Network Health" wide>
+        <div className="eval-chart-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+          {[
+            {
+              title: "Participants per room",
+              chart: (
+                <LineChart
+                  xLabels={r1XLabels}
+                  series={[{ name: "participants", values: r1Participants, colorVar: "--series-1" }]}
+                  height={140}
+                />
+              ),
+              caption: "Steps 1→2→3→2: bot1 creates, bot2 joins, the manual VN join, then VN leaving.",
+            },
+            {
+              title: "ICE Success Rate",
+              chart: (
+                <LineChart
+                  xLabels={r1XLabels}
+                  series={[
+                    { name: "avg", values: r1IceAvg, colorVar: "--series-1" },
+                    { name: "min", values: r1IceMin, colorVar: "--series-3" },
+                    { name: "max", values: r1IceMax, colorVar: "--series-2" },
+                  ]}
+                  unit="%"
+                  height={140}
+                />
+              ),
+              caption: "Steady 100%, dipping only during the VN join window, fully recovering.",
+            },
+            {
+              title: "Latency",
+              chart: (
+                <LineChart
+                  xLabels={r1XLabels}
+                  series={[
+                    { name: "avg", values: r1LatencyAvg, colorVar: "--series-1" },
+                    { name: "min", values: r1LatencyMin, colorVar: "--series-3" },
+                    { name: "max", values: r1LatencyMax, colorVar: "--series-2" },
+                  ]}
+                  unit=" ms"
+                  height={140}
+                />
+              ),
+              caption: "~20–30ms baseline, spikes to ~200ms during the VN join, settles ~70–80ms.",
+            },
+            {
+              title: "Jitter",
+              chart: (
+                <LineChart
+                  xLabels={r1XLabels}
+                  series={[
+                    { name: "avg", values: r1JitterAvg, colorVar: "--series-1" },
+                    { name: "min", values: r1JitterMin, colorVar: "--series-3" },
+                    { name: "max", values: r1JitterMax, colorVar: "--series-2" },
+                  ]}
+                  unit=" ms"
+                  height={140}
+                />
+              ),
+              caption: "Noisy 5–14ms band; elevated max coincides with the VN join window.",
+            },
+            {
+              title: "Packet Loss",
+              chart: (
+                <LineChart
+                  xLabels={r1XLabels}
+                  series={[{ name: "loss", values: r1PacketLoss, colorVar: "--series-1" }]}
+                  unit="%"
+                  height={140}
+                />
+              ),
+              caption: "Flat 0% for the entire 10-minute session.",
+            },
+          ].map((cell) => (
+            <div key={cell.title}>
+              <h4 className="eval-chart-cell-title">{cell.title}</h4>
+              {cell.chart}
+              <p className="eval-chart-cell-caption">{cell.caption}</p>
+            </div>
+          ))}
+        </div>
+      </SlideLayout>
+    ),
+  },
+  {
+    id: "eval-r1-media-quality",
+    stepsCount: 0,
+    render: () => (
+      <SlideLayout eyebrow="Evaluation — 4.2" title="Media Quality" wide>
+        <div className="eval-chart-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
+          {[
+            {
+              title: "Bitrate Up/Down",
+              chart: (
+                <LineChart
+                  xLabels={r1XLabels}
+                  series={[
+                    { name: "upload avg", values: r1BitrateUp, colorVar: "--series-1" },
+                    { name: "download avg", values: r1BitrateDown, colorVar: "--series-2" },
+                  ]}
+                  unit=" Mb/s"
+                  height={150}
+                />
+              ),
+              caption: "Ramps to ~1–2 Mb/s, noisy but stable — no collapse.",
+            },
+            {
+              title: "Resolution",
+              chart: (
+                <LineChart
+                  xLabels={r1XLabels}
+                  series={[
+                    { name: "avg", values: r1ResolutionAvg, colorVar: "--series-1" },
+                    { name: "min", values: r1ResolutionMin, colorVar: "--series-3" },
+                    { name: "max", values: r1ResolutionMax, colorVar: "--series-2" },
+                  ]}
+                  unit="K"
+                  height={150}
+                />
+              ),
+              caption: "Jumps to ~900K early; average settles ~500–620K as one participant downgrades.",
+            },
+            {
+              title: "Frame Rate",
+              chart: (
+                <LineChart
+                  xLabels={r1XLabels}
+                  series={[
+                    { name: "avg", values: r1FpsAvg, colorVar: "--series-1" },
+                    { name: "min", values: r1FpsMin, colorVar: "--series-3" },
+                    { name: "max", values: r1FpsMax, colorVar: "--series-2" },
+                  ]}
+                  unit=" fps"
+                  height={150}
+                />
+              ),
+              caption: "Ramps to and holds ~28–30fps, with occasional dips to ~22fps.",
+            },
+            {
+              title: "Encode/Decode Latency",
+              chart: (
+                <LineChart
+                  xLabels={r1XLabels}
+                  series={[
+                    { name: "encode avg", values: r1EncodeAvg, colorVar: "--series-1" },
+                    { name: "decode avg", values: r1DecodeAvg, colorVar: "--series-2" },
+                  ]}
+                  unit=" ms"
+                  height={150}
+                />
+              ),
+              caption: "Low and stable throughout — encode ~4–8ms, decode ~1ms.",
+            },
+          ].map((cell) => (
+            <div key={cell.title}>
+              <h4 className="eval-chart-cell-title">{cell.title}</h4>
+              {cell.chart}
+              <p className="eval-chart-cell-caption">{cell.caption}</p>
+            </div>
+          ))}
+        </div>
+      </SlideLayout>
+    ),
+  },
+  {
+    id: "eval-r1-summary",
+    stepsCount: 4,
+    render: ({ step }) => (
+      <SlideLayout eyebrow="Evaluation — 4.2" title="Summary & Conclusion">
+        <RevealList
+          className="bullet-list"
+          step={step}
+          items={[
+            "Deployment is healthy overall: 0% packet loss and stable bitrate/frame rate for the whole session",
+            "The one rough patch — the ICE/latency/jitter blip — is attributable to the author's manual Vietnam join, a genuine cross-continental path, not a scripted-bot artifact; it self-resolves within 1–2 minutes",
+            "No evidence of instability, resource exhaustion, or degradation over the 10-minute session — a passing/healthy result suitable to cite in the thesis evaluation",
+            "The topology also handled a real, geographically distant participant gracefully — a useful signal beyond scripted bot-to-bot traffic",
+          ]}
+        />
+        <div className="stat-grid" style={{ marginTop: 12 }}>
+          <div className="stat-card">
+            <div className="stat-value">0% packet loss</div>
+            <div className="stat-label">Flat all session</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">~70–80ms latency</div>
+            <div className="stat-label">Steady-state, post-VN-join</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">100% ICE recovery</div>
+            <div className="stat-label">Within 1–2 min of VN join</div>
+          </div>
+        </div>
+      </SlideLayout>
+    ),
+  },
+  {
+    id: "divider-4-3",
+    stepsCount: 0,
+    render: () => (
+      <SectionDivider
+        kicker="Evaluation"
+        variant="sub"
+        index="4.3"
+        title="2-Bot Resilience Test"
+        subtitle="15 workers · 5 hosts · 2-of-3 relay kill — data pending"
+      />
+    ),
+  },
+  {
+    id: "divider-4-4",
+    stepsCount: 0,
+    render: () => (
+      <SectionDivider
+        kicker="Evaluation"
+        variant="sub"
+        index="4.4"
+        title="5-Bot Resilience Test"
+        subtitle="15 workers · 5 hosts · 2-of-3 relay kill — data pending"
+      />
+    ),
+  },
+  {
+    id: "divider-4-5",
+    stepsCount: 0,
+    render: () => (
+      <SectionDivider
+        kicker="Evaluation"
+        variant="sub"
+        index="4.5"
+        title="10-Bot Resilience Test"
+        subtitle="15 workers · 5 hosts · 2-of-3 relay kill — data pending"
+      />
+    ),
+  },
+  {
+    id: "divider-4-6",
+    stepsCount: 0,
+    render: () => (
+      <SectionDivider
+        kicker="Evaluation"
+        variant="sub"
+        index="4.6"
+        title="20-Bot Resilience Test"
+        subtitle="15 workers · 5 hosts · 2-of-3 relay kill — data pending"
+      />
+    ),
+  },
+  {
     id: "divider-discussion",
     stepsCount: 0,
     render: () => <SectionDivider index="04" title="Discussion" subtitle="What's implemented vs. what's designed" />,
@@ -550,7 +1011,15 @@ export const slides: SlideDef[] = [
     id: "designed-vs-implemented",
     stepsCount: implementedRows.length,
     render: ({ step }) => (
-      <SlideLayout eyebrow="Discussion" title="Designed vs. Implemented" wide>
+      <SlideLayout
+        eyebrow="Discussion"
+        title={
+          <>
+            Designed vs. Implemented <sup className="citation-mark">[009,010]</sup>
+          </>
+        }
+        wide
+      >
         <ComparisonTable columns={implementedColumns} rows={implementedRows} step={step} />
       </SlideLayout>
     ),
@@ -598,6 +1067,63 @@ export const slides: SlideDef[] = [
           <li>
             <span className="reference-mark">[002]</span>
             <span>W3C, "WebRTC: Real-Time Communication in Browsers," W3C Recommendation, Mar. 2025.</span>
+          </li>
+          <li>
+            <span className="reference-mark">[003]</span>
+            <span>
+              L. F. G. Sarmenta, "Sabotage-Tolerance Mechanisms for Volunteer Computing Systems," in Proc. IEEE/ACM Int. Symp.
+              on Cluster Computing and the Grid (CCGrid), Brisbane, Australia, May 2001, pp. 337–346.
+            </span>
+          </li>
+          <li>
+            <span className="reference-mark">[004]</span>
+            <span>
+              Huddle01, "dRTC Chain: Decentralized Real-Time Communication Infrastructure." Available:
+              https://huddle01.com/media-node/documentation/drtc-network/drtc-chain.
+            </span>
+          </li>
+          <li>
+            <span className="reference-mark">[005]</span>
+            <span>
+              D. McGrew and E. Rescorla, "Datagram Transport Layer Security (DTLS) Extension to Establish Keys for the Secure
+              Real-Time Transport Protocol (SRTP)," IETF, RFC 5764, May 2010.
+            </span>
+          </li>
+          <li>
+            <span className="reference-mark">[006]</span>
+            <span>E. Rescorla, "WebRTC Security Architecture," IETF, RFC 8827, Jan. 2021.</span>
+          </li>
+          <li>
+            <span className="reference-mark">[007]</span>
+            <span>mediasoup contributors, "Mediasoup: Cutting-Edge WebRTC Video Conferencing." Available: https://mediasoup.org.</span>
+          </li>
+          <li>
+            <span className="reference-mark">[008]</span>
+            <span>
+              coturn contributors, "Coturn: Free Open Source Implementation of TURN and STUN Server." Available:
+              https://github.com/coturn/coturn.
+            </span>
+          </li>
+          <li>
+            <span className="reference-mark">[009]</span>
+            <span>
+              E. Buchman, "Tendermint: Byzantine Fault Tolerance in the Age of Blockchains," M.Sc. thesis, Dept. of Computer
+              Science, University of Guelph, Guelph, ON, Canada, Jun. 2016.
+            </span>
+          </li>
+          <li>
+            <span className="reference-mark">[010]</span>
+            <span>
+              M. Castro and B. Liskov, "Practical Byzantine Fault Tolerance," in Proc. 3rd USENIX Symp. on Operating Systems
+              Design and Implementation (OSDI), New Orleans, LA, USA, Feb. 1999, pp. 173–186.
+            </span>
+          </li>
+          <li>
+            <span className="reference-mark">[011]</span>
+            <span>
+              B. Allison, "Huddle01: Blockchain-Based Video Conferencing Platform Built on Arbitrum Orbit, Targets $37M Node
+              Sale," CoinDesk, Sept. 2024.
+            </span>
           </li>
         </ol>
       </SlideLayout>

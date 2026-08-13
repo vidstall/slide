@@ -155,7 +155,9 @@ function App() {
               e.stopPropagation();
               goToSlide(i);
             }}
-          />
+          >
+            {i === slideIndex && <span className="dot-number">{i + 1}</span>}
+          </span>
         ))}
       </div>
 

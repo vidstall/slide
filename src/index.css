@@ -282,16 +282,19 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-flow: column;
+  grid-template-rows: repeat(6, auto);
+  column-gap: 32px;
+  row-gap: 12px;
 }
 
 .reference-list li {
   display: flex;
-  gap: 14px;
-  font-size: 19px;
-  line-height: 1.5;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.4;
   color: var(--text-h);
 }
 
@@ -445,6 +448,26 @@ body {
   border: 1px solid var(--border);
 }
 
+.eval-chart-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.eval-chart-cell-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0 0 4px;
+}
+
+.eval-chart-cell-caption {
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--text);
+  margin: 4px 0 0;
+}
+
 .timeline-year {
   font-size: 16px;
   font-weight: 600;
@@ -483,6 +506,9 @@ body {
   background-clip: content-box;
   border-radius: 50%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
@@ -492,7 +518,15 @@ body {
 
 .dot-active {
   background: var(--accent);
-  transform: scale(1.3);
+  background-clip: border-box;
+  transform: scale(1.15);
+}
+
+.dot-number {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
 }
 
 .toolbar {
@@ -758,6 +792,19 @@ body {
   font-size: 20px;
   color: var(--text);
   margin: 0;
+}
+
+.section-divider-sub .section-divider-index {
+  font-size: 56px;
+  letter-spacing: -2px;
+}
+
+.section-divider-sub .section-divider-title {
+  font-size: 28px;
+}
+
+.section-divider-sub .section-divider-subtitle {
+  font-size: 16px;
 }
 
 @media (max-width: 768px) {
