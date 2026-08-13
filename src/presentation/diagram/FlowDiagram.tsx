@@ -84,8 +84,8 @@ export function FlowDiagram({
       source: beat.from,
       target: beat.to,
       type: "reveal",
-      markerEnd: { type: MarkerType.ArrowClosed, color: "var(--chart-axis)" },
-      style: { stroke: "var(--chart-axis)", strokeWidth: 2 },
+      markerEnd: { type: MarkerType.ArrowClosed, color: "var(--chart-axis)", width: 24, height: 24 },
+      style: { stroke: "var(--chart-axis)", strokeWidth: 6 },
       selectable: false,
       data: {
         revealed: i < step,

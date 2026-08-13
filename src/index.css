@@ -620,6 +620,11 @@ body {
   margin: 16px auto 0;
 }
 
+.architecture-mesh-canvas {
+  width: 700px;
+  height: 700px;
+}
+
 .flow-canvas .react-flow__pane,
 .flow-canvas .react-flow__node {
   cursor: default;
@@ -696,6 +701,34 @@ body {
   text-align: center;
 }
 
+.rf-device-sublabel {
+  margin-top: -6px;
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: var(--text);
+  opacity: 0.75;
+  text-align: center;
+  max-width: 100%;
+}
+
+.architecture-mesh-canvas .rf-device {
+  height: 272px;
+}
+
+.architecture-mesh-canvas .rf-device-hub {
+  width: 260px;
+  height: 312px;
+}
+
+.architecture-mesh-canvas .rf-device-badge-hub {
+  width: 226px;
+  height: 226px;
+}
+
+.architecture-mesh-canvas .rf-device-hub .rf-device-label {
+  font-size: 21px;
+}
+
 .rf-edge-path {
   fill: none;
   stroke-dasharray: 8 6;
@@ -720,10 +753,11 @@ body {
 
 .rf-edge-label {
   position: absolute;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 500;
   color: var(--chart-ink-secondary);
   background: var(--bg);
-  padding: 2px 8px;
+  padding: 3px 10px;
   border-radius: 6px;
   white-space: nowrap;
   pointer-events: none;
@@ -878,7 +912,8 @@ body {
   .timeline-stem {
     display: none;
   }
-  .device-mesh-canvas {
+  .device-mesh-canvas,
+  .architecture-mesh-canvas {
     width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;

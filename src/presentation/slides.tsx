@@ -4,6 +4,7 @@ import { RevealList } from "./RevealList";
 import { Timeline, type TimelinePoint } from "./Timeline";
 import { FlowDiagram } from "./diagram/FlowDiagram";
 import { DeviceMesh } from "./DeviceMesh";
+import { ArchitectureMesh } from "./ArchitectureMesh";
 import { LineChart } from "./chart/LineChart";
 import { BarChart } from "./chart/BarChart";
 import { ComparisonTable, type ComparisonRow } from "./ComparisonTable";
@@ -80,53 +81,33 @@ const gapRows: ComparisonRow[] = [
   { criteria: "Real-time media support", values: ["Mature — Zoom, Meet, LiveKit", "Unaddressed — this gap"], highlight: 1 },
 ];
 
-const archNodes: DiagramNodeData[] = [
-  { id: "client", label: "Client", sublabel: "Browser · WebRTC peer", x: 2, y: 50, layer: "client" },
-  { id: "relay", label: "Relay", sublabel: "mediasoup SFU", x: 32, y: 12, layer: "offchain" },
-  { id: "validator", label: "Validator Daemon", sublabel: "Canary probe · STUN/relay-latency probe", x: 32, y: 88, layer: "offchain" },
-  { id: "cpdaemon", label: "cp-daemon", sublabel: "Control-plane: pairing quorum, TURN issuance, failover", x: 80, y: 6, layer: "control" },
-  { id: "chain", label: "Sui Chain", sublabel: "Registry · RoomAssignment · SessionProof · Settlement (Move)", x: 116, y: 50, layer: "chain" },
-];
-
-const archBeats: DiagramBeat[] = [
-  { type: "node", id: "client" },
-  { type: "node", id: "relay" },
-  { type: "edge", from: "client", to: "relay", label: "media + signaling (single WS)" },
-  { type: "node", id: "validator" },
-  { type: "edge", from: "validator", to: "relay", label: "canary probe" },
-  { type: "node", id: "cpdaemon" },
-  { type: "edge", from: "cpdaemon", to: "relay", label: "TURN credentials (HTTP)" },
-  { type: "node", id: "chain" },
-  { type: "edge", from: "relay", to: "chain", label: "register · heartbeat (relay_registry)" },
-  { type: "edge", from: "validator", to: "chain", label: "register · dual-signed SessionProof" },
-  { type: "edge", from: "cpdaemon", to: "chain", label: "pairing quorum (≥2/3) · promote_relay · CapToken" },
-  { type: "edge", from: "client", to: "chain", label: "register/create_room/create_escrow ↔ read room+relay assignment" },
-];
-
 const lifecycleNodes: DiagramNodeData[] = [
-  { id: "register", label: "Register", sublabel: "Node enrollment: stake, capability", x: 6, y: 22, layer: "lifecycle" },
-  { id: "room", label: "Create Room", sublabel: "Room + escrow object", x: 21, y: 68, layer: "lifecycle" },
-  { id: "assign", label: "Assignment", sublabel: "cp-daemon quorum (≥2/3 active CPs) ratifies pairing proposal on-chain", x: 36, y: 22, layer: "lifecycle" },
-  { id: "setup", label: "Client Setup", sublabel: "ICE, DTLS-SRTP, TURN credentials", x: 51, y: 68, layer: "lifecycle" },
-  { id: "running", label: "Media Running", sublabel: "SFU forwarding, heartbeats", x: 66, y: 22, layer: "lifecycle" },
-  { id: "close", label: "Close", sublabel: "Session ends", x: 81, y: 68, layer: "lifecycle" },
-  { id: "settlement", label: "Settlement", sublabel: "Reward or slash obligation", x: 96, y: 22, layer: "lifecycle" },
+  { id: "register", label: "Register & Role Vote", sublabel: "Stake → CP quorum (2/3) votes role → apply_voted_role", x: 6, y: 15, layer: "worker" },
+  { id: "room", label: "Create Room", sublabel: "RoomInfo only — pending, no relay yet", x: 6, y: 85, layer: "client" },
+  { id: "escrow", label: "Fund Escrow", sublabel: "create_escrow — a separate tx, required before assignment", x: 82, y: 85, layer: "client" },
+  { id: "assign", label: "Assignment", sublabel: "cp-daemon quorum (≥2/3 active CPs) ratifies pairing proposal on-chain", x: 110, y: 50, layer: "lifecycle" },
+  { id: "setup", label: "Client ↔ Relay Setup", sublabel: "ICE/DTLS-SRTP negotiation; relay fetches TURN credential from cp-daemon", x: 138, y: 15, layer: "lifecycle" },
+  { id: "running", label: "Media Running", sublabel: "SFU forwarding — standby warm pipe & canary probing run alongside", x: 166, y: 85, layer: "lifecycle" },
+  { id: "close", label: "Close", sublabel: "Creator-only close_room — escrow left untouched", x: 194, y: 15, layer: "lifecycle" },
+  { id: "settlement", label: "Settlement", sublabel: "distribute_rewards / pay_slash — see Economic Layer", x: 222, y: 85, layer: "lifecycle" },
 ];
 
 const lifecycleBeats: DiagramBeat[] = [
   { type: "node", id: "register" },
   { type: "node", id: "room" },
-  { type: "edge", from: "register", to: "room", label: "escrow funded" },
+  { type: "edge", from: "room", to: "escrow", label: "create_escrow — separate tx" },
+  { type: "node", id: "escrow" },
   { type: "node", id: "assign" },
-  { type: "edge", from: "room", to: "assign", label: "cp-daemon scoring" },
+  { type: "edge", from: "register", to: "assign", label: "registered worker pool" },
+  { type: "edge", from: "escrow", to: "assign", label: "cp-daemon scores the funded room" },
   { type: "node", id: "setup" },
-  { type: "edge", from: "assign", to: "setup", label: "TURN credentials issued" },
+  { type: "edge", from: "assign", to: "setup", label: "RoomAssigned: relay + signaling resolved" },
   { type: "node", id: "running" },
-  { type: "edge", from: "setup", to: "running", label: "media begins" },
+  { type: "edge", from: "setup", to: "running", label: "producers/consumers live" },
   { type: "node", id: "close" },
-  { type: "edge", from: "running", to: "close", label: "session ends" },
+  { type: "edge", from: "running", to: "close", label: "creator closes, or cp-daemon expiry sweep" },
   { type: "node", id: "settlement" },
-  { type: "edge", from: "close", to: "settlement", label: "reward or slash" },
+  { type: "edge", from: "close", to: "settlement", label: "distribute_rewards / pay_slash" },
 ];
 
 const proofNodes: DiagramNodeData[] = [
@@ -157,43 +138,83 @@ const proofBeats: DiagramBeat[] = [
 ];
 
 const economyNodes: DiagramNodeData[] = [
-  { id: "proof2", label: "SessionProof", sublabel: "Quality measurement", x: 6, y: 50, layer: "chain" },
-  { id: "quality", label: "Quality Check", sublabel: "Composite QoS score", x: 38, y: 50, layer: "chain" },
-  { id: "rewards", label: "distribute_rewards", sublabel: "RewardsDistributed event", x: 70, y: 18, layer: "reward" },
-  { id: "slash", label: "RelaySlashed", sublabel: "Penalty obligation recorded", x: 70, y: 82, layer: "penalty" },
-  { id: "payslash", label: "pay_slash", sublabel: "Cooperative deduction from StakePosition", x: 102, y: 82, layer: "penalty" },
+  { id: "escrow", label: "Client: create_escrow", sublabel: "Funds locked before session starts", x: 6, y: 20, layer: "client" },
+  { id: "session", label: "Session Runs", sublabel: "Relay serves; each validator measures independently", x: 38, y: 80, layer: "relay" },
+  { id: "proof", label: "submit_session_proof", sublabel: "Dual-signed — permanent wallet + one-time session wallet", x: 70, y: 20, layer: "chain" },
+  { id: "median", label: "Per-Relay Median", sublabel: "≥2 distinct validators required — bytes, loss bps, RTT", x: 102, y: 80, layer: "chain" },
+  { id: "quality", label: "Quality Multiplier", sublabel: "Packet-loss tiers: 100% / 80% / 50% / 0%", x: 134, y: 20, layer: "chain" },
+  { id: "distribute", label: "distribute_rewards", sublabel: "base_rate × median_bytes × quality — capped at escrow", x: 166, y: 80, layer: "reward" },
 ];
 
 const economyBeats: DiagramBeat[] = [
-  { type: "node", id: "proof2" },
+  { type: "node", id: "escrow" },
+  { type: "node", id: "session" },
+  { type: "edge", from: "escrow", to: "session" },
+  { type: "node", id: "proof" },
+  { type: "edge", from: "session", to: "proof", label: "measured independently per validator" },
+  { type: "node", id: "median" },
+  { type: "edge", from: "proof", to: "median", label: "coverage + liveness gated" },
   { type: "node", id: "quality" },
-  { type: "edge", from: "proof2", to: "quality" },
-  { type: "node", id: "rewards" },
-  { type: "edge", from: "quality", to: "rewards", label: "quality ≥ threshold" },
-  { type: "node", id: "slash" },
-  { type: "edge", from: "quality", to: "slash", label: "zero-quality session" },
-  { type: "node", id: "payslash" },
-  { type: "edge", from: "slash", to: "payslash", label: "relay-authorised transaction" },
+  { type: "edge", from: "median", to: "quality", label: "median packet-loss bps" },
+  { type: "node", id: "distribute" },
+  { type: "edge", from: "quality", to: "distribute", label: "scarcity-weighted split: relay / validator / CP" },
+];
+
+const slashingColumns = ["Dimension", "Escrow QoS Slash", "Canary-Fraud Slash", "Liveness Ejection"];
+const slashingRows: ComparisonRow[] = [
+  {
+    criteria: "Trigger",
+    values: [
+      "Session quality score = 0 (median packet-loss > 10%)",
+      "2+ validators produce cryptographic tamper/drop proof",
+      "2/3 of active validators vote the node unreachable",
+    ],
+  },
+  {
+    criteria: "Nature",
+    values: ["Punitive — QoS failure", "Punitive — proven fraud", "Non-punitive — liveness only"],
+    highlight: 2,
+  },
+  {
+    criteria: "Stake impact",
+    values: ["10% of stake, via pay_slash", "Fixed % cut (canary-audit)", "None — full stake returned"],
+    highlight: 2,
+  },
+  {
+    criteria: "Payout destination",
+    values: ["Split: room creator + other assigned relays", "100% to room creator", "N/A — no payout, just ejection"],
+  },
+  {
+    criteria: "Applies to",
+    values: ["Relay only", "Relay only", "Any role"],
+  },
 ];
 
 const failoverNodes: DiagramNodeData[] = [
-  { id: "primary", label: "Primary Relay", sublabel: "Serving session media", x: 10, y: 22, layer: "relay" },
-  { id: "standby", label: "Standby Relay", sublabel: "Paused DirectTransport, warm pipe", x: 10, y: 78, layer: "relay" },
-  { id: "watcher", label: "cp-daemon: Heartbeat Watcher", sublabel: "Staleness check: primary heartbeat > 3 epochs", x: 48, y: 50, layer: "watcher" },
-  { id: "promote", label: "promote_relay", sublabel: "Permissionless — no AdminCap", x: 82, y: 22, layer: "chain" },
-  { id: "promoted", label: "RelayPromoted", sublabel: "New primary assigned on-chain", x: 82, y: 78, layer: "chain" },
+  { id: "primary", label: "Primary Relay", sublabel: "Serving session media", x: 10, y: 50, layer: "relay" },
+  { id: "standby", label: "Standby Relay", sublabel: "Warm mediasoup pipe, Consumer paused", x: 10, y: 15, layer: "relay" },
+  { id: "client", label: "Client", sublabel: "Pre-warmed, paused connection to standby", x: 10, y: 85, layer: "client" },
+  { id: "localPromote", label: "Relay: Local Self-Promotion", sublabel: "Resume paused Consumer, flip role — ~3s, no chain tx", x: 72, y: 15, layer: "relay" },
+  { id: "clientCutover", label: "Client: Independent Cutover", sublabel: "Un-pause pre-warmed stream — no chain tx", x: 72, y: 85, layer: "client" },
+  { id: "onchain", label: "cp-daemon: Promote Relay (on-chain)", sublabel: "Epoch-stale >3 epochs (days-scale) OR health-alert quorum — ~30s+ poll", x: 116, y: 50, layer: "chain" },
+  { id: "promoted", label: "RelayPromoted", sublabel: "On-chain record — audit trail & late joiners, trails the already-recovered call", x: 182, y: 50, layer: "chain" },
 ];
 
 const failoverBeats: DiagramBeat[] = [
   { type: "node", id: "primary" },
   { type: "node", id: "standby" },
-  { type: "node", id: "watcher" },
-  { type: "edge", from: "primary", to: "watcher", label: "heartbeat" },
-  { type: "edge", from: "standby", to: "watcher", label: "eligible candidate" },
-  { type: "node", id: "promote" },
-  { type: "edge", from: "watcher", to: "promote", label: "primary stale (>3 epochs)" },
+  { type: "edge", from: "primary", to: "standby", label: "/healthz probe, 1000ms interval (relay-local)" },
+  { type: "node", id: "client" },
+  { type: "edge", from: "primary", to: "client", label: "primary media stream (normal state)" },
+  { type: "edge", from: "standby", to: "client", label: "pre-warmed, paused (receive-only)" },
+  { type: "node", id: "localPromote" },
+  { type: "edge", from: "standby", to: "localPromote", label: "3 misses (~3s) → resume & flip role" },
+  { type: "node", id: "clientCutover" },
+  { type: "edge", from: "client", to: "clientCutover", label: "silence or WS-close detected → un-pause standby" },
+  { type: "node", id: "onchain" },
+  { type: "edge", from: "primary", to: "onchain", label: "cp-daemon polling — independent of both fast paths above" },
   { type: "node", id: "promoted" },
-  { type: "edge", from: "promote", to: "promoted", label: "on-chain commit ~1.6–2.0s" },
+  { type: "edge", from: "onchain", to: "promoted", label: "on-chain commit ~1.6–2.0s" },
 ];
 
 const huddle01TradeoffColumns = ["Dimension", "Traditional Cloud VC", "Huddle01"];
@@ -393,8 +414,8 @@ export const slides: SlideDef[] = [
   },
   {
     id: "architecture",
-    stepsCount: archBeats.length,
-    render: ({ step }) => (
+    stepsCount: 0,
+    render: () => (
       <SlideLayout
         eyebrow="02 Proposed Architecture — System Architecture"
         title={
@@ -405,7 +426,7 @@ export const slides: SlideDef[] = [
         wide
       >
         <p className="slide-subtitle">DVConf: off-chain data plane (Relay), off-chain control plane (cp-daemon + Validator), on-chain settlement</p>
-        <FlowDiagram nodes={archNodes} beats={archBeats} step={step} canvasWidth={1300} canvasHeight={480} />
+        <ArchitectureMesh />
       </SlideLayout>
     ),
   },
@@ -414,7 +435,11 @@ export const slides: SlideDef[] = [
     stepsCount: lifecycleBeats.length,
     render: ({ step }) => (
       <SlideLayout eyebrow="System Architecture" title="Session Lifecycle" wide>
-        <FlowDiagram nodes={lifecycleNodes} beats={lifecycleBeats} step={step} canvasWidth={1100} canvasHeight={420} />
+        <p className="slide-subtitle">
+          Worker registration and client room-creation run on independent tracks — Assignment is where they
+          first meet.
+        </p>
+        <FlowDiagram nodes={lifecycleNodes} beats={lifecycleBeats} step={step} canvasWidth={1400} canvasHeight={460} />
       </SlideLayout>
     ),
   },
@@ -431,8 +456,39 @@ export const slides: SlideDef[] = [
     id: "economic-layer",
     stepsCount: economyBeats.length,
     render: ({ step }) => (
-      <SlideLayout eyebrow="Trust Model" title="Economic Layer: Rewards &amp; Slashing" wide>
+      <SlideLayout eyebrow="Trust Model" title="Economic Layer: Funding, Measurement &amp; Rewards" wide>
         <FlowDiagram nodes={economyNodes} beats={economyBeats} step={step} canvasWidth={1300} canvasHeight={460} />
+        <div className="stat-grid" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
+          <div className="stat-card">
+            <div className="stat-value">100% / 80% / 50% / 0%</div>
+            <div className="stat-label">Quality multiplier by median packet-loss: ≤200 / ≤500 / ≤1000 bps, else zero</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">≥2 validators</div>
+            <div className="stat-label">Minimum distinct attestations per relay before any payout</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">500–8,000 bps</div>
+            <div className="stat-label">Dynamic scarcity clamp per role pool (relay / validator / CP) — not a fixed split</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">Equal vs. accuracy-scored</div>
+            <div className="stat-label">Qualifying relays split their pool evenly; validators split theirs by closeness to the median</div>
+          </div>
+        </div>
+      </SlideLayout>
+    ),
+  },
+  {
+    id: "economic-layer-slashing",
+    stepsCount: slashingRows.length,
+    render: ({ step }) => (
+      <SlideLayout eyebrow="Trust Model" title="Three Distinct Ways to Lose Stake" wide>
+        <p className="slide-subtitle">
+          Self-reported degradation is advisory only and never touches stake — these three on-chain mechanisms
+          are the only ones that do, and they differ in trigger, actor, and consequence.
+        </p>
+        <ComparisonTable columns={slashingColumns} rows={slashingRows} step={step} />
       </SlideLayout>
     ),
   },
@@ -440,8 +496,12 @@ export const slides: SlideDef[] = [
     id: "failover",
     stepsCount: failoverBeats.length,
     render: ({ step }) => (
-      <SlideLayout eyebrow="Trust Model" title="Self-Healing: Relay Failover" wide>
-        <FlowDiagram nodes={failoverNodes} beats={failoverBeats} step={step} />
+      <SlideLayout eyebrow="Trust Model" title="Self-Healing: Local Recovery, Chain Confirms Later" wide>
+        <p className="slide-subtitle">
+          Relay and client each cut over independently in seconds — on-chain promote_relay trails behind, for
+          audit and late joiners only.
+        </p>
+        <FlowDiagram nodes={failoverNodes} beats={failoverBeats} step={step} canvasWidth={1400} canvasHeight={460} />
       </SlideLayout>
     ),
   },

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Handle, Position, type NodeProps } from "@xyflow/react";
+import type { ReactElement } from "react";
 
 export interface LabeledNodeData extends Record<string, unknown> {
   label: string;
@@ -91,6 +92,98 @@ export function DeviceNode({ data }: NodeProps & { data: DeviceNodeData }) {
           {data.device === "computer" ? <ComputerIcon /> : <PhoneIcon />}
         </div>
         <div className="rf-device-label">{data.label}</div>
+      </motion.div>
+    </>
+  );
+}
+
+export type RoleIcon = "browser" | "server" | "shield" | "cog" | "chain";
+
+function BrowserIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="3" y="4" width="18" height="16" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M3 9h18" strokeLinecap="round" />
+      <path d="M6.5 6.5h.01M9 6.5h.01" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function ServerIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="3" y="3.5" width="18" height="7" rx="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <rect x="3" y="13.5" width="18" height="7" rx="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6.5 7h.01M6.5 17h.01" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function ShieldIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M12 2.5l7.5 3v6c0 5-3.2 8.3-7.5 10-4.3-1.7-7.5-5-7.5-10v-6l7.5-3z" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M8.7 12.2l2.2 2.2 4.4-4.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function CogIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <circle cx="12" cy="12" r="3.2" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M12 2.5v3M12 18.5v3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M2.5 12h3M18.5 12h3M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function ChainIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M12 2.5l8.5 4.8v9.4L12 21.5l-8.5-4.8V7.3L12 2.5z" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="12" cy="12" r="2.6" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+const ROLE_ICONS: Record<RoleIcon, () => ReactElement> = {
+  browser: BrowserIcon,
+  server: ServerIcon,
+  shield: ShieldIcon,
+  cog: CogIcon,
+  chain: ChainIcon,
+};
+
+export interface RoleNodeData extends Record<string, unknown> {
+  label: string;
+  sublabel?: string;
+  color: string;
+  icon: RoleIcon;
+  /** The larger, central node in a hub-and-spoke mesh (e.g. the chain in the architecture diagram). */
+  hub?: boolean;
+  revealed: boolean;
+}
+
+/** A circular role badge with a sublabel — the hub-and-spoke sibling of DeviceNode, used by ArchitectureMesh. */
+export function RoleNode({ data }: NodeProps & { data: RoleNodeData }) {
+  const Icon = ROLE_ICONS[data.icon];
+  return (
+    <>
+      <NodeHandles />
+      <motion.div
+        className={data.hub ? "rf-device rf-device-hub" : "rf-device"}
+        initial={false}
+        animate={{ opacity: data.revealed ? 1 : 0, scale: data.revealed ? 1 : 0.85 }}
+        transition={{ duration: 0.35, ease: "easeOut" }}
+      >
+        <div className={data.hub ? "rf-device-badge rf-device-badge-hub" : "rf-device-badge"} style={{ background: data.color }}>
+          <Icon />
+        </div>
+        <div className="rf-device-label">{data.label}</div>
+        {data.sublabel && <div className="rf-device-sublabel">{data.sublabel}</div>}
       </motion.div>
     </>
   );

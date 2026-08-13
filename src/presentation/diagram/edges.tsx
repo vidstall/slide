@@ -1,4 +1,4 @@
-import { EdgeLabelRenderer, getStraightPath, type EdgeProps } from "@xyflow/react";
+import { EdgeLabelRenderer, getStraightPath, getSmoothStepPath, Position, type EdgeProps } from "@xyflow/react";
 import { motion } from "framer-motion";
 
 export interface RevealEdgeData extends Record<string, unknown> {
@@ -10,6 +10,21 @@ export interface RevealEdgeData extends Record<string, unknown> {
    *  have no visible handles and layout is fixed/hand-placed anyway. */
   sourcePoint: { x: number; y: number };
   targetPoint: { x: number; y: number };
+  /** Route as a right-angle (Manhattan) path instead of a straight diagonal
+   *  line. Degenerates to a plain straight segment when source/target already
+   *  share an axis, so it's safe to set on every edge in a mesh/topology
+   *  diagram uniformly — only genuinely diagonal pairs get a bend. */
+  orthogonal?: boolean;
+}
+
+/** Exit/entry side for a right-angle path, picked from which axis dominates
+ *  the source→target offset — e.g. a mostly-horizontal pair exits left/right
+ *  rather than top/bottom, so the bend (if any) reads as one clean corner. */
+function orthogonalPositions(dx: number, dy: number): { source: Position; target: Position } {
+  if (Math.abs(dx) >= Math.abs(dy)) {
+    return dx >= 0 ? { source: Position.Right, target: Position.Left } : { source: Position.Left, target: Position.Right };
+  }
+  return dy >= 0 ? { source: Position.Bottom, target: Position.Top } : { source: Position.Top, target: Position.Bottom };
 }
 
 /**
@@ -23,7 +38,20 @@ export interface RevealEdgeData extends Record<string, unknown> {
 export function RevealEdge({ markerStart, markerEnd, style, data }: EdgeProps & { data: RevealEdgeData }) {
   const { x: sourceX, y: sourceY } = data.sourcePoint;
   const { x: targetX, y: targetY } = data.targetPoint;
-  const [path, labelX, labelY] = getStraightPath({ sourceX, sourceY, targetX, targetY });
+  const [path, labelX, labelY] = data.orthogonal
+    ? (() => {
+        const { source, target } = orthogonalPositions(targetX - sourceX, targetY - sourceY);
+        return getSmoothStepPath({
+          sourceX,
+          sourceY,
+          sourcePosition: source,
+          targetX,
+          targetY,
+          targetPosition: target,
+          borderRadius: 0,
+        });
+      })()
+    : getStraightPath({ sourceX, sourceY, targetX, targetY });
 
   return (
     <>
