@@ -873,24 +873,24 @@ export const slides: SlideDef[] = [
           className="bullet-list"
           step={step}
           items={[
-            "Healthy overall: stable bitrate and frame rate for the whole session",
-            "The one rough patch traces to the live Vietnam join — a genuine cross-continental path — and self-resolves within 1–2 minutes",
-            "No instability, resource exhaustion, or degradation across the 10 minutes",
-            "A real, geographically distant participant handled gracefully — a signal beyond bot-to-bot traffic",
+            "The ICE dip on the Vietnam join resolved itself through TURN fallback — no manual intervention",
+            "The cross-continent join's latency spike stayed inside a bounded envelope",
+            "Audio-video sync tracked well inside the ITU-R BT.1359 acceptable range",
+            "Under a real, geographically distributed deployment, call quality holds up — comparable to a standard, centralized video conferencing service",
           ]}
         />
         <div className="stat-grid" style={{ marginTop: 12 }}>
           <div className="stat-card">
-            <div className="stat-value">0% packet loss</div>
-            <div className="stat-label">Flat all session</div>
+            <div className="stat-value">50.15ms latency</div>
+            <div className="stat-label">Whole-run average</div>
           </div>
           <div className="stat-card">
-            <div className="stat-value">~70–80ms latency</div>
-            <div className="stat-label">Steady-state, post-VN-join</div>
+            <div className="stat-value">7.20ms jitter</div>
+            <div className="stat-label">Whole-run average</div>
           </div>
           <div className="stat-card">
-            <div className="stat-value">100% ICE recovery</div>
-            <div className="stat-label">Within 1–2 min of VN join</div>
+            <div className="stat-value">695.25 kbps bitrate</div>
+            <div className="stat-label">Whole-run average</div>
           </div>
         </div>
       </SlideLayout>
@@ -983,9 +983,9 @@ export const slides: SlideDef[] = [
           className="bullet-list"
           step={step}
           items={[
-            "Both relay kills recovered — no dropped participants",
-            "Whole-run quality stayed healthy: 7.20ms avg jitter",
-            "695.25 kbps avg download — light load at 2 concurrent viewers",
+            "Both relay kills recovered — no dropped participants; the first reads as a clean data gap, the second as a frame-rate cliff to zero before self-healing",
+            "Latency steps from ~40ms to ~120ms after the second kill; jitter stays noisy throughout but never runaway",
+            "Encode/decode latency and resolution barely register either kill — the disruption stays isolated to bitrate, frame rate, and end-to-end latency",
             "Smallest resilience scenario — the failover-recovery baseline for the 10-bot run in 3.4",
           ]}
         />
@@ -995,8 +995,8 @@ export const slides: SlideDef[] = [
             <div className="stat-label">5.82s–6.96s downtime</div>
           </div>
           <div className="stat-card">
-            <div className="stat-value">50.15ms avg latency</div>
-            <div className="stat-label">Whole-run average</div>
+            <div className="stat-value">40ms → 120ms latency</div>
+            <div className="stat-label">Step after the 2nd kill</div>
           </div>
           <div className="stat-card">
             <div className="stat-value">0.00% packet loss</div>
@@ -1093,10 +1093,10 @@ export const slides: SlideDef[] = [
           className="bullet-list"
           step={step}
           items={[
-            "All four relay kills recovered — at 5x the concurrency of 3.3",
-            "No degradation as load scales — whole-run latency lower than the 2-bot run",
-            "1880.99 kbps avg download at 10 concurrent viewers",
-            "Largest scenario measured — failover recovery holds without user-visible collapse",
+            "All four relay kills recovered — including the relay-1 false-dead-peer detour, self-corrected once relay 3's ping confirmed relay 2 was alive",
+            "At 5x 3.3's concurrency, whole-run quality holds: 31.68ms avg latency, 0.03% packet loss (p95 0.14%)",
+            "1880.99 kbps avg download at 10 concurrent viewers — bandwidth scales with load, no collapse",
+            "Largest scenario measured — failover recovery holds under both real kills and a false positive, without user-visible collapse",
           ]}
         />
         <div className="stat-grid" style={{ marginTop: 12 }}>

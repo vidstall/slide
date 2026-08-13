@@ -350,14 +350,144 @@
     <div class="cue">Failover p99=80 IS reportable (unlike latency p99). "Mechanism floor, not MTTR." Last line = live hand-off to Van.</div>
   </div>
 
-  <div class="handoff" id="s18">
-    <h3>▸ VAN — slides 18–29 · 3.2 Quality Baseline + 3.3/3.4 Resilience (pending-van)</h3>
-    <p class="ids">18 divider-4-2 (3.2) · 19–21 eval-r1-* · 22 divider-4-3 (3.3, 2 kills, 5.8–7.0s) · 23–25 eval-r2-* · 26 divider-4-5 (3.4, 4 kills, 7.6–19.6s) · 27–29 eval-r4-*</p>
+  <div class="card" id="s18">
+    <div class="head"><span class="num">18</span><span class="title">3.2 Quality Baseline</span><span class="id">divider-4-2 · V+0:00 · ~20s</span></div>
+    <div class="say">
+      <p>Now to the cloud test.</p>
+      <p>I ran three scenarios, all on real infrastructure.</p>
+      <p>The first: five Azure regions, each instance hosting five workers — one relay, two validators, two control planes.</p>
+      <p>Two bots join from East US and West US 2, alongside one real participant.</p>
+      <p>This scenario measures call quality only — no resilience, no relay kills.</p>
+    </div>
+    <div class="cue">Van-confirmed 08-13: 25 workers = 5 workers/instance (1 relay + 2 validator + 2 CP) × 5 Azure regions. Bots in eastus/westus2 + 1 real join. Quality-only run — kills start at 3.3 (slide 22). Not yet enrolled in 00-facts — treat as pending-van until logged.</div>
+  </div>
+
+  <div class="card" id="s19">
+    <div class="head"><span class="num">19</span><span class="title">3.2 Session Health — Participants, ICE, Latency &amp; Jitter</span><span class="id">eval-r1-* · V+0:20 · ~50s</span></div>
+    <div class="say">
+      <p>Top-left panel: participant tracking, timestamps normalized to one through the end.</p>
+      <p><span class="clk">▸</span>Watch the range step from two to three and back to two — that's me joining the room, live.</p>
+      <p><span class="clk">▸</span>Some panels plot three lines: the highest value across every user and bot, the lowest, and the average.</p>
+      <p><span class="clk">▸</span>Next to participants: ICE success rate. There's a dip to zero on the min line — the relay couldn't resolve my public IP and port, so I fell back to TURN.</p>
+      <p><span class="clk">▸</span>Latency: a flat 40 milliseconds, plus or minus 10, before I join. The moment I join, the max line spikes to 200 — the instances sit in the US and Europe, and that distance is hard to beat.</p>
+      <p><span class="clk">▸</span>Jitter tells the same story.</p>
+      <p>Beyond the numbers: the felt experience. When I join, the bot is already streaming a children's song — copyleft, chosen because the character sings in sync with the screen, so I can eyeball audio-video sync directly.</p>
+      <p>ITU-R BT.1359 sets the bar: undetectable is minus 125 to plus 45 milliseconds; acceptable is minus 185 to plus 90.</p>
+    </div>
+    <div class="cue">Van-confirmed 08-13, not yet in 00-facts: baseline latency ~40ms±10 pre-join, max-line spike to ~200ms on join (cross-continent, US/Europe hosts); ICE success-rate min-line dip to 0% = TURN fallback event; jitter mirrors latency. These are per-panel live/self figures — distinct from 3.1's 70.9ms component-sum and 3.2's steady-state ~70-80ms average (R-1 trap); don't merge them. Song = copyleft children's song, chosen for visually-cued A/V sync checking, not DVConf's own measured sync number. ITU-R BT.1359 cited as the judging bar (undetectable [-125,+45]ms, acceptable [-185,+90]ms) — a citation, not yet a DVConf result.</div>
+  </div>
+
+  <div class="card" id="s20">
+    <div class="head"><span class="num">20</span><span class="title">3.2 Media Quality — Resolution &amp; Framerate</span><span class="id">eval-r1-* · V+1:10 · ~14s</span></div>
+    <div class="say">
+      <p>Next, media quality.</p>
+      <p><span class="clk">▸</span>The bot streams at 1024 by 768.</p>
+      <p><span class="clk">▸</span>Average framerate across the run: 25 frames per second.</p>
+    </div>
+    <div class="cue">Van-confirmed 08-13, not yet in 00-facts: 1024×768 bot send resolution, 25 fps average. Keep it brief — this slide is a quick data beat between the session-health walkthrough (19) and the summary (21).</div>
+  </div>
+
+  <div class="card" id="s21">
+    <div class="head"><span class="num">21</span><span class="title">3.2 Summary &amp; Conclusion</span><span class="id">eval-r1-summary · V+1:24 · ~32s</span></div>
+    <div class="say">
+      <p>To close out 3.2 — the whole-run averages.</p>
+      <p><span class="clk">▸</span>Latency: 50.15 milliseconds.</p>
+      <p><span class="clk">▸</span>Jitter: 7.20 milliseconds.</p>
+      <p><span class="clk">▸</span>Bitrate: 695.25 kilobits per second.</p>
+      <p>Set against what you just saw: the ICE fallback resolved itself through TURN, the cross-continent join stayed inside a bounded envelope, and audio-video sync tracked well inside the ITU-R acceptable range.</p>
+      <p>Under a real, geographically distributed deployment, call quality holds up — comparable to a standard, centralized video conferencing service.</p>
+    </div>
+    <div class="cue">Uses only the three already-noted figures (50.15 ms / 7.20 ms / 695.25 kbps) — whole-run averages, not yet enrolled in 00-facts, Van confirms before Q&A treats them as governed. OPEN DISCREPANCY: PHASE B's R-1 trap describes 3.2's steady-state latency as "~70-80 ms" (collision note vs 3.1's 70.9 ms) — that estimate predates this confirmed 50.15 ms figure. Reconcile before the talk: either the R-1 trap wording needs updating, or 50.15 ms and the "~70-80 ms" describe different windows/panels. Do not speak both as if consistent.</div>
+  </div>
+
+  <div class="card" id="s22">
+    <div class="head"><span class="num">22</span><span class="title">3.3 2-Bot Resilience Test</span><span class="id">divider-4-3 · V+1:56 · ~25s</span></div>
+    <div class="say">
+      <p>Second scenario: resilience.</p>
+      <p>Same five Azure regions, now three workers per instance — one relay, one validator, one control plane, fifteen workers total.</p>
+      <p>Two scripted bots join a single room and hold it for about seven minutes.</p>
+      <p>I kill two relays by hand, outside the scenario script, and the failover panel measures the downtime each time.</p>
+    </div>
+    <div class="cue">Van-confirmed 08-13: 5 Azure regions (eastus/westus2/centralus/westeurope/eastus2), now 1 relay + 1 validator + 1 CP each = 15 infra workers (3 services × 5 VMs, R-4 — not users). 2 bots, one room, ~400s (~6.7 min). 2 relay kills — manual, out-of-band, not in scenario.toml — keep disclosed. Downtime 5.8–7.0s is printed on the slide subtitle; not yet enrolled in 00-facts.</div>
+  </div>
+
+  <div class="card" id="s23">
+    <div class="head"><span class="num">23</span><span class="title">3.3 Session &amp; Network Health</span><span class="id">eval-r2-session-health · V+2:21 · ~29s</span></div>
+    <div class="say">
+      <p>Two kill events on this run — the panel marks both.</p>
+      <p>First at two-fifty-three, second at two-fifty-six.</p>
+      <p>Watch the latency panel: a break in the line at the first kill, then a jump from forty to a hundred-twenty milliseconds after the second.</p>
+      <p>Downtime: five-point-eight-two seconds the first time, six-point-nine-six the second, until the new connection lands.</p>
+      <p>Jitter stays noisy throughout — but bounded, never runaway.</p>
+    </div>
+    <div class="cue">Van-confirmed 08-13, not yet in 00-facts. Real Grafana panels (participants/ICE/latency/jitter/loss/failover) — no click reveals, narrate by pointing. Kill timestamps 02:53/02:56 and downtimes 5.82s/6.96s match the divider-4-3 and eval-r2-summary stat cards. Latency break-then-jump (40ms→120ms) and "noisy but bounded" jitter are new detail, not on any stat card. Kills stay manual, out-of-band.</div>
+  </div>
+
+  <div class="card" id="s24">
+    <div class="head"><span class="num">24</span><span class="title">3.3 Media Quality</span><span class="id">eval-r2-media-quality · V+2:50 · ~29s</span></div>
+    <div class="say">
+      <p>Same two kills, now on media quality.</p>
+      <p>Bitrate and resolution show a clean gap at the first kill — no data, then a resume.</p>
+      <p>Frame rate does the same, but the second kill hits harder: a spike down to zero frames before recovering within the same window.</p>
+      <p>Encode and decode latency barely notice either kill — encode stays four to eleven milliseconds, decode near one.</p>
+    </div>
+    <div class="cue">Van-confirmed 08-13, not yet in 00-facts. Real Grafana panels (bitrate/resolution/frame rate/encode-decode) — no click reveals, narrate by pointing. Bitrate/resolution share a genuine sample gap at the first kill (~02:53–02:54); frame rate holds ~28–30fps (one unrelated ~24fps dip near 02:52) through that gap, then cliffs to 0fps at the second kill before recovering — the sharpest signature of either kill here. Encode (~4–11ms) / decode (~1–2ms) share the first-kill gap but stay in-band through the second. Don't state precise durations from this chart — those live on slide 23/25.</div>
+  </div>
+
+  <div class="card" id="s25">
+    <div class="head"><span class="num">25</span><span class="title">3.3 Summary &amp; Conclusion</span><span class="id">eval-r2-summary · V+3:19 · ~39s</span></div>
+    <div class="say">
+      <p>To close out 3.3. Both kills recovered — no dropped participants.</p>
+      <p><span class="clk">▸</span>The first reads as a clean data gap; the second, a frame-rate cliff to zero before it self-heals.</p>
+      <p><span class="clk">▸</span>Latency steps from about forty to about a hundred-twenty milliseconds after the second kill; jitter stays noisy but never runs away.</p>
+      <p><span class="clk">▸</span>Encode, decode, and resolution barely notice either kill — the disruption stays isolated to bitrate, frame rate, and end-to-end latency.</p>
+      <p><span class="clk">▸</span>Smallest resilience scenario we ran — this is the failover-recovery baseline the ten-bot run in 3.4 builds on.</p>
+    </div>
+    <div class="cue">Deck-fixed 08-13: this card previously showed 50.15ms/7.20ms/695.25kbps — byte-identical to slide 21's 3.2 numbers across two different topologies, a near-certain copy-paste bug. Rewritten to speak only slide 22–24-sourced figures (2 kills, 5.82s/6.96s downtime, 40ms→120ms latency step, bounded jitter). Real 3.3 whole-run latency/jitter/bitrate averages still needed from Van.</div>
+  </div>
+
+  <div class="card" id="s26">
+    <div class="head"><span class="num">26</span><span class="title">3.4 10-Bot Resilience Test</span><span class="id">divider-4-5 · V+3:58 · ~28s</span></div>
+    <div class="say">
+      <p>Third scenario: heavier load.</p>
+      <p>Same topology as before — fifteen workers, one relay, one validator, one control plane per region — but now ten scripted bots, two sessions each, all in one room for about seven minutes.</p>
+      <p>This time I kill four relays by hand, and the downtime stretches further: seven-point-six seconds on the light end, up to nineteen-point-six on the worst.</p>
+    </div>
+    <div class="cue">Van-confirmed 08-13: same 5-region/1-relay+1-validator+1-CP topology as 3.3 (15 workers), now 10 scripted bots (2 sessions each), 4 manual out-of-band relay kills. Downtime 7.6–19.6s is printed on the slide subtitle — fine to speak. W-08-live trap: 19.6s exceeds the 8–15s design budget (F-24) — budget stays unspoken on stage, answer only if asked. Not yet enrolled in 00-facts.</div>
+  </div>
+
+  <div class="card" id="s27">
+    <div class="head"><span class="num">27</span><span class="title">3.4 Session &amp; Network Health</span><span class="id">eval-r4-session-health · V+4:26 · ~50s</span></div>
+    <div class="say">
+      <p>This run has three relays — one primary, two standby, numbered one through three.</p>
+      <p>I kill relay one at three-forty-four — the panel's first record.</p>
+      <p>Six of the ten users reconnect straight to relay two. The other four stall: nine seconds waiting, they presume relay two is dead too, and fail over to relay three, the contract's next assignment.</p>
+      <p>Once there, relay three pings relay two, finds it alive, and those four reconnect back. That's why the first kill leaves two records in the downtime panel — a clean six-user recovery, and a four-user detour.</p>
+      <p>Then I kill relay two: this time, a clean failover to relay three in seven-point-six-one seconds.</p>
+    </div>
+    <div class="cue">Van-confirmed 08-13, not yet in 00-facts. Real Grafana panels — no click reveals, narrate by pointing. Topology: 1 primary + 2 standby relays (1-2-3). Relay-1 kill (3:44) splits into 2 downtime records: 6/10 users recover direct, 4/10 stall 9s, wrongly presume relay 2 dead, detour to relay 3, then reconnect to relay 2 once relay 3's ping confirms it's alive. New trap R-5: kill actions ≠ downtime-panel record count. Relay-2 kill fails over cleanly to relay 3 in 7.61s — one record. None of these numbers are on a stat card yet.</div>
+  </div>
+
+  <div class="handoff" id="traps-28">
+    <h3>▸ VAN continues — slide 28 · 3.4 Media Quality (pending-van)</h3>
+    <p class="ids">28 eval-r4-media-quality — not yet scripted</p>
     <p>Numbers not in <em>00-facts</em> — Van confirms before anyone speaks them. Traps:</p>
     <p>R-1 · 3.2's "~70–80 ms" ≠ 3.1's 70.9 ms lower bound — different methods; never merge them.</p>
-    <p>R-4 · "25 workers" / "15 workers" = infra processes (services × VMs), NOT users.</p>
+    <p>R-4 · "25 workers" (3.2) / "15 workers" (3.3/3.4) = infra processes (services × VMs), NOT users.</p>
+    <p>R-5 · 3.4's relay-1 kill produced 2 downtime records (direct 6-user recovery + 4-user false-dead-peer detour via relay 3) — kill count ≠ panel record count.</p>
     <p>W-08-live · framing decided 08-13: the 8–15 s budget is NOT spoken on stage (Quang's s16 line dropped it); 19.6 s stays on the slide, answer only if asked — "the budget was a design estimate; the live tail exceeded it, a finding". Never average it away.</p>
-    <p>Relay kills were manual, out-of-band (not in scenario.toml) — keep that disclosed. The eval-r2-summary "5 and 10 bots" bullet was fixed 08-13 (now "baseline for the 10-bot run in 3.4").</p>
+    <p>Relay kills were manual, out-of-band (not in scenario.toml) — keep that disclosed.</p>
+  </div>
+
+  <div class="card" id="s29">
+    <div class="head"><span class="num">29</span><span class="title">3.4 Summary &amp; Conclusion</span><span class="id">eval-r4-summary · V+TBD (after s28) · ~40s</span></div>
+    <div class="say">
+      <p>To close out 3.4 — and the resilience section. All four kills recovered, including that relay-one detour: the false read on relay two corrected itself once relay three's ping proved it alive.</p>
+      <p><span class="clk">▸</span>At five times 3.3's concurrency, whole-run quality holds: thirty-one-point-six-eight milliseconds average latency, packet loss three-hundredths of a percent.</p>
+      <p><span class="clk">▸</span>Download average: one-thousand-eight-hundred-eighty-one kilobits per second at ten concurrent viewers — bandwidth scales with load, no collapse.</p>
+      <p><span class="clk">▸</span>This is the largest scenario we measured. Failover recovery holds — under real kills and under a false positive — without a user-visible collapse.</p>
+    </div>
+    <div class="cue">Deck-fixed 08-13: cut the old "latency lower than the 2-bot run" bullet — it cited 3.3's whole-run latency, the same 50.15ms figure removed from slide 25 as an unconfirmed duplicate. Bullets now state 3.4's own numbers only (31.68ms / 0.03% loss, p95 0.14% / 1880.99 kbps / 4 events, 7.61–19.6s) — these are distinct from other slides, no duplicate-bug evidence here. Opening/closing bullets headline slide 27's R-5 self-correction as the closing resilience story. V+ timestamp provisional until slide 28 is scripted.</div>
   </div>
 
   <div class="sec">Quang resumes — slides 30–32 · ~1:20</div>
