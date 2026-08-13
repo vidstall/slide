@@ -521,11 +521,11 @@ export const slides: SlideDef[] = [
         </p>
         <div className="stat-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
           <div className="stat-card">
-            <div className="stat-value">0.0257 SUI</div>
+            <div className="stat-value">0.017 SUI</div>
             <div className="stat-label">Irreversible cost — full K=2, N=4 session (13 transactions)</div>
           </div>
           <div className="stat-card">
-            <div className="stat-value">0.0351 SUI</div>
+            <div className="stat-value">0.035 SUI</div>
             <div className="stat-label">Net cost — same session, including refundable storage</div>
           </div>
         </div>
