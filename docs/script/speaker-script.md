@@ -27,7 +27,7 @@ Number authority: **`00-facts.md`** (Section A registry, Section C stances, Sect
 
 | Slide `id` | # | Flag | What the script does differently, and why |
 |---|---|---|---|
-| `title` | 1 | diverge -> L-5 | Cover omits supervisor + project code; the open credits him verbally. |
+| `title` | 1 | ok (deck-fixed 08-13) | Cover now carries "Supervisor: Assoc. Prof. Nguyen Dinh Thuc" (L-5 closed). 08-13 decision: Assoc. Prof. Thuc only — the progress form also names Sr. Lect. Do Hoang Cuong, kept off the cover. Project code stays off; verbal credit kept. |
 | `idle-capacity-gap` | 4 | note | `cost-problem` slide was removed — the cloud-cost framing survives as one spoken sentence here. |
 | `huddle01-tradeoffs` | 5 | note | `huddle01-intro` slide was removed — who-Huddle01-is is one spoken sentence here. Subtitle trimmed 08-13: the $37M / 840M-min figures are now truly off the deck; do not volunteer them (Q&A only, cited [004,011]). |
 | `architecture` | 7 | diverge -> H-4 | (L-3 closed 08-13: "coturn TURN" removed from the relay node; the TURN-issuance-only note stays spoken.) (H-4) still **no E2EE slide** — the +1.86 ms upper bound is a spoken aside; short variant drops it. Also absorbs a one-breath WebRTC gloss (the `webrtc-framework` slide was removed). |
@@ -35,8 +35,8 @@ Number authority: **`00-facts.md`** (Section A registry, Section C stances, Sect
 | `economic-layer` | 10 | note | `designed-vs-implemented` slide was removed. The two mandatory concessions (W-01 settlement = 2 proofs + mean; W-02 slashing = cooperative obligation, not seizure) are now **spoken here**, one breath each. Never "automatic slashing", never "three-of-four ships". |
 | `evaluation-methodology` | 12 | ok (deck-fixed 08-13) | Card now reads **"Fee"** (L-2 closed — Section D / F-41). |
 | `eval-latency` | 13 | ok (deck-fixed 08-13) | H-1/H-2 closed: **p99 bar removed** (F-02) and title now neutral ("Wide-Area One-Way Component-Sum"). Discipline unchanged: p50/p95 only, target **unresolved**. |
-| `eval-cost` | 14 | diverge -> M-1 | Title now **"On-Chain Fee per Session"** (M-2 closed 08-13). Six per-function gas bars stay: raw-traceable (`m8-cost-empirical`, e2-provenance row 107) but **not in `00-facts`** — never read them off. Stat cards 0.017 / 0.035 SUI are correct (H-3, L-1 fixed 2026-08-13). |
-| `eval-failover` | 16 | ok (+bridge) | Adds a hand-off bridge: origin test did not measure full recovery; **Van's 3.3/3.4 kill real relays and measure downtime**. Keeps W-08 discipline: mechanism floor, not MTTR. |
+| `eval-cost` | 14 | ok (F-46 enrolled 08-13) | Title **"On-Chain Fee per Session"** (M-2 closed). Six gas bars now governed by **F-46** (§5.3.2 table + `m8-cost-empirical` raw) — fine to discuss if asked; don't read all six in the talk (time). Stat cards 0.017 / 0.035 SUI correct (H-3, L-1 fixed 2026-08-13). |
+| `eval-failover` | 16 | ok (+bridge) | Adds a hand-off bridge: origin test did not measure full recovery; **Van's 3.3/3.4 kill real relays and measure downtime**. Keeps W-08 discipline: mechanism floor, not MTTR. 08-13 decision: the spoken **8-15 s budget line was removed** from this block — budget is Q&A-only (see W-08-live note in Phase B). |
 | `divider-4-2` .. `eval-r4-summary` | 17-28 | pending-van | Van's runs; numbers not in `00-facts`. See PHASE B notes — includes the **new 19.6 s vs 8-15 s budget trap**. |
 | `limitations` | 29 | diverge -> M-3 | Script adds, verbally: E2EE opt-in/fails-open (W-04), AdminCap breadth (W-10), no threat model (W-17). All raised by the thesis itself. |
 
@@ -50,11 +50,11 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 
 # PHASE A — Quang, slides 1-16
 
-### 1 · `title` — Cover  |  0:00 · ~20s · ~44 words  |  SYNC: diverge -> L-5
+### 1 · `title` — Cover  |  0:00 · ~20s · ~44 words  |  SYNC: ok (deck-fixed 08-13)
 
 > Good morning. Our thesis is *Innovating Video Conferencing Systems Through Blockchain*. I'm Duong Minh Quang; with me is Le Quoc Van. We work under the supervision of Assoc. Prof. Nguyen Dinh Thuc, at the University of Science. Van and I will split the talk.
 
-**Cue:** Verify supervisor name before rehearsal. Credit him aloud — the cover omits it.
+**Cue:** Cover now shows "Supervisor: Assoc. Prof. Nguyen Dinh Thuc" (L-5 closed; verified vs `02-slides.md` + the progress form — which also names Sr. Lect. Do Hoang Cuong; 08-13 decision keeps Thuc only). Verbal credit kept.
 
 ### 2 · `intro-video-conferencing` — Nearly a Century of Video Calling  |  0:20 · ~34s · ~74 words  |  SYNC: ok
 
@@ -186,13 +186,13 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 **Cue:** Deck fixed 08-13 — p99 bar removed (F-02), title now neutral (H-1/H-2 closed). Discipline unchanged: speak p50/p95 only; never say the target was met.
 **Short variant:** "One-way component-sum, p95 70.9 ms — a declared lower bound; synthetic camera, one access network. Full-path sub-200 ms is unresolved."
 
-### 14 · `eval-cost` — Fee  |  8:29 · ~46s · ~100 words  |  SYNC: diverge -> M-1
+### 14 · `eval-cost` — Fee  |  8:29 · ~46s · ~100 words  |  SYNC: ok (F-46 enrolled 08-13)
 
 > The on-chain **fee**. One full session, executed end to end: two relays, four validators — thirteen transactions, on a pinned localnet.
 > The two cards carry the session totals. Irreversible: about **0.017 SUI**. Net, counting refundable storage: about **0.035 SUI**. At a *labelled* one-dollar-fifty per SUI, that net is **about five cents**.
 > The boundary. Pinned localnet — not mainnet. Localnet fixes the gas schedule and has no fee contention. And it does not validate the three-of-four settlement rule. Gas is a property of the bytecode and storage rebate; the real SUI price is not ours to claim.
 
-**Cue:** Title now "On-Chain Fee per Session" (M-2 fixed 08-13). Still do NOT read the six per-function gas bars — raw-traceable (`m8-cost-empirical`) but not in `00-facts` (M-1). Cards 0.017 / 0.035 SUI are correct (H-3/L-1 fixed). USD 0.0257 stays Q&A-only, never as "SUI".
+**Cue:** Title now "On-Chain Fee per Session" (M-2 fixed 08-13). Six gas bars now governed (F-46, thesis §5.3.2) — discuss if asked; don't read all six in the talk (time). Cards 0.017 / 0.035 SUI are correct (H-3/L-1 fixed). USD 0.0257 stays Q&A-only, never as "SUI".
 **Short variant:** "Irreversible ~0.017 SUI, ~five cents net at a labelled 1.50-dollar SUI — pinned localnet, not mainnet, not a check of three-of-four."
 
 ### 15 · `eval-capacity` — Capacity  |  9:15 · ~38s · ~82 words  |  SYNC: ok
@@ -203,13 +203,13 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 
 **Trace:** F-16/F-17 (0.05 core at N=15, not saturated), F-20 (floor 3, planning 5-6), W-06 (labelled a model), W-15 (no auto-scaling). Never "100 users" as achieved.
 
-### 16 · `eval-failover` — Failover: Warm-Pipe Mechanism Floor  |  9:53 · ~46s · ~100 words  |  SYNC: ok (+bridge)
+### 16 · `eval-failover` — Failover: Warm-Pipe Mechanism Floor  |  9:53 · ~42s · ~87 words  |  SYNC: ok (+bridge)
 
 > Failover, measured. Thirty cutovers on a real mediasoup warm pipe. **Zero failures.** Detection-plus-resume: **58 milliseconds** median, **74** at p95, **80** at p99.
-> The honest label: this is a **mechanism floor** — not recovery time. The bench closes the primary's sink while the pipe stays live, so it is optimistic by construction. Our design budget for full recovery was eight to fifteen seconds — and in this origin test, we did not measure it.
+> The honest label: this is a **mechanism floor** — not recovery time. The bench closes the primary's sink while the pipe stays live, so it is optimistic by construction. And full user-visible recovery was not measured in this origin test.
 > That open end is exactly where Van picks up. His resilience runs kill real relays, on live Azure hosts — and measure the downtime users actually see. Van, over to you.
 
-**Trace:** F-23 (58/74/80, 30 cutovers, zero failures — failover p99 IS reportable), F-24 (8-15 s budget, unmeasured in 4.1/3.1), W-08 (CONCEDE MTTR, DEFEND mechanism). The last line is the live hand-off to Van.
+**Trace:** F-23 (58/74/80, 30 cutovers, zero failures — failover p99 IS reportable), F-24 (8-15 s budget — 08-13 decision: **not spoken on stage**, Q&A-only; reduces the visible collision with Van's 19.6 s tail), W-08 (CONCEDE MTTR, DEFEND mechanism). The last line is the live hand-off to Van.
 
 ---
 
@@ -227,7 +227,7 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 **Traps for whoever narrates this section:**
 - **R-1:** 3.2's steady-state "~70-80 ms" collides with 3.1's 70.9 ms lower bound — different methods (Grafana panel average vs component-sum); say so if asked, never merge them.
 - **R-4:** "25 workers" = 5 services x 5 VMs — infra processes, NOT users. 3.3/3.4: "15 workers" = 3 services x 5 VMs.
-- **W-08-live (NEW):** 3.4's downtime tail **19.6 s exceeds the 8-15 s design budget**. Honest line: the budget was a design estimate; the live tail exceeded it — that is a finding to report, not to hide. Do not average it away.
+- **W-08-live (framing decided 08-13):** 3.4's downtime tail **19.6 s exceeds the 8-15 s design budget** (F-24). Team stance: the budget is **not spoken on stage** — Quang's slide-16 line no longer reads it; 19.6 s stays disclosed on the slide and is **answered only if asked**. The honest answer, if asked: the budget was a design estimate; the live tail exceeded it — a finding, not hidden. Never average it away.
 - Relay kills were applied **manually, out-of-band** (not in scenario.toml) — the slide discloses this; keep it disclosed when speaking.
 - `eval-r2-summary` bullet fixed on deck 08-13: now "the failover-recovery baseline for the 10-bot run in 3.4" (deck has no 5-bot section). The 3.2/3.3/3.4 summary bullets were also deduped against the stat cards — every number still appears exactly once on each slide.
 - Whole-run averages on the summary slides (50.15 ms, 7.20 ms, 695.25 kbps, ...) are not yet in `00-facts` — Van confirms before anyone speaks them.
@@ -269,4 +269,5 @@ Slides 1-16: ~1,390 words ≈ **10:40**. Slides 29-31: ~170 words ≈ **1:20**. 
 ## Open items feeding back to the deck
 
 **Applied 2026-08-13 (certain batch):** H-1 (p99 bar removed — F-02), H-2 (latency retitled), M-2/L-2 (Cost -> Fee on title + methodology card + limitations bullet), L-3 (coturn off the relay node), the `eval-r2-summary` "5 and 10 bots" bullet, plus a text-density pass (huddle01 subtitle, call-mesh, dividers collapsed, summary bullets deduped, closing hint replaced with the Section-D framing line).
-**Still open:** M-1 (six gas bars — raw-traceable via `m8-cost-empirical` / e2-provenance row 107, but not in `00-facts`: promote them or keep unspoken), H-4 (an E2EE/Trust-Model slide — the +1.86 ms aside still has no visual home), L-5 (supervisor on cover). For Van: how 3.4's 19.6 s tail is framed against the 8-15 s budget.
+**Decided 2026-08-13 (interview round):** M-1 CLOSED — six gas bars promoted into `00-facts` as **F-46** (thesis §5.3.2 + `m8-cost-empirical` raw). L-5 CLOSED — cover now carries the supervisor (Assoc. Prof. Thuc only). H-4 — decision: **keep the +1.86 ms as a spoken aside**, no E2EE slide (H-4 retired as a deck item; the aside + Q&A carry it). W-08-live — framing: **budget 8-15 s not spoken on stage**; 19.6 s disclosed on the slide, answered only if asked.
+**Still open for Van:** confirm the 3.2-3.4 numbers into `00-facts` before anyone speaks them; R-1 (~70-80 ms vs 70.9 ms collision) stays a spoken-discipline note.

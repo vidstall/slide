@@ -115,7 +115,7 @@
       <p>We work under the supervision of Assoc. Prof. Nguyen Dinh Thuc, at the University of Science.</p>
       <p>Van and I will split the talk.</p>
     </div>
-    <div class="cue">Verify supervisor name before rehearsal. Credit him aloud — the cover slide omits it (L-5).</div>
+    <div class="cue">Cover now shows "Supervisor: Assoc. Prof. Nguyen Dinh Thuc" (L-5 closed). Credit him aloud as scripted.</div>
   </div>
 
   <div class="card" id="s2">
@@ -306,7 +306,7 @@
       <p>And it does not validate the three-of-four settlement rule.</p>
       <p>Gas is a property of the bytecode and storage rebate; the real SUI price is not ours to claim.</p>
     </div>
-    <div class="cue">Title now "On-Chain Fee per Session" (M-2 fixed 08-13). Still do NOT read the six gas bars (raw-traceable, not in 00-facts — M-1). USD 0.0257 = Q&amp;A only, never as "SUI". SHORT: "irreversible ~0.017 SUI, ~five cents net at a labelled 1.50-dollar SUI — localnet, not mainnet, not three-of-four."</div>
+    <div class="cue">Title now "On-Chain Fee per Session" (M-2 fixed 08-13). Six gas bars now governed (F-46, thesis §5.3.2) — discuss if asked, don't read all six in the talk. USD 0.0257 = Q&amp;A only, never as "SUI". SHORT: "irreversible ~0.017 SUI, ~five cents net at a labelled 1.50-dollar SUI — localnet, not mainnet, not three-of-four."</div>
   </div>
 
   <div class="card" id="s15">
@@ -330,7 +330,7 @@
       <p>Detection-plus-resume: <b>58 milliseconds</b> median, <b>74</b> at p95, <b>80</b> at p99.</p>
       <p>The honest label: this is a <b>mechanism floor</b> — not recovery time.</p>
       <p>The bench closes the primary's sink while the pipe stays live, so it is optimistic by construction.</p>
-      <p>Our design budget for full recovery was eight to fifteen seconds — and in this origin test, we did not measure it.</p>
+      <p>And full user-visible recovery was not measured in this origin test.</p>
       <p>That open end is exactly where Van picks up.</p>
       <p>His resilience runs kill real relays, on live Azure hosts — and measure the downtime users actually see.</p>
       <p>Van, over to you.</p>
@@ -344,7 +344,7 @@
     <p>Numbers not in <em>00-facts</em> — Van confirms before anyone speaks them. Traps:</p>
     <p>R-1 · 3.2's "~70–80 ms" ≠ 3.1's 70.9 ms lower bound — different methods; never merge them.</p>
     <p>R-4 · "25 workers" / "15 workers" = infra processes (services × VMs), NOT users.</p>
-    <p>W-08-live · 3.4's 19.6 s tail EXCEEDS the 8–15 s design budget — report it as a finding, don't average it away.</p>
+    <p>W-08-live · framing decided 08-13: the 8–15 s budget is NOT spoken on stage (Quang's s16 line dropped it); 19.6 s stays on the slide, answer only if asked — "the budget was a design estimate; the live tail exceeded it, a finding". Never average it away.</p>
     <p>Relay kills were manual, out-of-band (not in scenario.toml) — keep that disclosed. The eval-r2-summary "5 and 10 bots" bullet was fixed 08-13 (now "baseline for the 10-bot run in 3.4").</p>
   </div>
 

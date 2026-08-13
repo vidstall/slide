@@ -291,6 +291,7 @@ export const slides: SlideDef[] = [
             <p>Faculty of Information Technology</p>
           </div>
           <p className="cover-authors">Le Quoc Van &nbsp;·&nbsp; Duong Minh Quang</p>
+          <p className="cover-supervisor">Supervisor: Assoc. Prof. Nguyen Dinh Thuc</p>
         </SlideLayout>
       </div>
     ),
