@@ -15,7 +15,7 @@ export function Landing({ onStart }: LandingProps) {
         </div>
         <p className="slide-eyebrow">Bachelor Thesis · Advanced Program in Computer Science</p>
         <h1 className="slide-title">Innovating Video Conferencing Systems Through Blockchain</h1>
-        <p className="cover-authors">Le Quoc Van &nbsp;·&nbsp; Duong Minh Quang</p>
+        <p className="cover-authors">Le Quoc Van — 22125119 &nbsp;·&nbsp; Duong Minh Quang — 22125081</p>
         <p className="cover-supervisor">Supervisor: Assoc. Prof. Nguyen Dinh Thuc</p>
         <button type="button" className="start-button" onClick={onStart}>
           Start

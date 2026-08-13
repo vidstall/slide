@@ -311,7 +311,7 @@ export const slides: SlideDef[] = [
             <p>VNU-HCMUS — Ho Chi Minh University of Science</p>
             <p>Faculty of Information Technology</p>
           </div>
-          <p className="cover-authors">Le Quoc Van &nbsp;·&nbsp; Duong Minh Quang</p>
+          <p className="cover-authors">Le Quoc Van — 22125119 &nbsp;·&nbsp; Duong Minh Quang — 22125081</p>
           <p className="cover-supervisor">Supervisor: Assoc. Prof. Nguyen Dinh Thuc</p>
         </SlideLayout>
       </div>
