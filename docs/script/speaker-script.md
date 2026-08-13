@@ -29,13 +29,13 @@ Number authority: **`00-facts.md`** (Section A registry, Section C stances, Sect
 |---|---|---|---|
 | `title` | 1 | diverge -> L-5 | Cover omits supervisor + project code; the open credits him verbally. |
 | `idle-capacity-gap` | 4 | note | `cost-problem` slide was removed — the cloud-cost framing survives as one spoken sentence here. |
-| `huddle01-tradeoffs` | 5 | note | `huddle01-intro` slide was removed — who-Huddle01-is is one spoken sentence here. The $37M / 840M-min figures are no longer on any slide; do not volunteer them (Q&A only, cited [004,011]). |
-| `architecture` | 7 | diverge -> L-3, H-4 | (L-3) "coturn TURN" on the node — coturn was **never deployed** (F-28); said aloud. (H-4) still **no E2EE slide** — the +1.86 ms upper bound is a spoken aside; short variant drops it. Also absorbs a one-breath WebRTC gloss (the `webrtc-framework` slide was removed). |
+| `huddle01-tradeoffs` | 5 | note | `huddle01-intro` slide was removed — who-Huddle01-is is one spoken sentence here. Subtitle trimmed 08-13: the $37M / 840M-min figures are now truly off the deck; do not volunteer them (Q&A only, cited [004,011]). |
+| `architecture` | 7 | diverge -> H-4 | (L-3 closed 08-13: "coturn TURN" removed from the relay node; the TURN-issuance-only note stays spoken.) (H-4) still **no E2EE slide** — the +1.86 ms upper bound is a spoken aside; short variant drops it. Also absorbs a one-breath WebRTC gloss (the `webrtc-framework` slide was removed). |
 | `session-lifecycle` | 8 | ok (deck-change) | Assignment is now "cp-daemon quorum (>=2/3 active CPs) ratifies pairing on-chain" — script updated to match; single-host boundary of the quorum run stays Q&A. |
 | `economic-layer` | 10 | note | `designed-vs-implemented` slide was removed. The two mandatory concessions (W-01 settlement = 2 proofs + mean; W-02 slashing = cooperative obligation, not seizure) are now **spoken here**, one breath each. Never "automatic slashing", never "three-of-four ships". |
-| `evaluation-methodology` | 12 | diverge -> L-2 | Card reads "Cost"; script says **"Fee"** (Section D / F-41). |
-| `eval-latency` | 13 | diverge -> H-1, H-2 | Slide still shows a **p99=72.0 bar** (F-02: not reportable — do not speak it) and the title **"Below the 200ms Ceiling"** (Section D banned). Script: p50/p95 only, target **unresolved**. |
-| `eval-cost` | 14 | diverge -> M-2, M-1 | Title still "Cost" -> speak **"Fee"**. Six per-function gas bars are **not in `00-facts`** (Rule 5) — never read them off. Stat cards 0.017 / 0.035 SUI are correct (H-3, L-1 fixed 2026-08-13). |
+| `evaluation-methodology` | 12 | ok (deck-fixed 08-13) | Card now reads **"Fee"** (L-2 closed — Section D / F-41). |
+| `eval-latency` | 13 | ok (deck-fixed 08-13) | H-1/H-2 closed: **p99 bar removed** (F-02) and title now neutral ("Wide-Area One-Way Component-Sum"). Discipline unchanged: p50/p95 only, target **unresolved**. |
+| `eval-cost` | 14 | diverge -> M-1 | Title now **"On-Chain Fee per Session"** (M-2 closed 08-13). Six per-function gas bars stay: raw-traceable (`m8-cost-empirical`, e2-provenance row 107) but **not in `00-facts`** — never read them off. Stat cards 0.017 / 0.035 SUI are correct (H-3, L-1 fixed 2026-08-13). |
 | `eval-failover` | 16 | ok (+bridge) | Adds a hand-off bridge: origin test did not measure full recovery; **Van's 3.3/3.4 kill real relays and measure downtime**. Keeps W-08 discipline: mechanism floor, not MTTR. |
 | `divider-4-2` .. `eval-r4-summary` | 17-28 | pending-van | Van's runs; numbers not in `00-facts`. See PHASE B notes — includes the **new 19.6 s vs 8-15 s budget trap**. |
 | `limitations` | 29 | diverge -> M-3 | Script adds, verbally: E2EE opt-in/fails-open (W-04), AdminCap breadth (W-10), no threat model (W-17). All raised by the thesis itself. |
@@ -107,7 +107,7 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 
 **Trace:** Matches F-39 / W-14 (combination-level novelty — DEFEND). Last line pre-empts "did you really decentralise it".
 
-### 7 · `architecture` — Client, Relay, and Sui Chain  |  3:03 · ~72s · ~156 words  |  SYNC: diverge -> L-3, H-4
+### 7 · `architecture` — Client, Relay, and Sui Chain  |  3:03 · ~72s · ~156 words  |  SYNC: diverge -> H-4
 
 > Here is DVConf — four off-chain roles and a chain.
 > ▸x3 The client is a browser — a standard WebRTC peer. It reaches the relay over one WebSocket, media and signaling together. The relay is a mediasoup SFU: it forwards everyone's media to everyone else.
@@ -115,9 +115,9 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 > ▸x2 The cp-daemon is the control plane: pairing, TURN credentials, failover.
 > ▸x5 And the Sui chain holds the registry, the assignments, the SessionProofs, and settlement — in Move.
 > Media never touches the chain.
-> Two honest notes. The box says coturn — in our build, TURN was credential issuance only; the data plane never ran. And the relay terminates transport encryption, so by itself it *can* see media. Content-blindness is an opt-in layer — SFrame — and it fails open. In a matched cloud-WAN test, the encrypted arm differed by about **+1.86 milliseconds** on the mean — an upper bound on SFrame overhead; the tail is unresolved.
+> Two honest notes. TURN, in our build, was credential issuance only — the TURN data plane never ran. And the relay terminates transport encryption, so by itself it *can* see media. Content-blindness is an opt-in layer — SFrame — and it fails open. In a matched cloud-WAN test, the encrypted arm differed by about **+1.86 milliseconds** on the mean — an upper bound on SFrame overhead; the tail is unresolved.
 
-**Trace:** F-28 (coturn never deployed — L-3, said aloud), F-32 (E2EE opt-in, fails open), F-06 (+1.86 ms upper bound; never "the encryption costs 1.86 ms"). **H-4:** still no E2EE slide — the aside has no visual home. Deck-change: cp-daemon node + canary-probe sublabel narrated. The removed WebRTC slide survives as "standard WebRTC peer" + the transport-encryption note; never say bare "end-to-end encrypted" of the relay path (Section D).
+**Trace:** F-28 (TURN issuance only, data plane never ran — said aloud; L-3 closed 08-13, coturn off the relay node), F-32 (E2EE opt-in, fails open), F-06 (+1.86 ms upper bound; never "the encryption costs 1.86 ms"). **H-4:** still no E2EE slide — the aside has no visual home. Deck-change: cp-daemon node + canary-probe sublabel narrated. The removed WebRTC slide survives as "standard WebRTC peer" + the transport-encryption note; never say bare "end-to-end encrypted" of the relay path (Section D).
 **Short variant:** drop the +1.86 ms sentence — keep "opt-in SFrame that fails open"; number moves to Q&A.
 
 ### 8 · `session-lifecycle` — Session Lifecycle  |  4:15 · ~37s · ~81 words  |  SYNC: ok (deck-change)
@@ -165,7 +165,7 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 
 **Trace:** F-25 (permissionless, >3 epochs, no AdminCap — DEFEND for W-10), F-44a (~1.6-2.0 s, median 1.6). Watcher is now labelled "cp-daemon: Heartbeat Watcher" — narrated as cp-daemon. Sets up slide 16 and Van's 3.3/3.4.
 
-### 12 · `evaluation-methodology` — 3.1 Origin Test · Four Dimensions  |  7:05 · ~36s · ~78 words  |  SYNC: diverge -> L-2
+### 12 · `evaluation-methodology` — 3.1 Origin Test · Four Dimensions  |  7:05 · ~36s · ~78 words  |  SYNC: ok (deck-fixed 08-13)
 
 > Our origin test — section 3.1 — has four dimensions. The evidence class comes before any number.
 > ▸ Latency: a wide-area component sum, thirty sessions — a declared *lower bound*.
@@ -174,25 +174,25 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 > ▸ Failover: a mechanism floor from thirty cutovers — not full recovery.
 > Nothing here is dressed up as more than it is.
 
-**Cue:** Card on the slide reads "Cost" -> SAY "Fee" (L-2).
+**Cue:** Card now reads "Fee" (L-2 fixed 08-13) — say it as printed.
 
-### 13 · `eval-latency` — Latency  |  7:41 · ~48s · ~105 words  |  SYNC: diverge -> H-1, H-2
+### 13 · `eval-latency` — Latency  |  7:41 · ~48s · ~105 words  |  SYNC: ok (deck-fixed 08-13)
 
 > Latency. Thirty wide-area sessions. The one-way component-sum: **64.8 milliseconds** at the median, **70.9** at the ninety-fifth percentile.
 > Now the boundary, because it *is* the result. This is a component sum — not capture-to-paint. The camera is synthetic. The capture term is set to zero, which biases the number *downward*. And both peers ran on one laptop, one access network, one relay.
 > So: seventy-point-nine is a declared **lower bound**. The full-path sub-two-hundred-millisecond target is **unresolved** — the thesis refuses that claim, and so do I.
 > What the number does show: the on-chain control plane adds nothing to the media path.
 
-**Cue — DIVERGENCE:** Slide still shows the **p99=72.0 bar** (F-02: not reportable — do NOT read it) and the banned title "Below the 200ms Ceiling" (H-2). Speak p50/p95 only; never say the target was met.
+**Cue:** Deck fixed 08-13 — p99 bar removed (F-02), title now neutral (H-1/H-2 closed). Discipline unchanged: speak p50/p95 only; never say the target was met.
 **Short variant:** "One-way component-sum, p95 70.9 ms — a declared lower bound; synthetic camera, one access network. Full-path sub-200 ms is unresolved."
 
-### 14 · `eval-cost` — Fee  |  8:29 · ~46s · ~100 words  |  SYNC: diverge -> M-2, M-1
+### 14 · `eval-cost` — Fee  |  8:29 · ~46s · ~100 words  |  SYNC: diverge -> M-1
 
 > The on-chain **fee**. One full session, executed end to end: two relays, four validators — thirteen transactions, on a pinned localnet.
 > The two cards carry the session totals. Irreversible: about **0.017 SUI**. Net, counting refundable storage: about **0.035 SUI**. At a *labelled* one-dollar-fifty per SUI, that net is **about five cents**.
 > The boundary. Pinned localnet — not mainnet. Localnet fixes the gas schedule and has no fee contention. And it does not validate the three-of-four settlement rule. Gas is a property of the bytecode and storage rebate; the real SUI price is not ours to claim.
 
-**Cue:** SAY "Fee" (title still "Cost", M-2). Do NOT read the six per-function gas bars (not in `00-facts`, M-1). Cards 0.017 / 0.035 SUI are correct (H-3/L-1 fixed). USD 0.0257 stays Q&A-only, never as "SUI".
+**Cue:** Title now "On-Chain Fee per Session" (M-2 fixed 08-13). Still do NOT read the six per-function gas bars — raw-traceable (`m8-cost-empirical`) but not in `00-facts` (M-1). Cards 0.017 / 0.035 SUI are correct (H-3/L-1 fixed). USD 0.0257 stays Q&A-only, never as "SUI".
 **Short variant:** "Irreversible ~0.017 SUI, ~five cents net at a labelled 1.50-dollar SUI — pinned localnet, not mainnet, not a check of three-of-four."
 
 ### 15 · `eval-capacity` — Capacity  |  9:15 · ~38s · ~82 words  |  SYNC: ok
@@ -229,7 +229,7 @@ Quang budget: **~1,560 words ≈ 12:00**. Timestamps below are cumulative for Qu
 - **R-4:** "25 workers" = 5 services x 5 VMs — infra processes, NOT users. 3.3/3.4: "15 workers" = 3 services x 5 VMs.
 - **W-08-live (NEW):** 3.4's downtime tail **19.6 s exceeds the 8-15 s design budget**. Honest line: the budget was a design estimate; the live tail exceeded it — that is a finding to report, not to hide. Do not average it away.
 - Relay kills were applied **manually, out-of-band** (not in scenario.toml) — the slide discloses this; keep it disclosed when speaking.
-- `eval-r2-summary` bullet says "before scaling to 5 and 10 bots" but the deck has no 5-bot section (3.4 is 10-bot) — Van to fix or skip the "5".
+- `eval-r2-summary` bullet fixed on deck 08-13: now "the failover-recovery baseline for the 10-bot run in 3.4" (deck has no 5-bot section). The 3.2/3.3/3.4 summary bullets were also deduped against the stat cards — every number still appears exactly once on each slide.
 - Whole-run averages on the summary slides (50.15 ms, 7.20 ms, 695.25 kbps, ...) are not yet in `00-facts` — Van confirms before anyone speaks them.
 
 ---
@@ -268,4 +268,5 @@ Slides 1-16: ~1,390 words ≈ **10:40**. Slides 29-31: ~170 words ≈ **1:20**. 
 
 ## Open items feeding back to the deck
 
-Deck edits that would let a `diverge` flag drop — coordinate via `DECK-FACT-REVIEW.md` Gate-1 before applying: H-1 (remove p99 bar), H-2 (retitle latency slide), M-2/L-2 (Cost -> Fee), M-1 (six gas bars: label as illustrative or source them), L-3 (coturn note on the node), H-4 (add an E2EE/Trust-Model slide — the +1.86 ms aside still has no visual home), L-5 (supervisor on cover). NEW for Van: the `eval-r2-summary` "5 and 10 bots" bullet, and a decision on how 3.4's 19.6 s tail is framed against the 8-15 s budget.
+**Applied 2026-08-13 (certain batch):** H-1 (p99 bar removed — F-02), H-2 (latency retitled), M-2/L-2 (Cost -> Fee on title + methodology card + limitations bullet), L-3 (coturn off the relay node), the `eval-r2-summary` "5 and 10 bots" bullet, plus a text-density pass (huddle01 subtitle, call-mesh, dividers collapsed, summary bullets deduped, closing hint replaced with the Section-D framing line).
+**Still open:** M-1 (six gas bars — raw-traceable via `m8-cost-empirical` / e2-provenance row 107, but not in `00-facts`: promote them or keep unspoken), H-4 (an E2EE/Trust-Model slide — the +1.86 ms aside still has no visual home), L-5 (supervisor on cover). For Van: how 3.4's 19.6 s tail is framed against the 8-15 s budget.

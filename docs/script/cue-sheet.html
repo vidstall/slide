@@ -196,7 +196,7 @@
       <p><span class="clk">▸×5</span>And the Sui chain holds the registry, the assignments, the SessionProofs, and settlement — in Move.</p>
       <p>Media never touches the chain.</p>
       <p>Two honest notes.</p>
-      <p>The box says coturn — in our build, TURN was credential issuance only; the data plane never ran.</p>
+      <p>TURN, in our build, was credential issuance only — the TURN data plane never ran.</p>
       <p>And the relay terminates transport encryption, so by itself it <em>can</em> see media.</p>
       <p>Content-blindness is an opt-in layer — SFrame — and it fails open.</p>
       <p>In a matched cloud-WAN test, the encrypted arm differed by about <b>+1.86 milliseconds</b> on the mean — an upper bound on SFrame overhead; the tail is unresolved.</p>
@@ -273,7 +273,7 @@
       <p><span class="clk">▸</span><b>Failover</b>: a mechanism floor from thirty cutovers — not full recovery.</p>
       <p>Nothing here is dressed up as more than it is.</p>
     </div>
-    <div class="cue">Card on the slide reads "Cost" → SAY "Fee" (L-2).</div>
+    <div class="cue">Card now reads "Fee" (L-2 fixed 08-13) — say it as printed.</div>
   </div>
 
   <div class="card" id="s13">
@@ -290,7 +290,7 @@
       <p>The full-path sub-two-hundred-millisecond target is <b>unresolved</b> — the thesis refuses that claim, and so do I.</p>
       <p>What the number does show: the on-chain control plane adds nothing to the media path.</p>
     </div>
-    <div class="cue">Slide STILL shows p99=72.0 and the banned title "Below the 200ms Ceiling" — do NOT read p99, do NOT say the target was met. SHORT: "p95 70.9 ms — a declared lower bound; synthetic camera, one access network; sub-200 unresolved."</div>
+    <div class="cue">Deck fixed 08-13: p99 bar removed, neutral title. Discipline unchanged — speak p50/p95 only, never say the target was met. SHORT: "p95 70.9 ms — a declared lower bound; synthetic camera, one access network; sub-200 unresolved."</div>
   </div>
 
   <div class="card" id="s14">
@@ -306,7 +306,7 @@
       <p>And it does not validate the three-of-four settlement rule.</p>
       <p>Gas is a property of the bytecode and storage rebate; the real SUI price is not ours to claim.</p>
     </div>
-    <div class="cue">SAY "Fee" (title still "Cost"). Do NOT read the six gas bars (not governed, M-1). USD 0.0257 = Q&amp;A only, never as "SUI". SHORT: "irreversible ~0.017 SUI, ~five cents net at a labelled 1.50-dollar SUI — localnet, not mainnet, not three-of-four."</div>
+    <div class="cue">Title now "On-Chain Fee per Session" (M-2 fixed 08-13). Still do NOT read the six gas bars (raw-traceable, not in 00-facts — M-1). USD 0.0257 = Q&amp;A only, never as "SUI". SHORT: "irreversible ~0.017 SUI, ~five cents net at a labelled 1.50-dollar SUI — localnet, not mainnet, not three-of-four."</div>
   </div>
 
   <div class="card" id="s15">
@@ -345,7 +345,7 @@
     <p>R-1 · 3.2's "~70–80 ms" ≠ 3.1's 70.9 ms lower bound — different methods; never merge them.</p>
     <p>R-4 · "25 workers" / "15 workers" = infra processes (services × VMs), NOT users.</p>
     <p>W-08-live · 3.4's 19.6 s tail EXCEEDS the 8–15 s design budget — report it as a finding, don't average it away.</p>
-    <p>Relay kills were manual, out-of-band (not in scenario.toml) — keep that disclosed. And eval-r2-summary still says "5 and 10 bots" but there is no 5-bot section.</p>
+    <p>Relay kills were manual, out-of-band (not in scenario.toml) — keep that disclosed. The eval-r2-summary "5 and 10 bots" bullet was fixed 08-13 (now "baseline for the 10-bot run in 3.4").</p>
   </div>
 
   <div class="sec">Quang resumes — slides 29–31 · ~1:20</div>
