@@ -6,7 +6,10 @@ import { FlowDiagram } from "./diagram/FlowDiagram";
 import { DeviceMesh } from "./DeviceMesh";
 import { ArchitectureMesh } from "./ArchitectureMesh";
 import { LineChart } from "./chart/LineChart";
-import { BarChart } from "./chart/BarChart";
+// HIDDEN 2026-08-15: BarChart is only used by the four 3.1 Origin Test slides
+// (eval-latency/cost/capacity/failover) hidden below. Restore this import when
+// un-hiding that block (noUnusedLocals would otherwise fail the build).
+// import { BarChart } from "./chart/BarChart";
 import { ComparisonTable, type ComparisonRow } from "./ComparisonTable";
 import { SectionDivider } from "./SectionDivider";
 import type { DiagramBeat, DiagramNodeData } from "./diagram/types";
@@ -311,6 +314,17 @@ const r1FpsMax = [0, 30, 31, 30, 29, 29, 30, 31, 30, 29, 31];
 const r1EncodeAvg = [0, 5, 6, 7, 7, 6, 7, 8, 7, 7, 7];
 const r1DecodeAvg = [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
+// Major deck sections, keyed by the id of the slide that opens each one. The
+// footer indicator highlights the current section by finding the last section
+// whose opening slide index is <= the current slide. Keep startId in sync when
+// reordering/hiding the opening slide of a section.
+export const sections = [
+  { num: 1, label: "Motivation", startId: "intro-video-conferencing" },
+  { num: 2, label: "Architecture", startId: "architecture" },
+  { num: 3, label: "Evaluation", startId: "divider-4-2" },
+  { num: 4, label: "Discussion", startId: "limitations" },
+];
+
 export const slides: SlideDef[] = [
   {
     id: "title",
@@ -521,6 +535,10 @@ export const slides: SlideDef[] = [
       </SlideLayout>
     ),
   },
+  // HIDDEN 2026-08-13 (user decision): the 3.1 Origin Test overview slide is out of the
+  // deck flow; Quality Baseline / resilience sections renumbered 3.2→3.1, 3.3→3.2, 3.4→3.3.
+  // Restore by uncommenting and reverting those section indices.
+  /*
   {
     id: "evaluation-methodology",
     stepsCount: 4,
@@ -553,12 +571,18 @@ export const slides: SlideDef[] = [
       </SlideLayout>
     ),
   },
+  */
+  // HIDDEN 2026-08-15 (user decision): the four 3.1 Origin Test dimension slides
+  // (Latency / Fee / Capacity / Failover) are out of the deck flow, following the
+  // 2026-08-13 removal of their "Four Dimensions" overview slide above. Restore by
+  // uncommenting this block AND the BarChart import near the top of this file.
+  /*
   {
     id: "eval-latency",
     stepsCount: 0,
     render: () => (
       <SlideLayout eyebrow="Evaluation" title="Latency: Wide-Area One-Way Component-Sum">
-        <div style={{ maxWidth: 560 }}>
+        <div style={{ maxWidth: 560, margin: "0 auto" }}>
           <BarChart
             data={[
               { label: "p50", value: 64.8 },
@@ -576,7 +600,7 @@ export const slides: SlideDef[] = [
     stepsCount: 0,
     render: () => (
       <SlideLayout eyebrow="Evaluation" title="On-Chain Fee per Session" wide>
-        <div style={{ maxWidth: 720 }}>
+        <div style={{ maxWidth: 720, margin: "0 auto" }}>
           <BarChart
             data={[
               { label: "create_room", value: 1.161 },
@@ -611,7 +635,7 @@ export const slides: SlideDef[] = [
     stepsCount: 0,
     render: () => (
       <SlideLayout eyebrow="Evaluation" title="Capacity: Measured to N=15, Projected to N=100">
-        <div style={{ maxWidth: 560 }}>
+        <div style={{ maxWidth: 560, margin: "0 auto" }}>
           <LineChart
             xLabels={["N=5", "N=10", "N=15"]}
             unit="%"
@@ -637,7 +661,7 @@ export const slides: SlideDef[] = [
     stepsCount: 0,
     render: () => (
       <SlideLayout eyebrow="Evaluation" title="Failover: Warm-Pipe Mechanism Floor">
-        <div style={{ maxWidth: 560 }}>
+        <div style={{ maxWidth: 560, margin: "0 auto" }}>
           <BarChart
             data={[
               { label: "p50", value: 58 },
@@ -661,6 +685,7 @@ export const slides: SlideDef[] = [
       </SlideLayout>
     ),
   },
+  */
   {
     id: "divider-4-2",
     stepsCount: 0,
@@ -668,7 +693,7 @@ export const slides: SlideDef[] = [
       <SectionDivider
         kicker="Evaluation"
         variant="sub"
-        index="3.2"
+        index="3.1"
         title="Quality Baseline"
         subtitle="azure-devnet-sample — 25 workers · 5 Azure VMs · 2 bots + 1 real join"
       >
@@ -699,7 +724,7 @@ export const slides: SlideDef[] = [
     id: "eval-r1-session-health",
     stepsCount: 0,
     render: () => (
-      <SlideLayout eyebrow="Evaluation — 3.2" title="Session & Network Health" wide>
+      <SlideLayout eyebrow="Evaluation — 3.1" title="Session & Network Health" wide>
         <div className="eval-chart-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
           {[
             {
@@ -788,7 +813,7 @@ export const slides: SlideDef[] = [
     id: "eval-r1-media-quality",
     stepsCount: 0,
     render: () => (
-      <SlideLayout eyebrow="Evaluation — 3.2" title="Media Quality" wide>
+      <SlideLayout eyebrow="Evaluation — 3.1" title="Media Quality" wide>
         <div className="eval-chart-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
           {[
             {
@@ -868,7 +893,7 @@ export const slides: SlideDef[] = [
     id: "eval-r1-summary",
     stepsCount: 4,
     render: ({ step }) => (
-      <SlideLayout eyebrow="Evaluation — 3.2" title="Summary & Conclusion">
+      <SlideLayout eyebrow="Evaluation — 3.1" title="Summary & Conclusion">
         <RevealList
           className="bullet-list"
           step={step}
@@ -903,7 +928,7 @@ export const slides: SlideDef[] = [
       <SectionDivider
         kicker="Evaluation"
         variant="sub"
-        index="3.3"
+        index="3.2"
         title="2-Bot Resilience Test"
         subtitle="15 workers · 5 hosts · 2 relay-failover events (5.8–7.0s downtime)"
       >
@@ -934,7 +959,7 @@ export const slides: SlideDef[] = [
     id: "eval-r2-session-health",
     stepsCount: 0,
     render: () => (
-      <SlideLayout eyebrow="Evaluation — 3.3" title="Session & Network Health" wide>
+      <SlideLayout eyebrow="Evaluation — 3.2" title="Session & Network Health" wide>
         <div className="eval-room-image-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
           {[
             { title: "Participants per Room", src: r2Participants },
@@ -957,7 +982,7 @@ export const slides: SlideDef[] = [
     id: "eval-r2-media-quality",
     stepsCount: 0,
     render: () => (
-      <SlideLayout eyebrow="Evaluation — 3.3" title="Media Quality" wide>
+      <SlideLayout eyebrow="Evaluation — 3.2" title="Media Quality" wide>
         <div className="eval-room-image-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
           {[
             { title: "Bitrate Up/Down", src: r2Bitrate },
@@ -978,7 +1003,7 @@ export const slides: SlideDef[] = [
     id: "eval-r2-summary",
     stepsCount: 4,
     render: ({ step }) => (
-      <SlideLayout eyebrow="Evaluation — 3.3" title="Summary & Conclusion">
+      <SlideLayout eyebrow="Evaluation — 3.2" title="Summary & Conclusion">
         <RevealList
           className="bullet-list"
           step={step}
@@ -986,7 +1011,7 @@ export const slides: SlideDef[] = [
             "Both relay kills recovered — no dropped participants; the first reads as a clean data gap, the second as a frame-rate cliff to zero before self-healing",
             "Latency steps from ~40ms to ~120ms after the second kill; jitter stays noisy throughout but never runaway",
             "Encode/decode latency and resolution barely register either kill — the disruption stays isolated to bitrate, frame rate, and end-to-end latency",
-            "Smallest resilience scenario — the failover-recovery baseline for the 10-bot run in 3.4",
+            "Smallest resilience scenario — the failover-recovery baseline for the 10-bot run in 3.3",
           ]}
         />
         <div className="stat-grid" style={{ marginTop: 12 }}>
@@ -1013,7 +1038,7 @@ export const slides: SlideDef[] = [
       <SectionDivider
         kicker="Evaluation"
         variant="sub"
-        index="3.4"
+        index="3.3"
         title="10-Bot Resilience Test"
         subtitle="15 workers · 5 hosts · 4 relay-failover events (7.6–19.6s downtime)"
       >
@@ -1044,7 +1069,7 @@ export const slides: SlideDef[] = [
     id: "eval-r4-session-health",
     stepsCount: 0,
     render: () => (
-      <SlideLayout eyebrow="Evaluation — 3.4" title="Session & Network Health" wide>
+      <SlideLayout eyebrow="Evaluation — 3.3" title="Session & Network Health" wide>
         <div className="eval-room-image-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
           {[
             { title: "Participants per Room", src: r4Participants },
@@ -1067,7 +1092,7 @@ export const slides: SlideDef[] = [
     id: "eval-r4-media-quality",
     stepsCount: 0,
     render: () => (
-      <SlideLayout eyebrow="Evaluation — 3.4" title="Media Quality" wide>
+      <SlideLayout eyebrow="Evaluation — 3.3" title="Media Quality" wide>
         <div className="eval-room-image-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
           {[
             { title: "Bitrate Up/Down", src: r4Bitrate },
@@ -1088,13 +1113,13 @@ export const slides: SlideDef[] = [
     id: "eval-r4-summary",
     stepsCount: 4,
     render: ({ step }) => (
-      <SlideLayout eyebrow="Evaluation — 3.4" title="Summary & Conclusion">
+      <SlideLayout eyebrow="Evaluation — 3.3" title="Summary & Conclusion">
         <RevealList
           className="bullet-list"
           step={step}
           items={[
             "All four relay kills recovered — including the relay-1 false-dead-peer detour, self-corrected once relay 3's ping confirmed relay 2 was alive",
-            "At 5x 3.3's concurrency, whole-run quality holds: 31.68ms avg latency, 0.03% packet loss (p95 0.14%)",
+            "At 5x 3.2's concurrency, whole-run quality holds: 31.68ms avg latency, 0.03% packet loss (p95 0.14%)",
             "1880.99 kbps avg download at 10 concurrent viewers — bandwidth scales with load, no collapse",
             "Largest scenario measured — failover recovery holds under both real kills and a false positive, without user-visible collapse",
           ]}

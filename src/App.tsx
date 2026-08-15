@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
-import { slides } from "./presentation/slides";
+import { slides, sections } from "./presentation/slides";
 import { Landing } from "./presentation/Landing";
 import { useTheme } from "./presentation/theme/useTheme";
 import { ThemeToggle } from "./presentation/theme/ThemeToggle";
@@ -22,9 +22,14 @@ function App() {
   const [slideIndex, setSlideIndex] = useState(0);
   const [stepIndex, setStepIndex] = useState(0);
   const [direction, setDirection] = useState<1 | -1>(1);
+  const [hoverSide, setHoverSide] = useState<"left" | "right">("right");
   const animatingRef = useRef(false);
 
   const currentSlide = slides[slideIndex];
+  const currentSection = sections.reduce<(typeof sections)[number] | null>((acc, s) => {
+    const idx = slides.findIndex((sl) => sl.id === s.startId);
+    return idx !== -1 && slideIndex >= idx ? s : acc;
+  }, null);
   const isFirst = slideIndex === 0 && stepIndex === 0;
   const isLast =
     slideIndex === slides.length - 1 && stepIndex === currentSlide.stepsCount;
@@ -120,12 +125,18 @@ function App() {
 
   return (
     <div
-      className="stage"
-      onClick={advance}
-      onContextMenu={(e) => {
-        e.preventDefault();
-        retreat();
+      className={`stage ${hoverSide === "left" ? "stage-nav-back" : "stage-nav-fwd"}`}
+      onMouseMove={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const side = e.clientX - rect.left < rect.width / 2 ? "left" : "right";
+        setHoverSide((prev) => (prev === side ? prev : side));
       }}
+      onClick={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        if (e.clientX - rect.left < rect.width / 2) retreat();
+        else advance();
+      }}
+      onContextMenu={(e) => e.preventDefault()}
     >
       <div className="toolbar">
         <ThemeToggle theme={theme} onToggle={toggleTheme} />
@@ -146,23 +157,33 @@ function App() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="progress-dots">
-        {slides.map((s, i) => (
-          <span
-            key={s.id}
-            className={i === slideIndex ? "dot dot-active" : "dot"}
-            onClick={(e) => {
-              e.stopPropagation();
-              goToSlide(i);
-            }}
-          >
-            {i === slideIndex && <span className="dot-number">{i + 1}</span>}
-          </span>
-        ))}
+      <div className="deck-progress" onClick={(e) => e.stopPropagation()}>
+        <div className="deck-sections">
+          {sections.map((s) => {
+            const active = currentSection?.num === s.num;
+            return (
+              <span
+                key={s.num}
+                className={active ? "deck-section deck-section-active" : "deck-section"}
+                title={`Part ${s.num} — ${s.label}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToSlide(slides.findIndex((sl) => sl.id === s.startId));
+                }}
+              >
+                <span className="deck-section-num">{s.num}</span>
+                {active && <span className="deck-section-label">{s.label}</span>}
+              </span>
+            );
+          })}
+        </div>
+        <span className="deck-count">
+          {slideIndex + 1} / {slides.length}
+        </span>
       </div>
 
       <div className="nav-hint">
-        {isFirst && "Click or press → to begin"}
+        {isFirst && "Click the right side or press → to begin"}
         {isLast && "End of deck"}
       </div>
     </div>

@@ -118,9 +118,19 @@ body {
   background: var(--bg);
 }
 
+/* Position-based nav cursors: the left half of the stage shows a back arrow,
+   the right half a forward arrow (wired in App.tsx onMouseMove / onClick). */
+.stage-nav-back {
+  cursor: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='14'%20fill='rgba(20,20,25,0.55)'/%3E%3Cpath%20d='M19%209%20L11%2016%20L19%2023'%20fill='none'%20stroke='white'%20stroke-width='2.6'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E") 16 16, w-resize;
+}
+.stage-nav-fwd {
+  cursor: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='14'%20fill='rgba(20,20,25,0.55)'/%3E%3Cpath%20d='M13%209%20L21%2016%20L13%2023'%20fill='none'%20stroke='white'%20stroke-width='2.6'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E") 16 16, e-resize;
+}
+
 .slide {
   position: absolute;
-  inset: 0;
+  /* bottom lane reserved for the footer indicator so content never overlaps it */
+  inset: 0 0 68px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -508,58 +518,77 @@ body {
   overflow: hidden;
 }
 
-.progress-dots {
+/* Footer indicator: compact section (Part 1-4) + slide counter pill. Sits in
+   the 56px lane reserved at the bottom of .slide, so it never overlaps content. */
+.deck-progress {
   position: absolute;
-  bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  gap: 3.2px;
-  width: 95%;
-  max-width: 95%;
-  margin-top: 32px;
-  z-index: 10;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.progress-dots::-webkit-scrollbar {
-  display: none;
-}
-
-.dot {
-  box-sizing: content-box;
-  width: 8px;
-  height: 8px;
-  padding: 8px;
-  background: var(--border);
-  background-clip: content-box;
-  border-radius: 50%;
-  cursor: pointer;
+  bottom: 16px;
+  right: 28px;
+  z-index: 12;
   display: flex;
   align-items: center;
+  gap: 14px;
+  padding: 8px 14px 8px 10px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.16);
+  user-select: none;
+}
+
+.deck-sections {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.deck-section {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  transition: background 0.3s ease, transform 0.3s ease;
+  gap: 8px;
+  height: 32px;
+  min-width: 32px;
+  padding: 0 8px;
+  border-radius: 999px;
+  color: var(--text);
+  opacity: 0.4;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.25s ease, background 0.25s ease, color 0.25s ease;
 }
 
-.dot:hover {
+.deck-section:hover {
+  opacity: 0.75;
+}
+
+.deck-section-active {
+  opacity: 1;
   background: var(--accent);
+  color: #fff;
+  padding: 0 15px 0 12px;
 }
 
-.dot-active {
-  background: var(--accent);
-  background-clip: border-box;
-  transform: scale(0.767);
+.deck-section-num {
+  line-height: 1;
 }
 
-.dot-number {
-  font-size: 10px;
+.deck-section-label {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.deck-count {
+  font-size: 16px;
   font-weight: 700;
   line-height: 1;
-  color: #fff;
+  color: var(--text);
+  opacity: 0.7;
+  padding-left: 14px;
+  border-left: 1px solid var(--border);
 }
 
 .toolbar {
@@ -599,7 +628,7 @@ body {
 .nav-hint {
   position: absolute;
   bottom: 28px;
-  right: 32px;
+  left: 32px;
   font-size: 13px;
   color: var(--text);
   opacity: 0.6;
@@ -611,9 +640,11 @@ body {
   width: 100%;
   height: 46vh;
   min-height: 320px;
-  margin: 16px auto 0;
-  /* Diagram canvases are often wider than .slide-content-wide (1200px);
-     auto margins can't center an overflowing box, this can. */
+  margin: 16px 0 0;
+  /* left+translate is the ONE centering mechanism: it also centers canvases
+     wider than .slide-content-wide (1200px), where auto margins resolve to 0.
+     Keep horizontal margins at 0 — an auto margin would center narrow
+     canvases a second time and push them flush right. */
   left: 50%;
   transform: translateX(-50%);
 }
@@ -621,7 +652,6 @@ body {
 .device-mesh-canvas {
   width: 640px;
   height: 640px;
-  margin: 16px auto 0;
 }
 
 .architecture-mesh-canvas {
